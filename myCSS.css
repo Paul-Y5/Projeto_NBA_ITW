@@ -87,7 +87,7 @@ a{
 }
 
 .card-img-top{
-    height: 250px;
+    height: 200px;
 }
 
 .title{
@@ -99,6 +99,11 @@ a{
 #cardbody{
     background-color: whitesmoke;
 }
+
+#cardclick:hover{
+    box-shadow: 0px 8px 15px 5px rgba(0, 0, 0, 0.5);
+    transform: translateY(0px);
+  }
 
 
 
