@@ -12,9 +12,6 @@ $(document).ready(function () {
         if (data.name) {
           $("table").removeClass("d-none");
           $("#cityName").html(data.name + " / " + data.sys.country);
-          $("#coordinates").html(
-            "Lon (º): " + data.coord.lon + " / Lat(º):" + data.coord.lat
-          );
           $("#weather").html(
             '<img src="http://openweathermap.org/img/w/' +
               data.weather[0].icon +
@@ -26,11 +23,6 @@ $(document).ready(function () {
               "ºK / " +
               (data.main.temp - 273.15).toString() +
               "ºC"
-          );
-          $("#pressure").html(data.main.pressure);
-          $("#humidity").html(data.main.humidity + "%");
-          $("#allData").html(
-            JSON.stringify(data, null, 4).replace(/\n/g, "<br>")
           );
         } else {
           $("table").addClass("d-none");
