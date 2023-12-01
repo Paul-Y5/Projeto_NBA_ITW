@@ -12,6 +12,14 @@
     opacity: 0.5;
 }
 
+.navbar-nav > li >a{
+  color: blue;
+}
+
+.navbar-link >li:active {
+    color: rgba(236, 8, 8, 0.682);
+}
+
 .navbar-nav > li:hover >a,
 .navbar-nav > li.active >a
 {
