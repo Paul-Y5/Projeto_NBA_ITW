@@ -3,6 +3,21 @@
     margin: 56px 0 56px 0;
 }
 
+.carousel-inner { padding: 0 !important; }
+
+#back-color {
+    color: black;
+    font-weight: bold;
+    background-color: lightgrey;
+    opacity: 0.5;
+}
+
+.navbar-nav > li:hover >a,
+.navbar-nav > li.active >a
+{
+  color: red;
+}
+
 /* button default
 ---------------------------- */
 .btn-default {
