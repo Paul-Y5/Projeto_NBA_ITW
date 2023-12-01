@@ -16,13 +16,12 @@
   color: blue;
 }
 
-.navbar-link >li:active {
-    color: rgba(236, 8, 8, 0.682);
+#active {
+    color: rgb(185, 7, 7);
 }
 
 .navbar-nav > li:hover >a,
-.navbar-nav > li.active >a
-{
+.navbar-nav > li.active >a{
   color: red;
 }
 
