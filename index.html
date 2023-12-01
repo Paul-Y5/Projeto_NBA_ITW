@@ -11,35 +11,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="myCSS.css" />
-    <style>
-        .carousel-item {
-            z-index: -100;
-            height: 640px;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-            .carousel-item:nth-child(1) {
-                background-image: url('https://cdn.nba.com/manage/2023/11/USATSI_21963262-784x441.jpg');
-            }
-
-            .carousel-item:nth-child(2) {
-                background-image: url('https://cdn.nba.com/manage/2023/11/GettyImages-1797516862.jpg');
-            }
-
-            .carousel-item:nth-child(3) {
-                background-image: url('https://cdn.nba.com/manage/2023/11/banchero-784x441.jpg');
-            }
-
-            .carousel-item:nth-child(4) {
-                background-image: url('https://cdn.nba.com/manage/2023/11/GettyImages-1730506370-1-scaled-e1700674286240-1568x882.jpg');
-            }
-
-            .carousel-item:nth-child(5) {
-                background-image: url('https://cdn.nba.com/manage/2023/11/GettyImages-1790167479-1-1568x882.jpg');
-            }
-    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -106,16 +77,59 @@
                 <span class="visually-hidden"></span>
             </button>
         </div>
-        
-        <div class="row">
-            <div class="col-lg-2">
-                Estado do Tempo nos diferentes estádios
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col-md-6 d-flex">
+                <div class="card mb-3 flex-grow-1">
+                        <div class="card-header" >
+                            <div class="card-title">League Table</div>
+                        </div>
+                    <div class="card-body">
+                        <div class="card-text"></div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-6">
-                Last News
-            </div>
-            <div class="col-lg-4">
-                Tabela da Current Season
+
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        
+                        <div class="card h-100">
+                            <div class="card-header">
+                                <div class="card-title">Recent games</div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga laborum dolores cupiditate laudantium ex incidunt aliquam dolorem illo, omnis dicta! Quis laboriosam quia delectus quam nihil quae eveniet nisi id?</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="col-md-12 mb-3">
+                        <a class="card-block stretched-link text-decoration-none text-dark" href="statspage.html">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <div class="card-title">NBA Stats</div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque officiis tenetur inventore provident ducimus esse tempora adipisci, placeat iusto similique necessitatibus consequatur? Aliquid accusantium repudiandae voluptates nam facere natus modi.</div>
+                                </div>  
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                        <div class="card h-100">
+                            <div class="card-header">
+                                <div class="card-title">Arenas Wheather</div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, nostrum quae saepe repudiandae rem error commodi ab provident amet quasi ratione, quo voluptates cupiditate quos nam debitis nemo suscipit iste.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
