@@ -12,9 +12,16 @@
     opacity: 0.5;
 }
 
+.navbar-nav > li >a{
+  color: blue;
+}
+
+#active {
+    color: rgb(185, 7, 7);
+}
+
 .navbar-nav > li:hover >a,
-.navbar-nav > li.active >a
-{
+.navbar-nav > li.active >a{
   color: red;
 }
 

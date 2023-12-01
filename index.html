@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
     <link rel="stylesheet" href="myCSS.css" />
 </head>
 <body>
@@ -21,12 +21,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="arenas.html"><i class="fa fa-soccer-ball-o text-warning"></i> Arenas</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="players.html"><i class="fa fa-user-o text-primary"></i> Players</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="teams.html"><i class="fa fa-flag-o text-danger"></i> Teams</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="states.html"><i class="fa fa-map-marker text-success"></i> States</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="seasons.html"><i class="fa fa-bookmark-o text-info "></i> Seasons</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="favorite.html"><i class="fa fa-magic" title="favorite"></i> Favorites</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="arenas.html"><i class="fa fa-basketball-ball" style="color: orange;"></i> Arenas</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="players.html"><i class="fa fa-user" style="color: gray;"></i> Players</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="teams.html"><i class="fa fa-flag" style="color: black;"></i> Teams</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="states.html"><i class="fa fa-search-location" style="color: green;"></i> States</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="seasons.html"><i class="fa fa-bookmark" style="color: red;"></i> Seasons</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="favorite.html"><i class="fa fa-star" style="color: yellow;"></i> Favorites</a></li>
                 </ul>
             </div>
         </div>
@@ -122,10 +122,34 @@
                     <div class="col-md-12 mb-3">
                         <div class="card h-100">
                             <div class="card-header">
-                                <div class="card-title">Arenas Wheather</div>
+                                <h4>
+                                    <img style="width:50px; " src="https://help.apple.com/assets/63FFF4F425D106794D09CC92/63FFF4F525D106794D09CC99/pt_PT/dc7f8cdb406dc7704cccb5188ddc28c1.png" />
+                                    Arenas Wheather
+                                </h4>
                             </div>
                             <div class="card-body">
-                                <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, nostrum quae saepe repudiandae rem error commodi ab provident amet quasi ratione, quo voluptates cupiditate quos nam debitis nemo suscipit iste.</div>
+                                <select id="citySelector" class="form-select">
+                                    <option value="Alabama, EUA">Alabama</option>
+                                    <option value="Alasca, EUA">Alasca</option>
+                                    <option value="Califórnia, EUA">Califórnia</option>
+                                    <option value="Arizona, EUA">Arizona</option>
+                                    <option value="Idaho, EUA">Idaho</option>
+                                    <option value="New York, USA">New York</option>
+                                    <option value="Kansas, EUA">Kansas</option>
+                                </select>
+                                <table class="table table-striped d-none">
+                                    <tr>
+                                        <td class="col-xs-2">City Name:</td>
+                                        <td class="col-xs-10" id="cityName"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-xs-2">weather:</td>
+                                        <td class="col-xs-10" id="weather"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-xs-2">temp:</td>
+                                        <td class="col-xs-10" id="temp"></td>
+                                    </tr>
                             </div>
                         </div>
                     </div>
@@ -145,6 +169,8 @@
             </div>
         </div>
     </nav>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="JSIndex.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
