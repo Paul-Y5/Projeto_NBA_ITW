@@ -19,7 +19,7 @@ $(document).ready(function () {
           $("#coordinates").html(
             "Lon:" + data.coord.lon + "º Lat:" + data.coord.lat + "º"
           );
-          $("#weather").html(data.weather[0].description);
+          $("#weather").html('<img src="http://openweathermap.org/img/w/' + data.weather[0].icon + '.png" />' + data.weather[0].description);
           $("#temp").html(
             (data.main.temp - 273.15).toFixed(2).toString() + "ºC"
           );
