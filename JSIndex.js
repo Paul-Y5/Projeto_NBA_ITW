@@ -4,28 +4,24 @@
 
 /* Tempo nas cidades das Arenas */
 $(document).ready(function () {
-  $("#citySelector").change(function () {
+  $("#cityselect").change(function () {
     $.ajax({
-      url: "https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13",
+      url: "http://api.openweathermap.org/data/2.5/weather",
       data: {
-        q: $("#citySelector").val(),
+        q: $("#cityselect").val(),
         APPID: "b2b1df463182c3cca5276e9d3267cc95",
       },
       success: function (data) {
         if (data.name) {
+          $("#remover").removeClass("d-block");
+          $("#remover").addClass("d-none");
           $("table").removeClass("d-none");
-          $("#cityName").html(data.name + " / " + data.sys.country);
-          $("#weather").html(
-            '<img src="http://openweathermap.org/img/w/' +
-              data.weather[0].icon +
-              '.png" />' +
-              data.weather[0].description
+          $("#coordinates").html(
+            "Lon:" + data.coord.lon + "º Lat:" + data.coord.lat + "º"
           );
+          $("#weather").html(data.weather[0].description);
           $("#temp").html(
-            data.main.temp.toString() +
-              "ºK / " +
-              (data.main.temp - 273.15).toString() +
-              "ºC"
+            (data.main.temp - 273.15).toFixed(2).toString() + "ºC"
           );
         } else {
           $("table").addClass("d-none");
