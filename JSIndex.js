@@ -1,9 +1,12 @@
+/* Dark-Mode */
+
+
 
 /* Tempo nas cidades das Arenas */
 $(document).ready(function () {
   $("#citySelector").change(function () {
     $.ajax({
-      url: "http://api.openweathermap.org/data/2.5/weather",
+      url: "https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13",
       data: {
         q: $("#citySelector").val(),
         APPID: "b2b1df463182c3cca5276e9d3267cc95",
