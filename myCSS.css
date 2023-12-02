@@ -3,21 +3,23 @@
     margin: 56px 0 56px 0;
 }
 
+/* Var colors */
 .carousel-inner { padding: 0 !important; }
 
+/* text carousel */
 #back-color {
     color: black;
     font-weight: bold;
     background-color: lightgrey;
     opacity: 0.5;
 }
-
+/* Titles-nav-bar */
 .navbar-nav > li >a{
   color: blue;
 }
 
 #active {
-    color: rgb(185, 7, 7);
+    color: rgb(255, 0, 0);
 }
 
 .navbar-nav > li:hover >a,
