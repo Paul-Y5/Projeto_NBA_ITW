@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>NBA News & Statistics</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
@@ -77,7 +77,20 @@
                 <span class="visually-hidden"></span>
             </button>
         </div>
-
+        <div class="text">
+            The National Basketball Association (NBA), comprised of 30 teams (29 in the U.S. and 1 in Canada), stands as the foremost basketball league globally. Originating in 1946 as the Basketball Association of America (BAA), it underwent significant transformations, merging with the National Basketball League (NBL) in 1949 and later integrating with the American Basketball Association (ABA) in 1976, leading to the addition of four franchises.
+            
+            The league's annual calendar unfolds with a regular season spanning from October to April, featuring a rigorous schedule of 82 games per team. This intense competition sets the stage for a captivating playoff tournament that extends into June, capturing the attention of basketball enthusiasts worldwide.
+            
+            In the financial realm, NBA players have achieved global recognition as the highest-paid athletes, securing the top spot in average annual salary as of 2020. This financial dominance underscores the league's position as a powerhouse in the sports industry.
+            
+            Recognized as a major professional sports league in both the United States and Canada, the NBA holds a distinguished status, ranking third in revenue among professional sports leagues in North America, and among the top four globally. This remarkable standing is a testament to the league's widespread popularity and economic influence.
+            
+            Operational and administrative functions are centered around the league's headquarters in Midtown Manhattan, overseeing international and team offices. Additionally, the NBA Entertainment and NBA TV studios, integral components of the league's multimedia presence, are directed out of offices located in Secaucus, New Jersey.
+            
+            Lastly, the NBA's rich history is punctuated by iconic franchises, with the Boston Celtics and the Los Angeles Lakers sharing the record for the most NBA championships, each boasting an impressive 17 titles. In the most recent chapter of the league's narrative, the Denver Nuggets emerged as the reigning champions in the 2023 NBA Finals, triumphing over the Miami Heat.
+        </div>
+        <div><br/></div>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col-md-6 d-flex">
                 <div class="card mb-3 flex-grow-1">
@@ -99,57 +112,75 @@
                                 <div class="card-title">Recent games</div>
                             </div>
                             <div class="card-body">
-                                <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga laborum dolores cupiditate laudantium ex incidunt aliquam dolorem illo, omnis dicta! Quis laboriosam quia delectus quam nihil quae eveniet nisi id?</div>
+                                <div class="card-text"><p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil ratione ipsum distinctio officia numquam iste, ex incidunt, animi reiciendis autem ipsam sint perspiciatis sequi praesentium excepturi enim, obcaecati saepe. Maiores?</p></div>
                             </div>
                         </div>
 
                     </div>
                     
-                    <div class="col-md-12 mb-3">
+                    <div class="col-md-6 mb-3">
                         <a href="statspage.html" style="text-decoration: none; color: black">
                             <div class="card h-100" id="cardclick">
                                 <div class="card-header">
                                     <div class="card-title">NBA Stats</div>
                                 </div>
                                 <div class="card-body">
-                                    <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque officiis tenetur inventore provident ducimus esse tempora adipisci, placeat iusto similique necessitatibus consequatur? Aliquid accusantium repudiandae voluptates nam facere natus modi.</div>
+                                    <div class="card-text"><p class="text">You can check the sats of most NBA seasons!</p></div>
+                                    <img src="imagens/stats.png">
                                 </div>  
                             </div>
                         </a>    
 
                     </div>
 
-                    <div class="col-md-12 mb-3">
+                    <div class="col-md-6 mb-3">
                         <div class="card h-100">
                             <div class="card-header">
                                 <h4>
                                     <img style="width:50px; " src="https://help.apple.com/assets/63FFF4F425D106794D09CC92/63FFF4F525D106794D09CC99/pt_PT/dc7f8cdb406dc7704cccb5188ddc28c1.png" />
-                                    Arenas Wheather
+                                     Wheather
                                 </h4>
                             </div>
                             <div class="card-body">
-                                <select id="citySelector" class="form-select">
-                                    <option value="Alabama, EUA">Alabama</option>
-                                    <option value="Alasca, EUA">Alasca</option>
-                                    <option value="Califórnia, EUA">Califórnia</option>
-                                    <option value="Arizona, EUA">Arizona</option>
-                                    <option value="Idaho, EUA">Idaho</option>
-                                    <option value="New York, USA">New York</option>
-                                    <option value="Kansas, EUA">Kansas</option>
+                                <div class="d-block" id="remover"><p class= 'text'>You can check how the weather is on most US cities where NBA games take place!</p></div>
+                                <select class="form-select" id="cityselect">
+                                    <option value="" selected disabled>Select a city</option>
+                                    <option>Atlanta, EUA</option>
+                                    <option>Boston, EUA</option>
+                                    <option>Brooklyn, EUA</option>
+                                    <option>Charlotte, EUA</option>
+                                    <option>Chicago, EUA</option>
+                                    <option>Cleveland, EUA</option>
+                                    <option>Dallas, EUA</option>
+                                    <option>Denver, EUA</option>
+                                    <option>Detroit, EUA</option>
+                                    <option>San Francisco, EUA</option>
+                                    <option>Houston, EUA</option>
+                                    <option>Indianapolis, EUA</option>
+                                    <option>Los Angeles, EUA</option>
+                                    <option>Memphis, EUA</option>
+                                    <option>Miami, EUA</option>
+                                    <option>Milwaukee, EUA</option>
+                                    <option>Minneapolis, EUA</option>
+                                    <option>New Orleans, EUA</option>
+                                    <option>New York City, EUA</option>
+                                    <option>Oklahoma City, EUA</option>
+                                    <option>Orlando, EUA</option>
+                                    <option>Philadelphia, EUA</option>
+                                    <option>Phoenix, EUA</option>
+                                    <option>Portland, EUA</option>
+                                    <option>Sacramento, EUA</option>
+                                    <option>San Antonio, EUA</option>
+                                    <option>Toronto, EUA</option>
+                                    <option>Salt Lake City, EUA</option>
+                                    <option>Washington, EUA</option>
                                 </select>
+                                <br />
                                 <table class="table table-striped d-none">
-                                    <tr>
-                                        <td class="col-xs-2">City Name:</td>
-                                        <td class="col-xs-10" id="cityName"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="col-xs-2">weather:</td>
-                                        <td class="col-xs-10" id="weather"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="col-xs-2">temp:</td>
-                                        <td class="col-xs-10" id="temp"></td>
-                                    </tr>
+                                    <tr><td class="col-xs-2">Coordinates:</td><td class="col-xs-10" id="coordinates"></td></tr>
+                                    <tr><td class="col-xs-2">Weather:</td><td class="col-xs-10" id="weather"></td></tr>
+                                    <tr><td class="col-xs-2">Temperature:</td><td class="col-xs-10" id="temp"></td></tr>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -172,8 +203,40 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="JSIndex.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script type='text/javascript' src='knockout-3.5.1.js'></script>
+    <script>
+        $(document).ready(function () {
+            $("#cityselect").change(function () {
+                $.ajax({
+                    url: "http://api.openweathermap.org/data/2.5/weather",
+                    data: {
+                        q: $("#cityselect").val(),
+                        APPID: 'b2b1df463182c3cca5276e9d3267cc95'
+                    },
+                    success: function (data) {
+                        if (data.name) {
+                            $('#remover').removeClass('d-block')
+                            $('#remover').addClass('d-none')
+                            $('table').removeClass('d-none');
+                            $("#coordinates").html('Lon:' + data.coord.lon + 'º Lat:' + data.coord.lat + 'º');
+                            $("#weather").html(data.weather[0].description);
+                            $("#temp").html(((data.main.temp - 273.15).toFixed(2).toString() + 'ºC'));
+                        }
+                        else {
+                            $('table').addClass('d-none');
+                            alert(data.message);
+                        }
+                    },
+                    error: function () {
+                        $('table').addClass('d-none');
+                        alert('Erro!');
+                    }
+                });
+            });
+        });
+
+    </script>
 </body>
 </html>
