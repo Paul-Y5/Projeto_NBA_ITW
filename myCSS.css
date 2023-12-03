@@ -34,7 +34,7 @@
 }
 
 .in-toggle:checked + .label-toggle {
-    background: #242424;
+    background: #3f3f3f;
 }
 
 .in-toggle:checked + .label-toggle:after {

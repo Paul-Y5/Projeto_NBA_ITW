@@ -7,6 +7,14 @@ document.getElementById("dark-mode").addEventListener("click", () => {
     document.documentElement.setAttribute("data-bs-theme", "dark");
   }
 });
+$(document).ready(function () {
+  $("#dark-mode").change(function () {
+    $("body").toggleClass("bg-secondary");
+    $("nav").toggleClass("navbar-dark bg-dark");
+    $("label-toggle").toggleClass("text-white");
+  });
+});
+
 
 
 /* Tempo nas cidades das Arenas */
