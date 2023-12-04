@@ -30,7 +30,8 @@ $(document).ready(function () {
         if (data.name) {
           $("#remover").removeClass("d-block");
           $("#remover").addClass("d-none");
-          $("table").removeClass("d-none");
+          $("#adicionar").removeClass("d-none");
+          $("#adicionar").addClass("d-block");
           $("#coordinates").html("Lon:" + data.coord.lon + "º Lat:" + data.coord.lat + "º");
           $("#weather").html('<img src="http://openweathermap.org/img/w/' + data.weather[0].icon + '.png" />' + data.weather[0].description);
           $("#temp").html((data.main.temp - 273.15).toFixed(2).toString() + "ºC");
