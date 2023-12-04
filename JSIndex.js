@@ -1,3 +1,10 @@
+/* Capitalize */
+Object.defineProperty(String.prototype, 'capitalize', {
+  value: function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+  },
+  enumerable: false
+});
 /* Dark-Mode */
 document.getElementById("dark-mode").addEventListener("click", () => {
   if (document.documentElement.getAttribute("data-bs-theme") == "dark") {
@@ -30,11 +37,15 @@ $(document).ready(function () {
         if (data.name) {
           $("#remover").removeClass("d-block");
           $("#remover").addClass("d-none");
-          $("#adicionar").removeClass("d-none");
-          $("#adicionar").addClass("d-block");
-          $("#coordinates").html("Lon:" + data.coord.lon + "º Lat:" + data.coord.lat + "º");
-          $("#weather").html('<img src="http://openweathermap.org/img/w/' + data.weather[0].icon + '.png" />' + data.weather[0].description);
-          $("#temp").html((data.main.temp - 273.15).toFixed(2).toString() + "ºC");
+          $("#adicionar1").removeClass("d-none");
+          $("#adicionar1").addClass("d-block");
+          $("#adicionar2").removeClass("d-none");
+          $("#adicionar2").addClass("d-block");
+          $("#adicionar3").removeClass("d-none");
+          $("#adicionar3").addClass("d-block");
+          $("#coordinates").html("Lon: " + data.coord.lon + "º | Lat: " + data.coord.lat + "º");
+          $("#weather").html('<img src="http://openweathermap.org/img/w/' + data.weather[0].icon + '.png" />' + " " + data.weather[0].description.capitalize());
+          $("#temp").html("" + (data.main.temp - 273.15).toFixed(2).toString() + "ºC");
         } else {
           $("table").addClass("d-none");
           alert(data.message);
@@ -47,3 +58,4 @@ $(document).ready(function () {
     });
   });
 });
+
