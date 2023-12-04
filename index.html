@@ -131,7 +131,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="card-text"><p class="text">You can check the stats of most NBA seasons!</p></div>
-                                    <img src="imagens/stats.png">
+                                    <img class="img-thumbnail" src="imagens/stats.png">
                                 </div>  
                             </div>
                         </a>    
@@ -147,7 +147,7 @@
                                 </h4>
                             </div>
                             <div class="card-body">
-                                <div class="d-block" id="remover"><p class= 'text'>You can check how the weather is on most US cities where NBA games take place!</p></div>
+                                <div class="d-block" id="remover"><p class='text'>You can check how the weather is on most US cities where NBA games take place!</p></div>
                                 <select class="form-select" id="cityselect">
                                     <option value="" selected disabled>Select a city</option>
                                     <option>Atlanta, EUA</option>
@@ -181,11 +181,20 @@
                                     <option>Washington, EUA</option>
                                 </select>
                                 <br />
-                                <table class="table table-striped d-none">
-                                    <tr><td class="col-xs-2">Coordinates:</td><td class="col-xs-10" id="coordinates"></td></tr>
-                                    <tr><td class="col-xs-2">Weather:</td><td class="col-xs-10" id="weather"></td></tr>
-                                    <tr><td class="col-xs-2">Temperature:</td><td class="col-xs-10" id="temp"></td></tr>
-                                </table>
+                                <div>
+                                    <div id="adicionar1" class="d-none">
+                                        <div><b>Temperature:</b></div>
+                                        <div id="temp"></div>
+                                    </div>
+                                    <div id="adicionar2" class="d-none">
+                                        <div><b>Weather:</b></div>
+                                        <div id="weather"></div>
+                                    </div>
+                                    <div id="adicionar3" class="d-none">
+                                        <div ><b>Coordinates:</b></div>
+                                        <div id="coordinates"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
