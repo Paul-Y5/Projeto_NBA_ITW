@@ -5,22 +5,66 @@ Object.defineProperty(String.prototype, 'capitalize', {
   },
   enumerable: false
 });
+
 /* Dark-Mode */
-document.getElementById("dark-mode").addEventListener("click", () => {
-  if (document.documentElement.getAttribute("data-bs-theme") == "dark") {
-    document.documentElement.setAttribute("data-bs-theme", "light");
-  } else {
-    document.documentElement.setAttribute("data-bs-theme", "dark");
+$(document).ready(function() {
+  // Verifica se está ativo o dark-mode na storage
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    enableDarkMode();
   }
 });
-$(document).ready(function () {
-  $("#dark-mode").change(function () {
-    $("nav").toggleClass("navbar-dark bg-dark");
-    $("label-toggle").toggleClass("text-white");
-    $("#cardclick").toggleClass("bg-dark");
-    $("#cardbody").toggleClass("bg-dark");
-  });
+
+// Dark mode toggle button click event
+$('#dark-mode').click(function() {
+  if ($('body').hasClass('dark-mode')) {
+    disableDarkMode();
+  } else {
+    enableDarkMode();
+  }
 });
+
+// Botão Dark-Mode
+document.getElementById('dark-mode').addEventListener('clicked', function() {
+  handleButtonClick('dark-mode');
+});
+
+function handleButtonClick(botaoId) {
+  // Armazene o ID do botão no localStorage
+  localStorage.setItem('botaoAtivo', botaoId);
+  };
+
+var botaoSelecionado = localStorage.getItem('botaoAtivo');
+if (botaoSelecionado) {
+  // Se houver, selecione o botão armazenado
+  document.getElementById(botaoSelecionado).click();
+  };
+
+// Ativar Dark-mode
+function enableDarkMode() {
+  $('body').addClass('dark-mode');
+  localStorage.setItem('darkMode', 'enabled');
+  localStorage.setItem('in-toggle', 'enabled')
+};
+
+// Desativar Dark-mode
+function disableDarkMode() {
+  $('body').removeClass('dark-mode');
+  localStorage.setItem('darkMode', null);
+};
+
+//Nav-bars
+function handleDarkModeToggle() {
+  document.getElementById("nav-bar").classList.toggle("bg-dark");
+  var isDarkMode = document
+    .getElementById("nav-bar")
+    .classList.contains("bg-dark");
+  localStorage.setItem("darkMode", isDarkMode);
+}
+
+var storedDarkMode = localStorage.getItem("darkMode");
+if (storedDarkMode === "true") {
+  document.getElementById("nav-bar").classList.add("bg-dark");
+}
 
 
 
@@ -58,4 +102,3 @@ $(document).ready(function () {
     });
   });
 });
-
