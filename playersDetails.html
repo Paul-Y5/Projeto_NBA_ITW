@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ITW 2023/24 - NBA Arena Details</title>
+    <title>ITW 2023/24 - NBA Players Details</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
@@ -40,7 +40,7 @@
         <div class="py-2 border-bottom mb-3">
             <h2 data-bind="text:Name"></h2>
         </div>
-        <!-- ko if:Name().length > 0 -->
+        
         <div class="row border-bottom g-2">
             <div class="col-2">Player Id</div><div class="col-10" data-bind="text: Id"></div>
         </div>
@@ -70,7 +70,7 @@
         </div>
         
 
-        <!-- /ko -->
+        <!-- ko -->
         <div class="row border-bottom g-2" data-bind="visible: Photo() != '' && Photo() != null">
             <div class="col-2">Photo</div><div class="small col-10">
                 <img class="img-thumbnail" data-bind="attr:{src: Photo}"><br />
@@ -95,7 +95,8 @@
             </div>
         </div>
     </div>
-    <!-- End of Work Area -->
+    <!-- /Modal -->
+    <!-- /End of Work Area -->
     <nav class="navbar navbar-light bg-light fixed-bottom" id="nav-bar">
         <div class="container small">
             <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2023/24</div>
