@@ -11,7 +11,7 @@ var vm = function () {
     self.Id = ko.observable('');
     self.Acronym = ko.observable('');
     self.Name = ko.observable('');
-    self.ConferendeId = ko.observable('');
+    self.ConferenceId = ko.observable('');
     self.ConferenceName = ko.observable('');
     self.DivisionId = ko.observable('');
     self.DivisionName = ko.observable('');
@@ -31,7 +31,7 @@ var vm = function () {
             self.Id(data.Id);
             self.Acronym(data.Acronym);
             self.Name(data.Name);
-            self.ConferendeId(data.ConferendeId);
+            self.ConferenceId(data.ConferenceId);
             self.ConferenceName(data.ConferenceName);
             self.DivisionId(data.DivisionId);
             self.DivisionName(data.DivisionName);
