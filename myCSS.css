@@ -138,7 +138,8 @@ li.page-item a {
     .carousel-item:nth-child(5) {
         background-image: url('https://cdn.nba.com/manage/2023/11/GettyImages-1790167479-1-1568x882.jpg');
     }
-a{
+
+a {
     text-decoration: none;
     color: black;
 
@@ -148,26 +149,27 @@ a{
     mix-blend-mode: multiply;
 }
 
-.card-img-top{
+.card-img-top {
     height: 200px;
     width:auto;
 }
 
-.title{
+.title {
     font-size: 35px;
     text-align: center;
     font-weight: bolder;
 }
 
-#cardbody{
+#cardbody {
     background-color: whitesmoke;
 }
 
-#cardclick:hover{
+#cardclick:hover {
     box-shadow: 0px 8px 15px 5px rgba(0, 0, 0, 0.5);
     transform: translateY(-5px);
   }
-.text{
+
+.text {
     text-align: justify;
 }
 
@@ -183,7 +185,7 @@ a{
     background-repeat: no-repeat;
 }
 
-#Body-teams{
+#Body-teams {
     background-image: url(https://wallpapercave.com/wp/wp1827440.jpg);
     background-position: top center;
     background-repeat: no-repeat;
@@ -199,10 +201,9 @@ a{
     font-size: medium;
 }
 
-.rounded{
+.rounded {
     vertical-align: middle;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-
 }
