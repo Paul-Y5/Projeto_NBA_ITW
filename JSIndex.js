@@ -18,7 +18,6 @@ $(document).ready(function () {
     $("body").toggleClass("bg-secondary");
     $("nav").toggleClass("navbar-dark bg-dark");
     $("label-toggle").toggleClass("text-white");
-    $("i").css("color", "white");
   });
 });
 
