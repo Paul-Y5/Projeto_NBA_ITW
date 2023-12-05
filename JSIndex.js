@@ -15,9 +15,10 @@ document.getElementById("dark-mode").addEventListener("click", () => {
 });
 $(document).ready(function () {
   $("#dark-mode").change(function () {
-    $("body").toggleClass("bg-secondary");
     $("nav").toggleClass("navbar-dark bg-dark");
     $("label-toggle").toggleClass("text-white");
+    $("#cardclick").toggleClass("bg-dark");
+    $("#cardbody").toggleClass("bg-dark");
   });
 });
 
