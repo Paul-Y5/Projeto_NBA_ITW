@@ -171,6 +171,12 @@ a{
     text-align: justify;
 }
 
+#Body-arenas {
+    background-image: url(https://i.redd.it/m6up7z4yphh31.jpg);
+    background-position: top center;
+}
+
+
 #Body-players {
     background-image: url(https://wallpapers.com/images/featured/best-nba-zn90xecrm49mlwbx.jpg);
     background-position: top center;
@@ -189,4 +195,12 @@ a{
 #table {
     font-weight: bolder;
     font-size: medium;
+}
+
+.rounded{
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
 }
