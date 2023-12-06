@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     enableDarkMode();
   }
   if (checkboxState === "true") {
-    myCheckbox.checked = true;
+    darkModeToggle.checked = true;
   }
 
   // Adiciona um evento de alteração à checkbox de dark mode
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     body.classList.add("dark-mode");
     // Armazena o estado do dark mode na localStorage
     localStorage.setItem("darkMode", "true");
-    localStorage.setItem("darkModeToggle", "enable")
+    localStorage.setItem("checkboxState", "true");
   }
 
   function disableDarkMode() {
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     body.classList.remove("dark-mode");
     // Armazena o estado do dark mode na localStorage
     localStorage.setItem("darkMode", "false");
-    localStorage.setItem("darkModeToggle", )
+    localStorage.setItem("checkboxState", "false");
   }
 });
 
