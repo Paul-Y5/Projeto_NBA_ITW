@@ -93,7 +93,10 @@
                     <td class="align-middle" data-bind="text:StateId"></td>
                     <td class="align-middle" data-bind="text:City"></td>
                     <td class="text-end">
-                        <a class="btn btn-default btn-light btn-xs" data-bind="attr: { href:'./teamsDetails.html?id=' + Id }"><i class="fa fa-eye" title="Show details"></i></a>
+                        <a class="btn btn-default btn-light btn-xs" data-bind="attr: { href: './teamsdetails.html?id=' + Id + '?acronym=' + Acronym }"
+
+
+                        ><i class="fa fa-eye" title="Show details"></i></a>
                         <button class="btn btn-default btn-xs"><i class="fa fa-heart" data-bind="attr : { 'id': 'favourite_' + Id }" title="Add to favorites"></i></button>
                     </td>
                 </tr>
