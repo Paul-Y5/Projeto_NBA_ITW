@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Armazena o estado do dark mode na localStorage
     localStorage.setItem("darkMode", "true");
     localStorage.setItem("checkboxState", "true");
+    localStorage.setItem("navdark", "true");
   }
 
   function disableDarkMode() {
@@ -62,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Armazena o estado do dark mode na localStorage
     localStorage.setItem("darkMode", "false");
     localStorage.setItem("checkboxState", "false");
+    localStorage.setItem("navdark", "false");
   }
 });
 
