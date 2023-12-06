@@ -51,19 +51,25 @@ document.addEventListener("DOMContentLoaded", function () {
   function enableDarkMode() {
     // Ativa o dark mode
     body.classList.add("dark-mode");
+    document.querySelector('.navbar').classList.add('dark-mode');
+    document.querySelectorAll('.card').forEach(card => {
+      card.classList.add('dark-mode');
+    }),
     // Armazena o estado do dark mode na localStorage
     localStorage.setItem("darkMode", "true");
     localStorage.setItem("checkboxState", "true");
-    localStorage.setItem("navdark", "true");
   }
 
   function disableDarkMode() {
     // Desativa o dark mode
     body.classList.remove("dark-mode");
+    document.querySelector(".navbar").classList.remove("dark-mode");
+    document.querySelectorAll(".card").forEach((card) => {
+      card.classList.remove("dark-mode");
+     }),
     // Armazena o estado do dark mode na localStorage
     localStorage.setItem("darkMode", "false");
     localStorage.setItem("checkboxState", "false");
-    localStorage.setItem("navdark", "false");
   }
 });
 

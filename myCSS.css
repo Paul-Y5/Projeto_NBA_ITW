@@ -2,6 +2,8 @@
     font-family: 'Open Sans', sans-serif;
     margin: 56px 0 56px 0;
     transition: background-color 0.3s ease;
+    background-color: #fff;
+    color:#000000;
 }
 
 
@@ -11,9 +13,23 @@
   color: #fff;
 }
 
-/* nav-nbar */
-.dark-mode-nav {
-    background-color: #5b4d4d;
+.navbar {
+    transition: background-color 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.dark-mode .navbar {
+    background-color: #343a40;
+}
+
+.card {
+    transition: background-color 0.5s ease;
+    background-color: #fff;
+}
+
+.dark-mode .card {
+    background-color: #343a40;
+    color: #fff;
 }
 
 /* Label Button Toggle */
