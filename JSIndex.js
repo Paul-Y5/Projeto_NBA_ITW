@@ -24,49 +24,47 @@ $('#dark-mode').click(function() {
 });
 
 // Botão Dark-Mode
-document.getElementById('dark-mode').addEventListener('clicked', function() {
-  handleButtonClick('dark-mode');
+document.addEventListener("DOMContentLoaded", function () {
+  const darkModeToggle = document.getElementById("dark-mode");
+  const body = document.body;
+
+  // Verifica o estado do dark mode no localStorage ao carregar a página
+  const isDarkMode = localStorage.getItem("darkMode") === "true";
+  const checkboxState = localStorage.getItem("checkboxState");
+  // Aplica o dark mode se necessário
+  if (isDarkMode) {
+    enableDarkMode();
+  }
+  if (checkboxState === "true") {
+    myCheckbox.checked = true;
+  }
+
+  // Adiciona um evento de alteração à checkbox de dark mode
+  darkModeToggle.addEventListener("change", function () {
+    if (this.checked) {
+      enableDarkMode();
+    } else {
+      disableDarkMode();
+    }
+  });
+
+
+  function enableDarkMode() {
+    // Ativa o dark mode
+    body.classList.add("dark-mode");
+    // Armazena o estado do dark mode na localStorage
+    localStorage.setItem("darkMode", "true");
+    localStorage.setItem("darkModeToggle", "enable")
+  }
+
+  function disableDarkMode() {
+    // Desativa o dark mode
+    body.classList.remove("dark-mode");
+    // Armazena o estado do dark mode na localStorage
+    localStorage.setItem("darkMode", "false");
+    localStorage.setItem("darkModeToggle", )
+  }
 });
-
-function handleButtonClick(botaoId) {
-  // Armazene o ID do botão no localStorage
-  localStorage.setItem('botaoAtivo', botaoId);
-  };
-
-var botaoSelecionado = localStorage.getItem('botaoAtivo');
-if (botaoSelecionado) {
-  // Se houver, selecione o botão armazenado
-  document.getElementById(botaoSelecionado).click();
-  };
-
-// Ativar Dark-mode
-function enableDarkMode() {
-  $('body').addClass('dark-mode');
-  localStorage.setItem('darkMode', 'enabled');
-  localStorage.setItem('in-toggle', 'enabled')
-};
-
-// Desativar Dark-mode
-function disableDarkMode() {
-  $('body').removeClass('dark-mode');
-  localStorage.setItem('darkMode', null);
-};
-
-//Nav-bars
-function handleDarkModeToggle() {
-  document.getElementById("nav-bar").classList.toggle("bg-dark");
-  var isDarkMode = document
-    .getElementById("nav-bar")
-    .classList.contains("bg-dark");
-  localStorage.setItem("darkMode", isDarkMode);
-}
-
-var storedDarkMode = localStorage.getItem("darkMode");
-if (storedDarkMode === "true") {
-  document.getElementById("nav-bar").classList.add("bg-dark");
-}
-
-
 
 /* Tempo nas cidades das Arenas */
 $(document).ready(function () {
