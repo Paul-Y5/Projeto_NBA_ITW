@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-
   function enableDarkMode() {
     // Ativa o dark mode
     body.classList.add("dark-mode");
