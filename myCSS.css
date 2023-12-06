@@ -1,9 +1,36 @@
 ﻿body {
     font-family: 'Open Sans', sans-serif;
     margin: 56px 0 56px 0;
+    transition: background-color 0.3s ease;
+    background-color: #fff;
+    color:#000000;
 }
 
-/* Dark-Mode */
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #000000;
+  color: #fff;
+}
+
+.navbar {
+    transition: background-color 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.dark-mode .navbar {
+    background-color: #343a40;
+}
+
+.card {
+    transition: background-color 0.5s ease;
+    background-color: #fff;
+}
+
+.dark-mode .card {
+    background-color: #343a40;
+    color: #fff;
+}
 
 /* Label Button Toggle */
 .label-toggle {
@@ -173,7 +200,7 @@ a {
     text-align: justify;
 }
 
-/* #Body-arenas {
+#Body-arenas {
     background-image: url(https://i.redd.it/m6up7z4yphh31.jpg);
     background-position: top center;
 }
@@ -182,7 +209,7 @@ a {
 #Body-players {
     background-image: url(https://wallpapers.com/images/featured/best-nba-zn90xecrm49mlwbx.jpg);
     background-position: top center;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
 }
 
 #Body-teams {
@@ -200,7 +227,7 @@ a {
     font-weight: bolder;
     font-size: medium;
 }
- */
+ 
 .rounded {
     vertical-align: middle;
     width: 50px;

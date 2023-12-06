@@ -5,24 +5,73 @@ Object.defineProperty(String.prototype, 'capitalize', {
   },
   enumerable: false
 });
+
 /* Dark-Mode */
-document.getElementById("dark-mode").addEventListener("click", () => {
-  if (document.documentElement.getAttribute("data-bs-theme") == "dark") {
-    document.documentElement.setAttribute("data-bs-theme", "light");
-  } else {
-    document.documentElement.setAttribute("data-bs-theme", "dark");
+$(document).ready(function() {
+  // Verifica se está ativo o dark-mode na storage
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    enableDarkMode();
   }
 });
-$(document).ready(function () {
-  $("#dark-mode").change(function () {
-    $("nav").toggleClass("navbar-dark bg-dark");
-    $("label-toggle").toggleClass("text-white");
-    $("#cardclick").toggleClass("bg-dark");
-    $("#cardbody").toggleClass("bg-dark");
-  });
+
+// Dark mode toggle button click event
+$('#dark-mode').click(function() {
+  if ($('body').hasClass('dark-mode')) {
+    disableDarkMode();
+  } else {
+    enableDarkMode();
+  }
 });
 
+// Botão Dark-Mode
+document.addEventListener("DOMContentLoaded", function () {
+  const darkModeToggle = document.getElementById("dark-mode");
+  const body = document.body;
 
+  // Verifica o estado do dark mode no localStorage ao carregar a página
+  const isDarkMode = localStorage.getItem("darkMode") === "true";
+  const checkboxState = localStorage.getItem("checkboxState");
+  // Aplica o dark mode se necessário
+  if (isDarkMode) {
+    enableDarkMode();
+  }
+  if (checkboxState === "true") {
+    darkModeToggle.checked = true;
+  }
+
+  // Adiciona um evento de alteração à checkbox de dark mode
+  darkModeToggle.addEventListener("change", function () {
+    if (this.checked) {
+      enableDarkMode();
+    } else {
+      disableDarkMode();
+    }
+  });
+
+  function enableDarkMode() {
+    // Ativa o dark mode
+    body.classList.add("dark-mode");
+    document.querySelector('.navbar').classList.add('dark-mode');
+    document.querySelectorAll('.card').forEach(card => {
+      card.classList.add('dark-mode');
+    }),
+    // Armazena o estado do dark mode na localStorage
+    localStorage.setItem("darkMode", "true");
+    localStorage.setItem("checkboxState", "true");
+  }
+
+  function disableDarkMode() {
+    // Desativa o dark mode
+    body.classList.remove("dark-mode");
+    document.querySelector(".navbar").classList.remove("dark-mode");
+    document.querySelectorAll(".card").forEach((card) => {
+      card.classList.remove("dark-mode");
+     }),
+    // Armazena o estado do dark mode na localStorage
+    localStorage.setItem("darkMode", "false");
+    localStorage.setItem("checkboxState", "false");
+  }
+});
 
 /* Tempo nas cidades das Arenas */
 $(document).ready(function () {
@@ -58,4 +107,3 @@ $(document).ready(function () {
     });
   });
 });
-
