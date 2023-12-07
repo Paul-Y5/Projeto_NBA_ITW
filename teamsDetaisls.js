@@ -22,9 +22,9 @@ var vm = function () {
     self.History = ko.observable('');
 
     //--- Page Events
-    self.activate = function (id) {
+    self.activate = function (id, acronym) {
         console.log('CALL: getTeam...');
-        var composedUri = self.baseUri() + id;
+        var composedUri = self.baseUri() + id + '?' + 'acronym=' + acronym
         ajaxHelper(composedUri, 'GET').done(function (data) {
             console.log(data);
             hideLoading();
