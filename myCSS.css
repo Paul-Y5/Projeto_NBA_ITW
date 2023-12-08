@@ -87,7 +87,7 @@
     opacity: 0.5;
 }
 /* Titles-nav-bar */
-.navbar-nav > li >a{
+.navbar-nav > li > a {
   color: blue;
 }
 
@@ -95,8 +95,8 @@
     color: rgb(255, 0, 0);
 }
 
-.navbar-nav > li:hover >a,
-.navbar-nav > li.active >a{
+.navbar-nav > li:hover > a,
+.navbar-nav > li.active > a {
   color: red;
 }
 
