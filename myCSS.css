@@ -9,27 +9,24 @@
 
 /* Dark Mode */
 .dark-mode {
-  background-color: #000000;
+  background-color: #060114;
   color: #fff;
 }
 
-.navbar {
+.navbar .dark-mode {
     transition: background-color 0.3s ease;
-    background-color: #f8f9fa;
-}
-
-.dark-mode .navbar {
     background-color: #343a40;
 }
 
 .card {
-    transition: background-color 0.5s ease;
-    background-color: #fff;
+    transition: background-color 0.3s ease;
+    background-color: #e6e2e2;
 }
 
 .dark-mode .card {
-    background-color: #343a40;
-    color: #fff;
+    transition: background-color 0.3s ease;
+    background-color: #1b1425;
+    color: #cbcbcb;
 }
 
 /* Label Button Toggle */

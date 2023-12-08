@@ -14,7 +14,7 @@ $(document).ready(function() {
   }
 });
 
-// Dark mode toggle button click event
+// Dark mode botão (click event)
 $('#dark-mode').click(function() {
   if ($('body').hasClass('dark-mode')) {
     disableDarkMode();
