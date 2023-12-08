@@ -105,3 +105,7 @@ $(document).ready(function () {
 $(document).ajaxComplete(function (event, xhr, options) {
     $("#myModal").modal('hide');
 })
+
+
+// Mapas
+
