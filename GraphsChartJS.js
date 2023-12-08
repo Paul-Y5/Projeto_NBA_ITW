@@ -1,4 +1,4 @@
-﻿const composedUri = "http://192.168.160.58/Olympics/api/statistics/games_athletes";
+﻿const composedUri = "http://192.168.160.58/NBA/api/Arenas/Location";
 
 $('document').ready(function () {
     const ctx = document.getElementById('myChart');
