@@ -21,28 +21,28 @@ var vm = function () {
     self.Logo = ko.observable('');
     self.History = ko.observable('');
 
-    //--- Page Events
-    self.activate = function (id, acronym) {
-        console.log('CALL: getTeam...');
-        var composedUri = self.baseUri() + id + '?' + 'acronym=' + acronym
-        ajaxHelper(composedUri, 'GET').done(function (data) {
-            console.log(data);
-            hideLoading();
-            self.Id(data.Id);
-            self.Acronym(data.Acronym);
-            self.Name(data.Name);
-            self.ConferenceId(data.ConferenceId);
-            self.ConferenceName(data.ConferenceName);
-            self.DivisionId(data.DivisionId);
-            self.DivisionName(data.DivisionName);
-            self.StateId(data.StateId);
-            self.StateName(data.StateName);
-            self.City(data.City);
-            self.Logo(data.Logo);
-            self.History(data.History);
-            
-        });
-    };
+//--- Page Events
+self.activate = function (teamId, teamAcronym) {
+    console.log('CALL: getTeam...');
+    var composedUri = self.baseUri() + teamId + '?' + 'acronym=' + teamAcronym;
+    ajaxHelper(composedUri, 'GET').done(function (data) {
+        console.log(data);
+        hideLoading();
+        self.Id(data.Id);
+        self.Acronym(data.Acronym);
+        self.Name(data.Name);
+        self.ConferenceId(data.ConferenceId);
+        self.ConferenceName(data.ConferenceName);
+        self.DivisionId(data.DivisionId);
+        self.DivisionName(data.DivisionName);
+        self.StateId(data.StateId);
+        self.StateName(data.StateName);
+        self.City(data.City);
+        self.Logo(data.Logo);
+        self.History(data.History);
+    });
+};
+
 
     //--- Internal functions
     function ajaxHelper(uri, method, data) {
@@ -91,11 +91,13 @@ var vm = function () {
     //--- start ....
     showLoading();
     var pg = getUrlParameter('id');
+    var acr = getUrlParameter('acronym')
     console.log(pg);
-    if (pg == undefined)
+    console.log(acr);
+    if (pg == undefined || acr == undefined)
         self.activate(1);
     else {
-        self.activate(pg);
+        self.activate(pg,acr);
     }
     console.log("VM initialized!");
 };
