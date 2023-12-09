@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="myCSS.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
-<body>
+<body style="background-image: url(imagens/);">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="nav-bar">
         <div class="container">
             <a class="navbar-brand" href="index.html" tabindex="NBA"><img src="https://1000logos.net/wp-content/uploads/2017/04/nba-big-logo-640x352.png" height="26" /></a>
@@ -39,10 +39,15 @@
     </nav>
     <!-- Working Area -->
    
-    <div class="border-bottom py-2 mb-2">
+    <div class="container-lg container-fluid">
+        <div class="border-bottom py-2 mb-2">
             <h2 data-bind="text:Name"></h2>
-    </div>
+        </div>
 
+        <div class="btn-outline-dark">
+            <a href="./conferences.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
+        </div>
+    </div>
     <!-- End of Working Area -->
     <nav class="navbar navbar-light bg-light fixed-bottom">
         <div class="container small">
