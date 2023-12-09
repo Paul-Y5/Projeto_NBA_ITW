@@ -38,22 +38,28 @@
         </div>
     </nav>
     <!-- Working Area -->
-    <div class="border-bottom py-2 mb-2">
-        <h2 data-bind="text:displayName"></h2>
+    <div class="container-lg container-fluid">
+        <div class="border-bottom py-2 mb-2">
+            <h2 data-bind="text:displayName"></h2>
+        </div>
     </div>
 
-    <div class="container-xl" style="padding: 5%; float: right;">
+    <div class="container-lg container-fluid">
 
-        <div class="row row-cols-1 row-cols-md-3">     
-            <div class="col-sm-6 sm-6">
+        <div class="row">     
+            <div class="col-sm-4 sm-4">
                 <a title="East" href="Eastconf.html" style="text-decoration: none; color: black">
                     <div class="card h-100" id="cardclick">
                         <img class="img-fluid" src="imagens/eastconferencelogo.png" class="card-img-top" alt="...">
                     </div>
-                </a>  
+                </a>
             </div>
 
-            <div class="col-sm-6 sm-6">
+            <div class="card-img col-sm-4">
+                <img src="imagens/stats2.png">
+            </div>
+
+            <div class="col-sm-4 sm-4">
                 <a title="West" href="Westconf.html" style="text-decoration: none; color: black">
                     <div class="card h-100" id="cardclick">
                         <img class="img-fluid" src="imagens/1westconferencelogo.png" class="card-img-top" alt="...">
@@ -61,6 +67,7 @@
                 </a>
             </div>
 
+        </div>  
     </div>
     <!-- End of Working Area -->
     <nav class="navbar navbar-light bg-light fixed-bottom">
