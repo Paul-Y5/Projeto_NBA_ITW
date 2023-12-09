@@ -40,7 +40,6 @@ var vm = function () {
             self.Weight(data.Weight);
             self.School(data.School);
             self.Photo(data.Photo);
-            
         });
     };
 
