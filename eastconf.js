@@ -9,17 +9,14 @@ var vm = function () {
   self.passingMessage = ko.observable("");
   //--- Data Record
   self.Id = ko.observable("");
-  self.Acronym = ko.observable("");
   self.Name = ko.observable("");
-  self.ConferenceId = ko.observable("");
-  self.ConferenceName = ko.observable("");
-  self.DivisionId = ko.observable("");
-  self.DivisionName = ko.observable("");
-  self.StateId = ko.observable("");
-  self.StateName = ko.observable("");
-  self.City = ko.observable("");
-  self.Logo = ko.observable("");
-  self.History = ko.observable("");
+  self.TotalRecords = ko.observable("");
+  self.TotalPage = ko.observable("");
+  self.CurrentPage = ko.observable("");
+  self.PageSize = ko.observable("");
+  self.HasPrevious = ko.observable("");
+  self.HasNext = ko.observable("");
+  self.Records = ko.observable("");
 
   //--- Page Events
   self.activate = function (id) {
@@ -30,8 +27,13 @@ var vm = function () {
       hideLoading();
       self.Id(data.ConferenceId);
       self.Name(data.Name);
-      self.conferenceLogo(data.Logo);
-      self.teams(data.Teams);
+      self.totalPage(data.TotalPage);
+      self.totalRecords(data.TotalRecords);
+      self.currentPage(data.CurrentPage);
+      self.pageSize(data.PageSize);
+      self.hasPrevious(data.HasPrevious);
+      self.hasNext(data.HasNext);
+      self.records(data.Records);
     });
   };
 
