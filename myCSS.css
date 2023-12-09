@@ -244,3 +244,9 @@ a {
     height: 50px;
     border-radius: 50%;
 }
+
+#map {
+    height: 500px;
+    width: auto;
+    border: #000000 solid 5px;
+}
