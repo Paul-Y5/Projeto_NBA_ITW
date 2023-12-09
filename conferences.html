@@ -43,13 +43,15 @@
             <h2 data-bind="text:displayName"></h2>
         </div>
     </div>
-    <div class="container" style="display: flex; width: 1000px;">     
+    <div class="container" style="display: flex; width: 1000px;">
+
         <div class="col-sm-4" style="margin: 10px; flex: 1;">
             <a title="East" href="Eastconf.html" style="text-decoration: none; color: black">
                 <div class="card h-100" id="cardclick">
                     <img class="img-fluid" src="imagens/eastconferencelogo.png" class="card-img-top" alt="...">
                 </div>
             </a>
+            <button class="btn btn-default btn-xs"><i class="fa fa-star" data-bind="attr : { 'id': 'favourite_' + Id }" title="Add to favorites"></i></button>
         </div>
 
         <div class="img-fluid" style=" flex: 1;">
@@ -64,6 +66,7 @@
                     <img class="img-fluid" src="imagens/1westconferencelogo.png" class="card-img-top" alt="...">
                 </div>
             </a>
+            <button class="btn btn-default btn-xs"><i class="fa fa-star" data-bind="attr : { 'id': 'favourite_' + Id }" title="Add to favorites"></i></button>
         </div>
     </div>  
     <!-- End of Working Area -->
