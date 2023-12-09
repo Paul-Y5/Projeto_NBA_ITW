@@ -208,6 +208,8 @@ var nbaArenas = [
 const map = L.map("map", {
   center: [39.8283, -98.5795], // centrar nos EUA
   zoom: 4.6,
+  maxZomm: 20,
+  minZoom: 4,
   maxBounds: [
     [50.3457868, -66.9345703], // Limite Norte e Este
     [23.396308, -125.0016502], // Limite Sul e oeste
@@ -220,6 +222,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
 }).addTo(map);
 
+//Cria pontos no mapa que marcam as arenas
 nbaArenas.forEach(function (arena) {
     L.marker([arena.lat, arena.lng]).addTo(map).bindPopup(arena.name, arena.state);
 });
