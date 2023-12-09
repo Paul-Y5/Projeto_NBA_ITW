@@ -1,4 +1,6 @@
 /* MAPAS */
+
+//Lista das arenas pedida ao ChatGPT
 var nbaArenas = [
   {
     name: "Madison Square Garden",
