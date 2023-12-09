@@ -68,3 +68,4 @@ function ajaxHelper(uri, method, data) {
         }
     });
 }
+

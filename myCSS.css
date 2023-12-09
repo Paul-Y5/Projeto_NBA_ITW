@@ -224,6 +224,19 @@ a {
     font-weight: bolder;
     font-size: medium;
 }
+
+#body-eConferences {
+    background-image: url(imagens/NBAs-Tight-Eastern-Conference-and-Whos-Coming-on-Top.png);
+    background-position: top center;
+    background-position-y: -145px;
+}
+
+#body-wConferences {
+    background-image: url(imagens/westernNBA.png);
+    background-position: top center;
+    background-size: 1545px;
+    background-position-y: -130px;
+}
  
 .rounded {
     vertical-align: middle;
