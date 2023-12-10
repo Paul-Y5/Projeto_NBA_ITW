@@ -37,84 +37,86 @@
         </div>
     </nav>
     <!-- Work Area-->
-    
-    <div class="row">
-        <!-- ko -->
-        <div class="col-3" id="div1" data-bind="visible: Photo() != '' && Photo() != null">
-            <img id="img1" data-bind="attr:{src: Photo}"/>
-        </div>
-        <!-- /ko -->
-        <!-- ko ifnot: Photo() != null && Photo() != '' -->
-        <div class="col-3" id="div1">
-            <img id="img1" src="imagens/765-default-avatar.png" />
-        </div>
-        <!-- /ko -->
-        <div class="col-3" id="div3">
-            <table class="table" id="table1">
-                <thead class="titulo1">
-                  <tr>
-                    <th scope="col" data-bind="text: Name"></th>
-                  </tr>
-                </thead>
-                <tbody class="body1">
-                  <tr>
-                    <td data-bind="text:Birthdate() + ' | ' + CountryName()"></td>
-                  </tr>
-                </tbody> 
-              </table>
-        </div>
-        <div class="col-6" id="div3">
-            <table class="table" id="table2" >
-                <thead class="titulo2">
-                  <tr>
-                    <th scope="col">Player Id</th>
-                    <th scope="col">Position</th>
-                    <th scope="col">Draft year</th>
-                  </tr>
-                </thead>
-                <tbody class="body2">
-                  <tr>
-                    <td data-bind="text: Id"></td>
-                    <td data-bind="text:PositionName"></td>
-                    <td data-bind="text:DraftYear"></td>
-                  </tr>
-                </tbody>
-                <thead class="titulo2">
+    <div class="container">
+        <div><br/></div>
+        <div class="row">
+            <!-- ko -->
+            <div class="col-3" data-bind="visible: Photo() != '' && Photo() != null">
+                <img id="img1" data-bind="attr:{src: Photo}"/>
+            </div>
+            <!-- /ko -->
+            <!-- ko ifnot: Photo() != null && Photo() != '' -->
+            <div class="col-3">
+                <img id="img1" src="imagens/765-default-avatar.png" />
+            </div>
+            <!-- /ko -->
+            <div class="col-3" id="div1">
+                <table class="table" id="table1">
+                    <thead class="titulo1">
                     <tr>
-                      <th scope="col">Height</th>
-                      <th scope="col">Weight</th>
-                      <th scope="col">School</th>
+                        <th scope="col" data-bind="text: Name"></th>
                     </tr>
-                </thead>  
-                <tbody class="body2">
+                    </thead>
+                    <tbody class="body1">
                     <tr>
-                      <td data-bind="text:Height() + ' FT'"></td>
-                      <td data-bind="text:Weight() + ' LB'"></td>
-                      <td data-bind="text:School"></td>
+                        <td data-bind="text:Birthdate() + ' | ' + CountryName()"></td>
                     </tr>
-                  </tbody>
-                
-              </table>
-        </div>
-    </div>
-        <!-- /ko -->
-        <a href="./players.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">
-                        <img src="https://1000logos.net/wp-content/uploads/2017/04/nba-big-logo-640x352.png" height="30" /> Loading data...
-                    </h5>
-                </div>
-                <div class="modal-body text-center">
-                    <i class="fa fa-spin fa-3x fa-refresh"></i>
-                </div>
+                    </tbody> 
+                </table>
+            </div>
+            <div class="col-6" id="div2">
+                <table class="table" id="table2" >
+                    <thead class="titulo2">
+                    <tr>
+                        <th scope="col">Player Id</th>
+                        <th scope="col">Position</th>
+                        <th scope="col">Draft year</th>
+                    </tr>
+                    </thead>
+                    <tbody class="body2">
+                    <tr>
+                        <td data-bind="text: Id"></td>
+                        <td data-bind="text:PositionName"></td>
+                        <td data-bind="text:DraftYear"></td>
+                    </tr>
+                    </tbody>
+                    <thead class="titulo2">
+                        <tr>
+                        <th scope="col">Height</th>
+                        <th scope="col">Weight</th>
+                        <th scope="col">School</th>
+                        </tr>
+                    </thead>  
+                    <tbody class="body2">
+                        <tr>
+                        <td data-bind="text:Height() + ' FT'"></td>
+                        <td data-bind="text:Weight() + ' LB'"></td>
+                        <td data-bind="text:School"></td>
+                        </tr>
+                    </tbody>
+                    
+                </table>
             </div>
         </div>
-    <!-- /Modal -->
+            <!-- /ko -->
+            <a href="./players.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            <img src="https://1000logos.net/wp-content/uploads/2017/04/nba-big-logo-640x352.png" height="30" /> Loading data...
+                        </h5>
+                    </div>
+                    <div class="modal-body text-center">
+                        <i class="fa fa-spin fa-3x fa-refresh"></i>
+                    </div>
+                </div>
+            </div>
+        <!-- /Modal -->
+    </div>
     <!-- /End of Work Area -->
     <nav class="navbar navbar-light bg-light fixed-bottom" id="nav-bar">
         <div class="container small">

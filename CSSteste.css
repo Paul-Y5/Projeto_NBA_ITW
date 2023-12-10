@@ -1,25 +1,23 @@
 
-.row{
-    /* background-image: url(imagens/61XfSVFqhKL._AC_UF894\,1000_QL80_.jpg); */
-    background-color: black;
-}
 #img1 {
     background: transparent no-repeat center;
     background-size: cover;
     max-width: 100%;
     height: auto;
+    margin: auto
   }
 
 /* div{
     border: 1px solid black;
 } */
 
-#div2 {
+
+#div1 {
     display: flex;
     text-align: center;
     align-items: center;
   }
-#div3 {
+#div2 {
     display: flex;
     text-align: center;
     align-items: center;
@@ -28,7 +26,7 @@
   .table>tbody>tr>td, .table>tbody>tr>th, .table>thead>tr>td, .table>thead>tr>th {
     border: 0;
     background-color: rgba(0, 0, 0, 0);
-    color: white;
+    color: black;
 
   }
   

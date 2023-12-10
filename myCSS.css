@@ -197,7 +197,7 @@ a {
     text-align: justify;
 }
 
-#Body-arenas {
+/* #Body-arenas {
     background-image: url(https://i.redd.it/m6up7z4yphh31.jpg);
     background-position: top center;
 }
@@ -214,14 +214,14 @@ a {
     background-position: top center;
     background-repeat: no-repeat;
 }
-
+*/
 #Body-STATS {
     background-image: url(https://w0.peakpx.com/wallpaper/657/828/HD-wallpaper-nba-logo-blue-stone-background-nba-grunge-logo-national-basketball-association-nba-emblem-usa-basketball.jpg);
     background-position: top center;
-}
+} 
 
 #table {
-    font-weight: bolder;
+    
     font-size: medium;
 }
 
@@ -238,15 +238,21 @@ a {
     background-position-y: -130px;
 }
  
-.rounded {
+.roundedr {
     vertical-align: middle;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+}
+
+.imgtable {
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    
 }
 
 #map {
     height: 500px;
     width: auto;
-    border: #000000 solid 5px;
 }

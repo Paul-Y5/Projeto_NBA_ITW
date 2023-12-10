@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
-    <link rel="stylesheet" href="myCSS.css" />
+    <link rel="stylesheet" href="CSSteste.css" />
 </head>
 <body>
      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="nav-bar">
@@ -36,56 +36,69 @@
             </div>
         </div>
     </nav>
-    <!-- Work Area-->
     <div class="container">
-        <div class="py-2 border-bottom mb-3">
-            <h2 data-bind="text:Name"></h2>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">Team Id</div><div class="col-10" data-bind="text:Id"></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">Name</div><div class="col-10" data-bind="text:Name"></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">Acronym</div><div class="col-10" data-bind="text:Acronym"></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">ConferenceId</div><div class="col-10" data-bind="text:ConferenceId"</div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">Conference Name</div><div class="col-10" data-bind="text:ConferenceName"></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">Division Name</div><div class="col-10" data-bind="text:DivisionName"></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">Division Id</div><div class="col-10" data-bind="text:DivisionId"></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">State Id</div><div class="col-10" data-bind="text:StateId"></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">State</div><div class="col-10" data-bind="text:StateName"></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">City</div><div class="col-10" data-bind="text:City"></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">History</div><div class="col-10" data-bind="text:History"></div>
-        </div>
-     
-        
-        
+        <div><br/></div>    
+        <div class="row">
+            <!-- ko -->
+            <div class="col-3" data-bind="visible: Logo() != '' && Logo() != null">
+                <img id="img1" data-bind="attr:{src: Logo}"/>
+            </div>
+            <!-- /ko -->
 
-        <!-- ko -->
-        <div class="row border-bottom g-2" data-bind="visible: Logo() != '' && Logo() != null">
-            <div class="col-2">Logo</div><div class="small col-10">
-                <img class="img-thumbnail" data-bind="attr:{src: Logo}"><br />
-                <i class="fa fa-link"></i> [<a class="link-dark text-decoration-none" data-bind="attr: { href: Logo }, text: Logo" target="_blank"></a>]
+            <!-- ko ifnot: Logo() != null && Logo() != '' -->
+            <div class="col-3">
+                <img id="img1" src="imagens/765-default-avatar.png" />
+            </div>
+            <!-- /ko -->
+            <div class="col-3" id="div1">
+                <table class="table" id="table1">
+                    <thead class="titulo1">
+                      <tr>
+                        <th scope="col" data-bind="text: Name"></th>
+                      </tr>
+                    </thead>
+                    <tbody class="body1">
+                      <tr>
+                        <td data-bind="text: Acronym"></td>
+                      </tr>
+                    </tbody> 
+                  </table>
+            </div>
+            <div class="col-6" id="div2">
+                <table class="table" id="table2" >
+                    <thead class="titulo2">
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Acronym</th>
+                        <th scope="col">State</th>
+                      </tr>
+                    </thead>
+                    <tbody class="body2">
+                      <tr>
+                        <td data-bind="text:Name"></td>
+                        <td data-bind="text:Acronym"></td>
+                        <td data-bind="text:StateName"></td>
+                      </tr>
+                    </tbody>
+                    <thead class="titulo2">
+                        <tr>
+                          <th scope="col">City</th>
+                          <th scope="col">Conference</th>
+                          <th scope="col">Division</th>
+                        </tr>
+                    </thead>  
+                    <tbody class="body2">
+                        <tr>
+                          <td data-bind="text:City"></td>
+                          <td data-bind="text:ConferenceName"></td>
+                          <td data-bind="text:DivisionName"></td>
+                        </tr>
+                      </tbody>
+                    
+                  </table>
             </div>
         </div>
-        <!-- /ko -->
+    </div>        
         <a href="./teams.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
     </div>
     <!-- Modal -->
