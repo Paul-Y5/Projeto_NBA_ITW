@@ -41,18 +41,18 @@ var vm = function () {
   //--- Page Events
   self.activate = function (id) {
     console.log("CALL: getStates...");
-    var composedUri =
-      self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
+    var composedUri = 
+    self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
     ajaxHelper(composedUri, "GET").done(function (data) {
       console.log(data);
       hideLoading();
-      self.records(data.Records);
+      self.totalRecords(data.TotalRecords);
+      self.totalPages(data.TotalPages);
       self.currentPage(data.CurrentPage);
       self.hasNext(data.HasNext);
       self.hasPrevious(data.HasPrevious);
       self.pagesize(data.PageSize);
-      self.totalPages(data.TotalPages);
-      self.totalRecords(data.TotalRecords);
+      self.records(data.Records);
       //self.SetFavourites();
     });
   };
