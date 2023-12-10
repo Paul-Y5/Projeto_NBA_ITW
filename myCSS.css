@@ -144,15 +144,15 @@ li.page-item a {
 }
 
     .carousel-item:nth-child(1) {
-        background-image: url('https://cdn.nba.com/manage/2023/11/USATSI_21963262-784x441.jpg');
+        background-image: url('https://cdn.nba.com/manage/2023/12/IST-Champions-Lakers16x9.png');
     }
 
     .carousel-item:nth-child(2) {
-        background-image: url('https://cdn.nba.com/manage/2023/11/GettyImages-1797516862.jpg');
+        background-image: url('https://media.foxbusiness.com/BrightCove/854081161001/202003/1164/854081161001_6141442585001_6141440893001-vs.jpg');
     }
 
     .carousel-item:nth-child(3) {
-        background-image: url('https://cdn.nba.com/manage/2023/11/banchero-784x441.jpg');
+        background-image: url('https://news.cgtn.com/news/2022-04-03/NBA-highlights-on-April-2-Do-Jazz-know-how-to-deal-with-big-lead--18VPLVbjbYk/img/21d89522151e413f94ef4ba8e6626756/21d89522151e413f94ef4ba8e6626756.jpeg');
     }
 
     .carousel-item:nth-child(4) {
@@ -162,6 +162,10 @@ li.page-item a {
     .carousel-item:nth-child(5) {
         background-image: url('https://cdn.nba.com/manage/2023/11/GettyImages-1790167479-1-1568x882.jpg');
     }
+    .carousel-item:nth-child(6) {
+        background-image: url('https://images.axios.com/Tussnpsai2h2JPyupEClibRovfc=/0x0:1920x1080/1920x1080/2022/02/22/1645547797667.jpg?w=1920');
+    }
+   
 
 a {
     text-decoration: none;
@@ -248,6 +252,12 @@ a {
 .imgtable {
     vertical-align: middle;
     width: 40px;
+    height: 40px;
+    
+}
+.flags {
+    vertical-align: middle;
+    width: 70px;
     height: 40px;
     
 }
