@@ -251,6 +251,12 @@ a {
     height: 40px;
     
 }
+.flags {
+    vertical-align: middle;
+    width: 70px;
+    height: 40px;
+    
+}
 
 #map {
     height: 500px;

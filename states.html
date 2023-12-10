@@ -71,28 +71,20 @@
         </div>
         <!-- /ko -->
 
-        <table class="table table-sm small img-thumbnail">
+        <table class="table table-sm small">
             <thead class="table-secondary">
                 <tr>
-                    <th scope="col">Photo</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Birthdate</th>
-                    <th scope="col">Country</th>
-                    <th scope="col">Position</th>
-                    <th scope="col">Height</th>
-                    <th scope="col">Weight</th>
+                    <th scope="col">Flag</th>
+                    <th scope="col">State name</th>
+                    <th scope="col">Acronym</th>
                     <th scope="col" class="text-right"></th>
                 </tr>
             </thead>
             <tbody data-bind="foreach: records">
                 <tr>
-                    <td class="align-middle"><img class="roundedr" data-bind="attr:{src: Photo}" /></td>                    
+                    <td class="align-middle"><img class="flags" data-bind="attr:{src: Flag}" /></td>                    
                     <td class="align-middle" data-bind="text:Name"></td>
-                    <td class="align-middle" data-bind="text:Birthdate"></td>
-                    <td class="align-middle" data-bind="text:CountryId"></td>
-                    <td class="align-middle" data-bind="text:PositionName"></td>
-                    <td class="align-middle" data-bind="text:Height"></td>
-                    <td class="align-middle" data-bind="text:Weight"></td>
+                    <td class="align-middle" data-bind="text:Id"></td>
                     <td class="text-end">
                         <a class="btn btn-default btn-light btn-xs" data-bind="attr: { href:'./playersDetails.html?id=' + Id }"><i class="fa fa-eye" title="Show details"></i></a>
                         <button class="btn btn-default btn-xs"><i class="fa fa-star" data-bind="attr : { 'id': 'favourite_' + Id }" title="Add to favorites"></i></button>
