@@ -4,7 +4,7 @@ var vm = function () {
   //---Variáveis locais
   var self = this;
   self.baseUri = ko.observable("http://192.168.160.58/NBA/API/Conferences/2");
-  self.displayName = "NBA Conferences Details";
+  self.displayName = "NBA Western Conference";
   self.error = ko.observable("");
   self.passingMessage = ko.observable("");
   //--- Data Record
@@ -20,7 +20,7 @@ var vm = function () {
     ajaxHelper(composedUri, "GET").done(function (data) {
       console.log(data);
       hideLoading();
-      self.Id(data.Id);
+      self.Id(data.ConferenceId);
       self.Name(data.Name);
       self.Logo(data.Logo);
       self.Teams(data.Teams);

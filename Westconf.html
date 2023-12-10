@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Eastern Conference</title>
+    <title>Western Conference</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
@@ -49,8 +49,11 @@
             <a href="./conferences.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
         </div>
 
-        <div class="container-lg border-bottom container-fluid">
-            <h2 style="color: white; font-weight: bold;">Divisons</h2>
+        <div class="border-bottom container-fluid" style="background-color: aliceblue; opacity: 0.8;">
+            <h2 style="color: red; font-weight: bold;">Teams</h2>
+            <div class="row g-1" data-bind="foreach: Teams">
+                <div class="align-middle col-3" data-bind="text:Name" style="font-weight: bold; font-size: medium;"></div>
+            </div>
         </div>
         
     </div>

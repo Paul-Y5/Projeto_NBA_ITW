@@ -3,37 +3,26 @@ var vm = function () {
   console.log("ViewModel initiated...");
   //---Variáveis locais
   var self = this;
-  self.baseUri = ko.observable("http://192.168.160.58/NBA/API/Conferences/");
-  self.displayName = "NBA Teams Details";
+  self.baseUri = ko.observable("http://192.168.160.58/NBA/API/Conferences/1");
+  self.displayName = "NBA Eastern Conference";
   self.error = ko.observable("");
   self.passingMessage = ko.observable("");
   //--- Data Record
   self.Id = ko.observable("");
   self.Name = ko.observable("");
-  self.TotalRecords = ko.observable("");
-  self.TotalPage = ko.observable("");
-  self.CurrentPage = ko.observable("");
-  self.PageSize = ko.observable("");
-  self.HasPrevious = ko.observable("");
-  self.HasNext = ko.observable("");
-  self.Records = ko.observable("");
-
+  self.Logo = ko.observable("");
+  self.Teams = ko.observable("");
   //--- Page Events
   self.activate = function (id) {
     console.log("CALL: getConferences...");
-    var composedUri = self.baseUri() + id
+    var composedUri = self.baseUri()
     ajaxHelper(composedUri, "GET").done(function (data) {
       console.log(data);
       hideLoading();
       self.Id(data.ConferenceId);
       self.Name(data.Name);
-      self.totalPage(data.TotalPage);
-      self.totalRecords(data.TotalRecords);
-      self.currentPage(data.CurrentPage);
-      self.pageSize(data.PageSize);
-      self.hasPrevious(data.HasPrevious);
-      self.hasNext(data.HasNext);
-      self.records(data.Records);
+      self.Logo(data.Logo);
+      self.Teams(data.Teams);
     });
   };
 

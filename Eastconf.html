@@ -49,8 +49,11 @@
             <a href="./conferences.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
         </div>
 
-        <div class="container-lg border-bottom container-fluid">
-            <h2 style="color: white; font-weight: bold;">Divisons</h2>
+        <div class="border-bottom container-fluid" style="background-color: aliceblue; opacity: 0.8;">
+            <h2 style="color:lightskyblue; font-weight: bold;">Teams</h2>
+            <div class="row g-1" data-bind="foreach: Teams">
+                <div class="align-middle col-3" data-bind="text:Name" style="font-weight: bold; font-size: medium;"></div>
+            </div>
         </div>
     </div>
     <!-- End of Working Area -->
@@ -67,7 +70,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-    <script src="eastconf.js"></script>
     <script src="JSIndex.js"></script>
+    <script src="eastconf.js"></script>
 </body>
 </html>
