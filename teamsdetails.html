@@ -93,11 +93,43 @@
                           <td data-bind="text:ConferenceName"></td>
                           <td data-bind="text:DivisionName"></td>
                         </tr>
-                      </tbody>
-                    
+                      </tbody>   
                   </table>
             </div>
         </div>
+        <div class="row">
+            <div class="text1" data-bind="text:History"></div>
+        </div>
+        
+        <div><br/></div>
+        
+        <div class="titulo2">Seasons<span data-bind="text: ' [' + Seasons().length +']'"></span></div>
+        
+        <div><br/></div>
+        
+        <div class="row justify-content-center" data-bind="foreach: Seasons">
+            <div class="card col-2 mx-2 mb-1">
+                <a class="btn stretched-link" data-bind=" attr:{href: 'SeasonsDetails.html?id=' + Id}" style="text-decoration: none; color: black; text-align: left;"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i><span data-bind="text:' | '+ Season"></span></a>
+            </div>        
+        </div>
+       
+        <div><br/></div>
+        
+        <div class="titulo2">List of players<span data-bind="text: ' [' + Players().length +']'"></span></div>
+        
+        <div><br/></div>
+        
+        <div class="row justify-content-center" data-bind="foreach: Players">
+            <div class="card col-2 mx-2 mb-1">
+                <a class="btn stretched-link" data-bind=" attr:{href: 'playersDetails.html?id=' + Id}" style="text-decoration: none; color: black; text-align: left;"><i class="fa fa-user" aria-hidden="true"></i><span data-bind="text:' | ' + Name"></span></a>
+            </div>        
+        </div>
+
+        
+
+        
+        
+
     </div>        
         <a href="./teams.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
     </div>
