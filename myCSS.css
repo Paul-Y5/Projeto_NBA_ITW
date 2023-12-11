@@ -244,6 +244,11 @@ a {
     width: auto;
 }
 
+#mapWheater {
+    height: 250px;
+    width: auto;
+}
+
 form {
     width: 300px;
     height: 44px;

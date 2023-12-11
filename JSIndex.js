@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
  */
 const isDarkMode = localStorage.getItem("darkMode") === "true";
-const checkboxState = localStorage.getItem("checkboxState");
+const checkboxState = localStorage.getItem("checkboxState") === 'true';
 
 // Set initial theme based on the stored state
 if (isDarkMode) {
@@ -94,31 +94,32 @@ if (isDarkMode) {
 document.getElementById('dark-mode').addEventListener('click', () => {
   // Toggle dark mode
   if (isDarkMode) {
-    document.documentElement.setAttribute('data-bs-theme', 'light');
-    $('#navbar-top').removeClass('navbar navbar-dark bg-dark fixed-top');
-    $('#navbar-top').addClass('navbar navbar-light bg-light fixed-top');
-    $('#navbar-bottom').removeClass('navbar navbar-dark bg-dark fixed-bottom');
-    $('#navbar-bottom').addClass('navbar navbar-light bg-light fixed-bottom');
+    document.documentElement.setAttribute("data-bs-theme", "light");
+    $("#navbar-top").removeClass("navbar navbar-dark bg-dark fixed-top");
+    $("#navbar-top").addClass("navbar navbar-light bg-light fixed-top");
+    $("#navbar-bottom").removeClass("navbar navbar-dark bg-dark fixed-bottom");
+    $("#navbar-bottom").addClass("navbar navbar-light bg-light fixed-bottom");
     localStorage.setItem("darkMode", "false");
     localStorage.setItem("checkboxState", "false");
   } else {
-    document.documentElement.setAttribute('data-bs-theme', 'dark');
-    $('#navbar-bottom').removeClass('navbar navbar-light bg-light fixed-bottom');
-    $('#navbar-bottom').addClass('navbar navbar-dark bg-dark fixed-bottom');
-    $('#navbar-top').removeClass('navbar navbar-light bg-light fixed-top');
-    $('#navbar-top').addClass('navbar navbar-dark bg-dark fixed-top');
+    document.documentElement.setAttribute("data-bs-theme", "dark");
+    $("#navbar-bottom").removeClass(
+      "navbar navbar-light bg-light fixed-bottom"
+    );
+    $("#navbar-bottom").addClass("navbar navbar-dark bg-dark fixed-bottom");
+    $("#navbar-top").removeClass("navbar navbar-light bg-light fixed-top");
+    $("#navbar-top").addClass("navbar navbar-dark bg-dark fixed-top");
     localStorage.setItem("darkMode", "true");
     localStorage.setItem("checkboxState", "true");
   }
-
   // Update the isDarkMode variable after toggling
   isDarkMode = !isDarkMode;
+
+  // Update and store the checkbox state
+  localStorage.setItem("darkMode", isDarkMode.toString());
+  localStorage.setItem("checkboxState", isDarkMode.toString());
 });
 
-
-
-
- 
 
 /* Tempo nas cidades das Arenas */
 $(document).ready(function () {
@@ -142,6 +143,26 @@ $(document).ready(function () {
           $("#coordinates").html("Lon: " + data.coord.lon + "º | Lat: " + data.coord.lat + "º");
           $("#weather").html('<img src="http://openweathermap.org/img/w/' + data.weather[0].icon + '.png" />' + " " + data.weather[0].description.capitalize());
           $("#temp").html("" + (data.main.temp - 273.15).toFixed(2).toString() + "ºC");
+          /* Mapa Tempo */
+          const lon = $("#coordinates").html(data.coord.lon)
+          const lat = $("#coordinates").html(data.coord.lat)
+          const map = L.map("map", {
+            center: [lat, lon],
+            zoom: 8,
+            maxZomm: 10,
+            minZoom: 4,
+            maxBounds: [
+              [lat + 0.5, lon + 0.5],
+              [lat + 0.5, lon + 0.5],
+            ],
+            maxBoundsViscosity: 1,
+          });
+          
+          // Cria "Titulo do mapa"
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "© OpenStreetMap contributors",
+          }).addTo(map);
+          L.marker([data.coord.lat, data.coord.lon]).addTo(map).bindPopup(data.name);
         } else {
           $("table").addClass("d-none");
           alert(data.message);
@@ -152,10 +173,6 @@ $(document).ready(function () {
         alert("Erro!");
       },
     });
+    });
   });
-});
-
-/* Mapa Tempo */
-
-
 
