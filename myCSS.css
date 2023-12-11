@@ -189,6 +189,14 @@ a {
     font-weight: bolder;
 }
 
+.card-img-top {
+    z-index: -100;
+    height: 200px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #cardbody {
     background-color: whitesmoke;
 }
@@ -222,6 +230,11 @@ a {
 */
 #Body-FAV {
     background-image: url(https://w0.peakpx.com/wallpaper/657/828/HD-wallpaper-nba-logo-blue-stone-background-nba-grunge-logo-national-basketball-association-nba-emblem-usa-basketball.jpg);
+    background-position: top center;
+}
+
+#Body-STATS {
+    background-image: url(imagens/wp1827457.jpg);
     background-position: top center;
 } 
 
