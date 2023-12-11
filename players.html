@@ -40,9 +40,16 @@
 
 <!-- Working Area -->
     <div class="container">
-        <div class="border-bottom py-2 mb-2">
-            <h2 data-bind="text:displayName"></h2>
+        <div class="row border-bottom py-2 mb-2">
+            <h2 class="col-6" data-bind="text:displayName"></h2>
+            <div class="col-6" id="cover">
+                <div class="row" style="justify-content:end">
+                    <input class="form-control" type="text" placeholder="Search" aria-label="Search" style="width:35%" id="procura" name="procura" autocomplete="off">
+                </div>
+            </div>
         </div>
+
+        
         <!-- ko if:records().length > 0 -->
         <div class="row small">
             <p class=" col-4 mr-auto pt-2">
@@ -89,7 +96,7 @@
                 <tr>
                     <td class="align-middle"><img class="roundedr" data-bind="attr:{src: Photo}" /></td>                    
                     <td class="align-middle" data-bind="text:Name"></td>
-                    <td class="align-middle" data-bind="text:Birthdate"></td>
+                    <td class="align-middle" data-bind="text:Birthdate.slice(0,10)"></td>
                     <td class="align-middle" data-bind="text:CountryId"></td>
                     <td class="align-middle" data-bind="text:PositionName"></td>
                     <td class="align-middle" data-bind="text:Height"></td>
