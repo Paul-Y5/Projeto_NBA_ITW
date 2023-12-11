@@ -7,7 +7,7 @@ Object.defineProperty(String.prototype, 'capitalize', {
 });
 
 /* Dark-Mode */
-$(document).ready(function() {
+/* $(document).ready(function() {
   // Verifica se está ativo o dark-mode na storage
   if (localStorage.getItem('darkMode') === 'enabled') {
     enableDarkMode();
@@ -72,6 +72,53 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("checkboxState", "false");
   }
 });
+ */
+const isDarkMode = localStorage.getItem("darkMode") === "true";
+const checkboxState = localStorage.getItem("checkboxState");
+
+// Set initial theme based on the stored state
+if (isDarkMode) {
+  document.documentElement.setAttribute('data-bs-theme', 'dark');
+  $('#navbar-bottom').removeClass('navbar navbar-light bg-light fixed-bottom');
+  $('#navbar-bottom').addClass('navbar navbar-dark bg-dark fixed-bottom');
+  $('#navbar-top').removeClass('navbar navbar-light bg-light fixed-top');
+  $('#navbar-top').addClass('navbar navbar-dark bg-dark fixed-top');
+} else {
+  document.documentElement.setAttribute('data-bs-theme', 'light');
+  $('#navbar-top').removeClass('navbar navbar-dark bg-dark fixed-top');
+  $('#navbar-top').addClass('navbar navbar-light bg-light fixed-top');
+  $('#navbar-bottom').removeClass('navbar navbar-dark bg-dark fixed-bottom');
+  $('#navbar-bottom').addClass('navbar navbar-light bg-light fixed-bottom');
+}
+
+document.getElementById('dark-mode').addEventListener('click', () => {
+  // Toggle dark mode
+  if (isDarkMode) {
+    document.documentElement.setAttribute('data-bs-theme', 'light');
+    $('#navbar-top').removeClass('navbar navbar-dark bg-dark fixed-top');
+    $('#navbar-top').addClass('navbar navbar-light bg-light fixed-top');
+    $('#navbar-bottom').removeClass('navbar navbar-dark bg-dark fixed-bottom');
+    $('#navbar-bottom').addClass('navbar navbar-light bg-light fixed-bottom');
+    localStorage.setItem("darkMode", "false");
+    localStorage.setItem("checkboxState", "false");
+  } else {
+    document.documentElement.setAttribute('data-bs-theme', 'dark');
+    $('#navbar-bottom').removeClass('navbar navbar-light bg-light fixed-bottom');
+    $('#navbar-bottom').addClass('navbar navbar-dark bg-dark fixed-bottom');
+    $('#navbar-top').removeClass('navbar navbar-light bg-light fixed-top');
+    $('#navbar-top').addClass('navbar navbar-dark bg-dark fixed-top');
+    localStorage.setItem("darkMode", "true");
+    localStorage.setItem("checkboxState", "true");
+  }
+
+  // Update the isDarkMode variable after toggling
+  isDarkMode = !isDarkMode;
+});
+
+
+
+
+ 
 
 /* Tempo nas cidades das Arenas */
 $(document).ready(function () {
