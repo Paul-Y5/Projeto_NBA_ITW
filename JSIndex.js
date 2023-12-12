@@ -7,119 +7,47 @@ Object.defineProperty(String.prototype, 'capitalize', {
 });
 
 /* Dark-Mode */
-/* $(document).ready(function() {
-  // Verifica se está ativo o dark-mode na storage
-  if (localStorage.getItem('darkMode') === 'enabled') {
-    enableDarkMode();
-  }
-});
-
-// Dark mode botão (click event)
-$('#dark-mode').click(function() {
-  if ($('body').hasClass('dark-mode')) {
-    disableDarkMode();
-  } else {
-    enableDarkMode();
-  }
-});
-
-// Botão Dark-Mode
-document.addEventListener("DOMContentLoaded", function () {
-  const darkModeToggle = document.getElementById("dark-mode");
-  const body = document.body;
-
-  // Verifica o estado do dark mode no localStorage ao carregar a página
-  const isDarkMode = localStorage.getItem("darkMode") === "true";
-  const checkboxState = localStorage.getItem("checkboxState");
-  // Aplica o dark mode se necessário
-  if (isDarkMode) {
-    enableDarkMode();
-  }
-  if (checkboxState === "true") {
-    darkModeToggle.checked = true;
-  }
-
-  // Adiciona um evento de alteração à checkbox de dark mode
-  darkModeToggle.addEventListener("change", function () {
-    if (this.checked) {
-      enableDarkMode();
-    } else {
-      disableDarkMode();
-    }
-  });
-
-  function enableDarkMode() {
-    // Ativa o dark mode
-    body.classList.add("dark-mode");
-    document.querySelector('.navbar').classList.add('dark-mode');
-    document.querySelectorAll('.card').forEach(card => {
-      card.classList.add('dark-mode');
-    }),
-    // Armazena o estado do dark mode na localStorage
-    localStorage.setItem("darkMode", "true");
-    localStorage.setItem("checkboxState", "true");
-  }
-
-  function disableDarkMode() {
-    // Desativa o dark mode
-    body.classList.remove("dark-mode");
-    document.querySelector(".navbar").classList.remove("dark-mode");
-    document.querySelectorAll(".card").forEach((card) => {
-      card.classList.remove("dark-mode");
-     }),
-    // Armazena o estado do dark mode na localStorage
-    localStorage.setItem("darkMode", "false");
-    localStorage.setItem("checkboxState", "false");
-  }
-});
- */
-const isDarkMode = localStorage.getItem("darkMode") === "true";
-const checkboxState = localStorage.getItem("checkboxState") === 'true';
-
-// Set initial theme based on the stored state
-if (isDarkMode) {
-  document.documentElement.setAttribute('data-bs-theme', 'dark');
-  $('#navbar-bottom').removeClass('navbar navbar-light bg-light fixed-bottom');
-  $('#navbar-bottom').addClass('navbar navbar-dark bg-dark fixed-bottom');
-  $('#navbar-top').removeClass('navbar navbar-light bg-light fixed-top');
-  $('#navbar-top').addClass('navbar navbar-dark bg-dark fixed-top');
-} else {
-  document.documentElement.setAttribute('data-bs-theme', 'light');
-  $('#navbar-top').removeClass('navbar navbar-dark bg-dark fixed-top');
-  $('#navbar-top').addClass('navbar navbar-light bg-light fixed-top');
-  $('#navbar-bottom').removeClass('navbar navbar-dark bg-dark fixed-bottom');
-  $('#navbar-bottom').addClass('navbar navbar-light bg-light fixed-bottom');
+// Verifica o estado atual do modo escuro na localStorage
+function getDarkModeState() {
+  return localStorage.getItem("darkMode") === "true";
 }
 
-document.getElementById('dark-mode').addEventListener('click', () => {
-  // Toggle dark mode
-  if (isDarkMode) {
-    document.documentElement.setAttribute("data-bs-theme", "light");
-    $("#navbar-top").removeClass("navbar navbar-dark bg-dark fixed-top");
-    $("#navbar-top").addClass("navbar navbar-light bg-light fixed-top");
-    $("#navbar-bottom").removeClass("navbar navbar-dark bg-dark fixed-bottom");
-    $("#navbar-bottom").addClass("navbar navbar-light bg-light fixed-bottom");
-    localStorage.setItem("darkMode", "false");
-    localStorage.setItem("checkboxState", "false");
-  } else {
-    document.documentElement.setAttribute("data-bs-theme", "dark");
-    $("#navbar-bottom").removeClass(
-      "navbar navbar-light bg-light fixed-bottom"
-    );
-    $("#navbar-bottom").addClass("navbar navbar-dark bg-dark fixed-bottom");
-    $("#navbar-top").removeClass("navbar navbar-light bg-light fixed-top");
-    $("#navbar-top").addClass("navbar navbar-dark bg-dark fixed-top");
-    localStorage.setItem("darkMode", "true");
-    localStorage.setItem("checkboxState", "true");
-  }
-  // Update the isDarkMode variable after toggling
-  isDarkMode = !isDarkMode;
+// Verifica o estado atual do botão toggle na localStorage
+function getToggleState() {
+  return localStorage.getItem("toggleState") === "true";
+}
 
-  // Update and store the checkbox state
-  localStorage.setItem("darkMode", isDarkMode.toString());
-  localStorage.setItem("checkboxState", isDarkMode.toString());
+// Atualiza o estado do modo escuro e aplica as alterações de estilo
+function setDarkModeState(isDarkMode) {
+  document.body.classList.toggle("dark-mode", isDarkMode);
+  const navbars = document.querySelectorAll(".navbar");
+  navbars.forEach((navbar) => {
+    navbar.classList.toggle("dark-mode", isDarkMode)});
+
+  // Atualiza o estado do modo escuro na localStorage
+  localStorage.setItem("darkMode", isDarkMode);
+}
+
+// Atualiza o estado do botão toggle na localStorage
+function setToggleState(isToggleActive) {
+  // Atualiza o estado do botão toggle na localStorage
+  localStorage.setItem("toggleState", isToggleActive);
+}
+
+// Inicializa com o estado salvo ou padrão
+setDarkModeState(getDarkModeState());
+
+// Inicializa o estado do botão toggle
+const isToggleActive = getToggleState();
+document.getElementById("toggle-mode").checked = isToggleActive;
+setDarkModeState(isToggleActive);
+
+// Adiciona um ouvinte de evento ao botão de alternância
+document.getElementById("toggle-mode").addEventListener("change", function () {
+  const isToggleActive = this.checked;
+  setToggleState(isToggleActive);
+  setDarkModeState(isToggleActive);
 });
-
 
 /* Tempo nas cidades das Arenas */
 $(document).ready(function () {
