@@ -4,6 +4,7 @@
     
 }
 
+
 /* Dark-mode Custom */
 body.light-mode {
     background-color: #ffffff;
@@ -37,12 +38,12 @@ body.light-mode {
 
 /* Estilos para o modo escuro */
 body.dark-mode {
-    background-color: #1a1a1a;
+    background-color: #302c2c;
     color: #ffffff;
 }
 
 .navbar.dark-mode {
-    background-color: #333333;
+    background-color: #393838;
     color: #ffffff;
 }
 

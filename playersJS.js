@@ -129,24 +129,3 @@ $(document).ajaxComplete(function (event, xhr, options) {
   $("#myModal").modal("hide");
 });
 
-/* search bar */
-
-
-$("#search").click(function () {
-  // Get the search input value
-  var filtered_data = []
-  var search = $('#input').val().toLowerCase();
-
-  // Filter the records based on the search term in the "Name" property
-  self.records.forEach(element => {
-    if (search in element){
-      filtered_data.push(element)
-    } 
-    return fitered_data
-  });
-});
-
-  // Log the filtered data to the console
-  console.log("Filtered data:", filteredData);
-
-  // Perform additional actions with the filtered data, such as updating the UI
