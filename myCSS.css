@@ -25,6 +25,11 @@ body.light-mode {
     color: #000000;
 }
 
+#light-mode {
+    background-color: #c7c3c3;
+    color: #000000;
+}
+
 /* Estilos para o modo escuro */
 body.dark-mode {
     background-color: #1a1a1a;

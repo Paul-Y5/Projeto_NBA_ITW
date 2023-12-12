@@ -7,78 +7,47 @@ Object.defineProperty(String.prototype, 'capitalize', {
 });
 
 /* Dark-Mode */
-
+// Verifica o estado atual do modo escuro na localStorage
 function getDarkModeState() {
   return localStorage.getItem("darkMode") === "true";
 }
 
-// Função para atualizar o estado do modo escuro
+// Verifica o estado atual do botão toggle na localStorage
+function getToggleState() {
+  return localStorage.getItem("toggleState") === "true";
+}
+
+// Atualiza o estado do modo escuro e aplica as alterações de estilo
 function setDarkModeState(isDarkMode) {
   document.body.classList.toggle("dark-mode", isDarkMode);
-  document.querySelectorAll(".navbar, .card").forEach((element) => {
-    element.classList.toggle("dark-mode", isDarkMode);
-  });
+  const navbars = document.querySelectorAll(".navbar");
+  navbars.forEach((navbar) => {
+    navbar.classList.toggle("dark-mode", isDarkMode)});
+
+  // Atualiza o estado do modo escuro na localStorage
   localStorage.setItem("darkMode", isDarkMode);
 }
 
-// Inicialização com o estado salvo ou padrão
-setDarkModeState(getDarkModeState());
-
-// Adiciona um ouvinte de evento ao botão de alternância
-document.getElementById("toggle-mode").addEventListener("click", function () {
-  const isDarkMode = !getDarkModeState();
-  setDarkModeState(isDarkMode);
-});
-
-
-
-/* const isDarkMode = localStorage.getItem("darkMode") === "true";
-const checkboxState = localStorage.getItem("checkboxState") === 'true';
-
-// Set initial theme based on the stored state
-if (isDarkMode) {
-  document.documentElement.setAttribute('data-bs-theme', 'dark');
-  $('#navbar-bottom').removeClass('navbar navbar-light bg-light fixed-bottom');
-  $('#navbar-bottom').addClass('navbar navbar-dark bg-dark fixed-bottom');
-  $('#navbar-top').removeClass('navbar navbar-light bg-light fixed-top');
-  $('#navbar-top').addClass('navbar navbar-dark bg-dark fixed-top');
-} else {
-  document.documentElement.setAttribute('data-bs-theme', 'light');
-  $('#navbar-top').removeClass('navbar navbar-dark bg-dark fixed-top');
-  $('#navbar-top').addClass('navbar navbar-light bg-light fixed-top');
-  $('#navbar-bottom').removeClass('navbar navbar-dark bg-dark fixed-bottom');
-  $('#navbar-bottom').addClass('navbar navbar-light bg-light fixed-bottom');
+// Atualiza o estado do botão toggle na localStorage
+function setToggleState(isToggleActive) {
+  // Atualiza o estado do botão toggle na localStorage
+  localStorage.setItem("toggleState", isToggleActive);
 }
 
-document.getElementById('dark-mode').addEventListener('click', () => {
-  // Toggle dark mode
-  if (isDarkMode) {
-    document.documentElement.setAttribute("data-bs-theme", "light");
-    $("#navbar-top").removeClass("navbar navbar-dark bg-dark fixed-top");
-    $("#navbar-top").addClass("navbar navbar-light bg-light fixed-top");
-    $("#navbar-bottom").removeClass("navbar navbar-dark bg-dark fixed-bottom");
-    $("#navbar-bottom").addClass("navbar navbar-light bg-light fixed-bottom");
-    localStorage.setItem("darkMode", "false");
-    localStorage.setItem("checkboxState", "false");
-  } else {
-    document.documentElement.setAttribute("data-bs-theme", "dark");
-    $("#navbar-bottom").removeClass(
-      "navbar navbar-light bg-light fixed-bottom"
-    );
-    $("#navbar-bottom").addClass("navbar navbar-dark bg-dark fixed-bottom");
-    $("#navbar-top").removeClass("navbar navbar-light bg-light fixed-top");
-    $("#navbar-top").addClass("navbar navbar-dark bg-dark fixed-top");
-    localStorage.setItem("darkMode", "true");
-    localStorage.setItem("checkboxState", "true");
-  }
-  // Update the isDarkMode variable after toggling
-  isDarkMode = !isDarkMode;
+// Inicializa com o estado salvo ou padrão
+setDarkModeState(getDarkModeState());
 
-  // Update and store the checkbox state
-  localStorage.setItem("darkMode", isDarkMode.toString());
-  localStorage.setItem("checkboxState", isDarkMode.toString());
+// Inicializa o estado do botão toggle
+const isToggleActive = getToggleState();
+document.getElementById("toggle-mode").checked = isToggleActive;
+setDarkModeState(isToggleActive);
+
+// Adiciona um ouvinte de evento ao botão de alternância
+document.getElementById("toggle-mode").addEventListener("change", function () {
+  const isToggleActive = this.checked;
+  setToggleState(isToggleActive);
+  setDarkModeState(isToggleActive);
 });
- */
 
 /* Tempo nas cidades das Arenas */
 $(document).ready(function () {
