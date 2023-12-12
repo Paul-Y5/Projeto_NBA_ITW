@@ -139,30 +139,12 @@ $(document).ready(function () {
           $("#adicionar2").removeClass("d-none");
           $("#adicionar2").addClass("d-block");
           $("#adicionar3").removeClass("d-none");
+          $("#adicionar4").removeClass("d-none");
+          $("#adicionar4").addClass("d-block");
           $("#adicionar3").addClass("d-block");
           $("#coordinates").html("Lon: " + data.coord.lon + "º | Lat: " + data.coord.lat + "º");
           $("#weather").html('<img src="http://openweathermap.org/img/w/' + data.weather[0].icon + '.png" />' + " " + data.weather[0].description.capitalize());
           $("#temp").html("" + (data.main.temp - 273.15).toFixed(2).toString() + "ºC");
-          /* Mapa Tempo */
-          const lon = $("#coordinates").html(data.coord.lon)
-          const lat = $("#coordinates").html(data.coord.lat)
-          const map = L.map("map", {
-            center: [lat, lon],
-            zoom: 8,
-            maxZomm: 10,
-            minZoom: 4,
-            maxBounds: [
-              [lat + 0.5, lon + 0.5],
-              [lat + 0.5, lon + 0.5],
-            ],
-            maxBoundsViscosity: 1,
-          });
-          
-          // Cria "Titulo do mapa"
-          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            attribution: "© OpenStreetMap contributors",
-          }).addTo(map);
-          L.marker([data.coord.lat, data.coord.lon]).addTo(map).bindPopup(data.name);
         } else {
           $("table").addClass("d-none");
           alert(data.message);
@@ -176,3 +158,48 @@ $(document).ready(function () {
     });
   });
 
+var map = null;
+$(document).ready(function () {
+  $("#cityselect").change(function () {
+    $.ajax({
+      url: "http://api.openweathermap.org/data/2.5/weather",
+      data: {
+        q: $("#cityselect").val(),
+        APPID: "b2b1df463182c3cca5276e9d3267cc95",
+      },
+      success: function (data) {
+        if (data.name) {
+          $("#adicionar4").removeClass("d-none");
+          $("#adicionar4").addClass("d-block");
+          $("#adicionar3").addClass("d-block");
+          /* Mapa Tempo */
+          var map = L.map("mapWheather", {
+            center: [data.coord.lat, data.coord.lon],
+            zoom: 8,
+            maxZomm: 10,
+            minZoom: 4,
+            maxBounds: [
+              [data.coord.lat, data.coord.lon],
+              [data.coord.lat, data.coord.lon],
+            ],
+            maxBoundsViscosity: 0.5,
+          });
+          // Cria "Titulo do mapa"
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "© OpenStreetMap contributors",
+          }).addTo(map);
+          L.marker([data.coord.lat, data.coord.lon])
+            .addTo(map)
+            .bindPopup(data.name);
+        } else {
+          $("table").addClass("d-none");
+          alert(data.message);
+        }
+      },
+      error: function () {
+        $("table").addClass("d-none");
+        alert("Erro!");
+      },
+    });
+    });
+  });
