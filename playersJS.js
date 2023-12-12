@@ -129,46 +129,24 @@ $(document).ajaxComplete(function (event, xhr, options) {
   $("#myModal").modal("hide");
 });
 
-/* Pesquisar */
+/* search bar */
 
-$(document).ready(function() {
-  // Get form and input elements
-  var form = $("#form");
-  var queryInput = $("#query");
-  var searchResultsDiv = $("#searchResults");
 
-  // Add event listener to the form
-  form.submit(function(event) {
-      // Prevent the default form submission
-      event.preventDefault();
+$("#search").click(function () {
+  // Get the search input value
+  var filtered_data = []
+  var search = $('#input').val().toLowerCase();
 
-      // Get the value from the input field
-      var query = queryInput.val();
-
-      // Make an AJAX request to the API
-      $.ajax({
-          url: "http://192.168.160.58/NBA/API/Players/Search?q=" + encodeURIComponent(query),
-          method: "GET",
-          dataType: "json",
-          success: function(data) {
-              // Display the search results
-              displaySearchResults(data);
-          },
-          error: function(error) {
-              console.error("Error fetching data:", error);
-          }
-      });
+  // Filter the records based on the search term in the "Name" property
+  self.records.forEach(element => {
+    if (search in element){
+      filtered_data.push(element)
+    } 
+    return fitered_data
   });
-
-  // Function to display search results
-  function displaySearchResults(results) {
-      // Clear previous results
-      searchResultsDiv.html("");
-
-      // Display each result
-      $.each(results, function(index, result) {
-          var resultItem = $("<div>").text(result.name); // Change this based on your API response structure
-          searchResultsDiv.append(resultItem);
-      });
-  }
 });
+
+  // Log the filtered data to the console
+  console.log("Filtered data:", filteredData);
+
+  // Perform additional actions with the filtered data, such as updating the UI

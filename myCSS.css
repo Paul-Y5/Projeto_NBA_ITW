@@ -249,14 +249,6 @@ a {
     width: auto;
 }
 
-form {
-    width: 300px;
-    height: 44px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
 
 #adicionar1,#adicionar2,#adicionar3{
     text-align: center;
