@@ -58,6 +58,13 @@
                 <a class="btn stretched-link" data-bind=" attr: { href:'./teamsdetails.html?id=' + Id + '&amp;acronym=' + Acronym } " style="text-decoration: none; text-align: left;"><i class="fa fa-flag" aria-hidden="true"></i><span data-bind="text:' | ' + Name"></span></a>
             </div>        
         </div>
+
+        <h2 style="color: rgb(42, 134, 165); font-weight: bold;">Divisions</h2>
+        <div class="row justify-content-center" data-bind="foreach: Teams">
+            <div class="card col-2 mx-2 mb-1 cardclick">
+                <a class="btn stretched-link" data-bind=" attr: { href:'./teamsdetails.html?id=' + Id + '&amp;acronym=' + Acronym } " style="text-decoration: none; text-align: left;"><i class="fa fa-flag" aria-hidden="true"></i><span data-bind="text:' | ' + Name"></span></a>
+            </div>        
+        </div>
     </div>
     <!-- End of Working Area -->
     <nav class="navbar navbar-light bg-light fixed-bottom" id="navbar-bottom">

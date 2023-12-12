@@ -4,29 +4,42 @@
     
 }
 
-
-/* Dark Mode */
-/* .dark-mode {
-  background-color: #0b0324;
-  color: #fff;
-  
+/* Dark-mode Custom */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
 }
 
-.navbar .dark-mode {
-    transition: background-color 0.3s ease;
-    background-color: #333a41;
+.navbar.light-mode {
+    background-color: #e8e8e8;
+    color: #ec0c0c;
 }
 
-.card {
-    transition: background-color 0.3s ease;
-    background-color: #e6e2e2;
+.card-header.light-mode {
+    background-color: #afafaf;
+    color: #000000;
 }
 
-.dark-mode .card {
-    transition: background-color 0.3s ease;
-    background-color: #1b1425;
-    color: #cbcbcb;
-} */
+.card-body.light-mode {
+    background-color: #c7c3c3;
+    color: #000000;
+}
+
+/* Estilos para o modo escuro */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.navbar.dark-mode {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.card.dark-mode {
+    background-color: #424242;
+    color: #ffffff;
+}
 
 /* Label Button Toggle */
 .label-toggle {
@@ -186,7 +199,7 @@ a {
     text-align: justify;
 }
 
-/* #Body-arenas {
+ #Body-arenas {
     background-image: url(https://i.redd.it/m6up7z4yphh31.jpg);
     background-position: top center;
 }
@@ -203,7 +216,7 @@ a {
     background-position: top center;
     background-repeat: no-repeat;
 }
-*/
+
 #Body-FAV {
     background-image: url(https://w0.peakpx.com/wallpaper/657/828/HD-wallpaper-nba-logo-blue-stone-background-nba-grunge-logo-national-basketball-association-nba-emblem-usa-basketball.jpg);
     background-position: top center;
@@ -264,4 +277,59 @@ form {
 }
 
 
+#img1 {
+    background: transparent no-repeat center;
+    background-size: cover;
+    max-width: 100%;
+    height: auto;
+    margin: auto
+  }
+
+/* div{
+    border: 1px solid black;
+} */
+
+
+#div1 {
+    display: flex;
+    text-align: center;
+    align-items: center;
+  }
+#div2 {
+    display: flex;
+    text-align: center;
+    align-items: center;
+  }
+
+#div3 {
+    font: optional;
+    text-align: center;
+    align-items: center;
+  }
+
+  #table_lay>tbody>tr>td, #table_lay>tbody>tr>th, #table_lay>thead>tr>td, #table_lay>thead>tr>th {
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+  }
   
+.titulo1{
+    font-size: 35px;
+    font-weight: bold;
+}
+.body1{
+    font-size: 20px;
+}
+
+.titulo2{
+    font-size: 25px;
+    font-weight: bold;
+    
+}
+
+.body2{
+    font-size: 20px;
+}
+.text1{
+    font-size: 20px;
+    text-align: justify;
+}

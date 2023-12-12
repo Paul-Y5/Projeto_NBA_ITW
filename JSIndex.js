@@ -7,73 +7,32 @@ Object.defineProperty(String.prototype, 'capitalize', {
 });
 
 /* Dark-Mode */
-/* $(document).ready(function() {
-  // Verifica se está ativo o dark-mode na storage
-  if (localStorage.getItem('darkMode') === 'enabled') {
-    enableDarkMode();
-  }
-});
 
-// Dark mode botão (click event)
-$('#dark-mode').click(function() {
-  if ($('body').hasClass('dark-mode')) {
-    disableDarkMode();
-  } else {
-    enableDarkMode();
-  }
-});
+function getDarkModeState() {
+  return localStorage.getItem("darkMode") === "true";
+}
 
-// Botão Dark-Mode
-document.addEventListener("DOMContentLoaded", function () {
-  const darkModeToggle = document.getElementById("dark-mode");
-  const body = document.body;
-
-  // Verifica o estado do dark mode no localStorage ao carregar a página
-  const isDarkMode = localStorage.getItem("darkMode") === "true";
-  const checkboxState = localStorage.getItem("checkboxState");
-  // Aplica o dark mode se necessário
-  if (isDarkMode) {
-    enableDarkMode();
-  }
-  if (checkboxState === "true") {
-    darkModeToggle.checked = true;
-  }
-
-  // Adiciona um evento de alteração à checkbox de dark mode
-  darkModeToggle.addEventListener("change", function () {
-    if (this.checked) {
-      enableDarkMode();
-    } else {
-      disableDarkMode();
-    }
+// Função para atualizar o estado do modo escuro
+function setDarkModeState(isDarkMode) {
+  document.body.classList.toggle("dark-mode", isDarkMode);
+  document.querySelectorAll(".navbar, .card").forEach((element) => {
+    element.classList.toggle("dark-mode", isDarkMode);
   });
+  localStorage.setItem("darkMode", isDarkMode);
+}
 
-  function enableDarkMode() {
-    // Ativa o dark mode
-    body.classList.add("dark-mode");
-    document.querySelector('.navbar').classList.add('dark-mode');
-    document.querySelectorAll('.card').forEach(card => {
-      card.classList.add('dark-mode');
-    }),
-    // Armazena o estado do dark mode na localStorage
-    localStorage.setItem("darkMode", "true");
-    localStorage.setItem("checkboxState", "true");
-  }
+// Inicialização com o estado salvo ou padrão
+setDarkModeState(getDarkModeState());
 
-  function disableDarkMode() {
-    // Desativa o dark mode
-    body.classList.remove("dark-mode");
-    document.querySelector(".navbar").classList.remove("dark-mode");
-    document.querySelectorAll(".card").forEach((card) => {
-      card.classList.remove("dark-mode");
-     }),
-    // Armazena o estado do dark mode na localStorage
-    localStorage.setItem("darkMode", "false");
-    localStorage.setItem("checkboxState", "false");
-  }
+// Adiciona um ouvinte de evento ao botão de alternância
+document.getElementById("toggle-mode").addEventListener("click", function () {
+  const isDarkMode = !getDarkModeState();
+  setDarkModeState(isDarkMode);
 });
- */
-const isDarkMode = localStorage.getItem("darkMode") === "true";
+
+
+
+/* const isDarkMode = localStorage.getItem("darkMode") === "true";
 const checkboxState = localStorage.getItem("checkboxState") === 'true';
 
 // Set initial theme based on the stored state
@@ -119,7 +78,7 @@ document.getElementById('dark-mode').addEventListener('click', () => {
   localStorage.setItem("darkMode", isDarkMode.toString());
   localStorage.setItem("checkboxState", isDarkMode.toString());
 });
-
+ */
 
 /* Tempo nas cidades das Arenas */
 $(document).ready(function () {

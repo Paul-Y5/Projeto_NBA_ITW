@@ -16,8 +16,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navbar-top">
+<body class="light-mode">
+    <nav class="navbar navbar-expand-lg light-mode fixed-top" id="navbar-top">
         <div class="container">
             <a class="navbar-brand" href="index.html" tabindex="NBA"><img src="https://pngimg.com/d/nba_PNG14.png" height="26" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,8 +36,8 @@
                 </ul>
                 <a class="nav-link" aria-current="page" href="statspage.html"><i class="fa fa-book" style="color: gray; padding: 10px;"></i></a></li>
                 <div class="toggle">
-                    <input class="in-toggle" type="checkbox" id="dark-mode">
-                    <label class="label-toggle" for="dark-mode" id="dark-mode"></label>
+                    <input class="in-toggle" type="checkbox" id="toggle-mode">
+                    <label class="label-toggle" for="toggle-mode" id="dark-mode"></label>
                 </div>
             </div>
         </div>
@@ -87,10 +87,10 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col-md-6 d-flex">
                 <div class="card mb-3 flex-grow-1">
-                        <div class="card-header" >
+                        <div class="card-header light-mode" >
                             <div class="card-title">League Table</div>
                         </div>
-                    <div class="card-body">
+                    <div class="card-body light-mode">
                         <div class="card-text"></div>
                     </div>
                 </div>
@@ -101,10 +101,10 @@
                     <div class="col-md-12 mb-3">
                         
                         <div class="card h-100">
-                            <div class="card-header">
+                            <div class="card-header light-mode">
                                 <div class="card-title">Recent games</div>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body light-mode">
                                 <div class="card-text"><p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil ratione ipsum distinctio officia numquam iste, ex incidunt, animi reiciendis autem ipsam sint perspiciatis sequi praesentium excepturi enim, obcaecati saepe. Maiores?</p></div>
                             </div>
                         </div>
@@ -113,13 +113,13 @@
 
                     <div class="col-md-12 mb-3">
                         <div class="card h-100"> 
-                            <div class="card-header">
+                            <div class="card-header light-mode">
                                 <h4>
                                     <img style="width:50px; " src="https://help.apple.com/assets/63FFF4F425D106794D09CC92/63FFF4F525D106794D09CC99/pt_PT/dc7f8cdb406dc7704cccb5188ddc28c1.png" />
                                      Wheather
                                 </h4>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body light-mode">
                                 <div class="d-block" id="remover"><p class='text'>You can check how the weather is on most US cities where NBA games take place!</p></div>
                                 <select class="form-select" id="cityselect" style="background-color: transparent;">
                                     <option selected disabled>Select a city</option>
@@ -181,7 +181,7 @@
 
     </div>
     <!-- End of Working Area -->
-    <nav class="navbar navbar-light bg-light fixed-bottom" id="navbar-bottom">
+    <nav class="navbar light-mode fixed-bottom" id="navbar-bottom">
         <div class="container small">
             <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2023/24</div>
             <div class="navbar-text">Made with &hearts;<i class="fa fa-heart-o text-danger"></i> for U by <a href="mailto:jsp@ua.pt" class="text-decoration-none text-muted">jsp@ua.pt</a>.</div>
