@@ -26,16 +26,6 @@ body.light-mode {
     color: #000000;
 }
 
-.card-body.dark-mode {
-    background-color: #c7c3c3;
-    color: #000000;
-}
-
-#light-mode {
-    background-color: #c7c3c3;
-    color: #000000;
-}
-
 /* Estilos para o modo escuro */
 body.dark-mode {
     background-color: #302c2c;
@@ -48,6 +38,16 @@ body.dark-mode {
 }
 
 .card.dark-mode {
+    background-color: #424242;
+    color: #ffffff;
+}
+
+.card-header.dark-mode {
+    background-color: #424242;
+    color: #ffffff;
+}
+
+.card-body.dark-mode {
     background-color: #424242;
     color: #ffffff;
 }
