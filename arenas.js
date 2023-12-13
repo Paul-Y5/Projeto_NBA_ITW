@@ -130,42 +130,42 @@ $(document).ajaxComplete(function (event, xhr, options) {
 });
 
 /* Dark-Mode */
-// Verifica o estado atual do modo escuro na localStorage
+
+// Verifica o estado do Dark-mode na localStorage
 function getDarkModeState() {
   return localStorage.getItem("darkMode") === "true";
 }
 
-// Verifica o estado atual do botão toggle na localStorage
+// Verifica o estado do botão toggle na localStorage
 function getToggleState() {
   return localStorage.getItem("toggleState") === "true";
 }
 
-// Atualiza o estado do modo escuro e aplica as alterações de estilo
+// Atualiza o estado o estado do dark-mode
 function setDarkModeState(isDarkMode) {
   document.body.classList.toggle("dark-mode", isDarkMode);
   const navbars = document.querySelectorAll(".navbar");
   navbars.forEach((navbar) => {
     navbar.classList.toggle("dark-mode", isDarkMode)});
 
-  // Atualiza o estado do modo escuro na localStorage
+  // Atualiza o estado do dark-mode na localStorage
   localStorage.setItem("darkMode", isDarkMode);
 }
 
 // Atualiza o estado do botão toggle na localStorage
 function setToggleState(isToggleActive) {
-  // Atualiza o estado do botão toggle na localStorage
   localStorage.setItem("toggleState", isToggleActive);
 }
 
-// Inicializa com o estado salvo ou padrão
+// Abre a página com o estado salvo
 setDarkModeState(getDarkModeState());
 
-// Inicializa o estado do botão toggle
+// Guarda o estado do botão toggle ao fechar página
 const isToggleActive = getToggleState();
 document.getElementById("toggle-mode").checked = isToggleActive;
 setDarkModeState(isToggleActive);
 
-// Adiciona um ouvinte de evento ao botão de alternância
+// Verificar a alteração do botão toggle
 document.getElementById("toggle-mode").addEventListener("change", function () {
   const isToggleActive = this.checked;
   setToggleState(isToggleActive);
