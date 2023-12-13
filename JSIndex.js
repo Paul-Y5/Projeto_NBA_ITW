@@ -25,6 +25,21 @@ function setDarkModeState(isDarkMode) {
   navbars.forEach((navbar) => {
     navbar.classList.toggle("dark-mode", isDarkMode)});
 
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((card) => {
+    card.classList.toggle("dark-mode", isDarkMode);
+  });
+
+  const cardh = document.querySelectorAll(".card-header");
+  cardh.forEach((card) => {
+    card.classList.toggle("dark-mode", isDarkMode);
+  });
+
+  const cardb = document.querySelectorAll(".card-body");
+  cardb.forEach((card) => {
+    card.classList.toggle("dark-mode", isDarkMode);
+  });
+
   // Atualiza o estado do dark-mode na localStorage
   localStorage.setItem("darkMode", isDarkMode);
 }
