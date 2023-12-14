@@ -12,6 +12,7 @@ var vm = function () {
   self.Name = ko.observable("");
   self.Logo = ko.observable("");
   self.Teams = ko.observable("");
+  self.Divisions = ko.observable("");
 
   //--- Page Events
   self.activate = function (id) {
@@ -24,6 +25,7 @@ var vm = function () {
       self.Name(data.Name);
       self.Logo(data.Logo);
       self.Teams(data.Teams);
+      self.Divisions(data.Divisions);
     });
   };
 
