@@ -29,6 +29,11 @@ function setDarkModeState(isDarkMode) {
   cards.forEach((card) => {
     card.classList.toggle("dark-mode", isDarkMode);
   });
+  
+  const btn = document.querySelectorAll(".btn");
+  cards.forEach((btn) => {
+    btn.classList.toggle("dark-mode", isDarkMode);
+  });
 
   const cardh = document.querySelectorAll(".card-header");
   cardh.forEach((card) => {
