@@ -347,3 +347,51 @@ a {
     font-size: 20px;
     text-align: justify;
 }
+    #procura{
+        max-width: 200px ;
+    }
+    .ui-autocomplete {
+        max-height: 200px; /* Set the maximum height */
+        overflow-y: auto; /* Enable vertical scrolling */
+        max-width: 200px;
+        background-color: white;
+        position: absolute;
+        top: 100%;
+        z-index: 9999 !important;        
+        left: 0;
+        float: left;
+        padding: 4px 4px;
+        margin: 0 0 10px 25px;
+        list-style: none;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        -webkit-background-clip: padding-box;
+        -moz-background-clip: padding;
+        background-clip: padding-box;
+        border-right-width: 2px;
+        border-bottom-width: 2px;
+    }
+
+    .ui-autocomplete .ui-menu-item {
+        font-size: medium;
+        list-style-type: none;
+
+    }
+
+    .ui-autocomplete .ui-menu-item a {
+        text-decoration: none; /* Remove underlines from links */
+    }
+
+    .ui-autocomplete .ui-menu-item:hover {
+        background-color: #f0f0f0; /* Add hover background color */
+        cursor: pointer;
+    }
+
+    
+
+    
+
