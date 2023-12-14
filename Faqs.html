@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>NBA News & Statistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="stylesheet" href="myCSS.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body class="light-mode">
+    <nav class="navbar navbar-expand-lg light-mode fixed-top" id="navbar-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" tabindex="NBA"><img src="https://pngimg.com/d/nba_PNG14.png" height="26" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="arenas.html"><i class="fa fa-basketball-ball" style="color: orange;"></i> Arenas</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="players.html"><i class="fa fa-user" style="color: gray;"></i> Players</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="teams.html"><i class="fa fa-flag" style="color: black;"></i> Teams</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="states.html"><i class="fa fa-search-location" style="color: green;"></i> States</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="seasons.html"><i class="fa fa-bookmark" style="color: red;"></i> Seasons</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="conferences.html"><i class="fa fa-address-book" style="color: rgb(255, 77, 0);"></i> Conferences</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="positions.html"><i class="fa-solid fa-arrows-spin" style="color: palevioletred;"></i> Positions</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="favorite.html"><i class="fa fa-star" style="color: yellow;"></i> Favorites</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="Faqs.html" id="active"><i class="fa fa-question" style="color: rgb(121, 0, 208);"></i> FAQs</a></li>
+                </ul>
+                <a class="nav-link" aria-current="page" href="statspage.html"><i class="fa fa-book" style="color: gray; padding: 10px;"></i></a></li>
+                <div class="toggle">
+                    <input class="in-toggle" type="checkbox" id="toggle-mode">
+                    <label class="label-toggle" for="toggle-mode" id="dark-mode"></label>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" style="color: white; background-color: rgb(68, 68, 68);" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><strong>What API methods did we use?</strong></button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        We used this methods:
+                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop1" aria-controls="offcanvasWithBackdrop1">Ver mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" style="color: white; background-color: rgb(68, 68, 68);" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><strong>What Bootstrap components did we use?</strong></button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        We used this components:
+                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop">Ver mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" style="color: white; background-color: rgb(68, 68, 68);" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><strong>What have we learnt with ITW and this project?</strong></button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Mainly, we have learnt how to develop a functional website by applying our new basic notions on web programming, creating pages autonomously and integrating external libraries :)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- OfCanvas -->
+        <div class="offcanvas offcanvas-start background" tabindex="-1" id="offcanvasWithBackdrop1" aria-labelledby="offcanvasWithBackdropLabel1">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel"><strong>API methods</strong></h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul type="disc">
+                    <li>GET api/Circuits/Circuit?id={id}</li>
+                    <li>GET api/Circuits</li>
+                    <li>GET api/Constructors/Constructor?id={id}</li>
+                    <li>GET api/Constructors</li>
+                    <li>GET api/Drivers/Driver?id={id}</li>
+                    <li>GET api/Drivers</li>
+                    <li>GET api/Races/Race?id={id}</li>
+                    <li>GET api/Races</li>
+                    <li>GET api/Search/Circuits?q={q}</li>
+                    <li>GET api/Search/Constructors?q={q}</li>
+                    <li>GET api/Search/Drivers?q={q}</li>
+                    <li>GET api/Search/Races?q={q}</li>
+                    <li>GET api/Statistics/Champions</li>
+                </ul>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-start background" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel"><strong>Bootstrap 5 components</strong></h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul type="disc">
+                    <li>Accordion</li>
+                    <li>Buttons</li>
+                    <li>Card</li>
+                    <li>Carousel</li>
+                    <li>Close button</li>
+                    <li>Collapse</li>
+                    <li>Dropdowns</li>
+                    <li>Modal</li>
+                    <li>Navs & tabs</li>
+                    <li>Navbar</li>
+                    <li>Offcanvas</li>
+                    <li>Pagination</li>
+                    <li>Spinners</li>
+                    <li>Breadcrumb</li>
+                    <li>Toast</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Button trigger modal -->
+        <div class="text-center" style="margin-top: 20px;">
+            <button type="button" class="btn btn-secondary btn-lg " data-bs-toggle="modal" data-bs-target="#faqsmodal" style="margin-bottom: 15px; ">Still got questions?</button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="faqsmodal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: red;">
+                        <h5 class="modal-title" style="font-size: x-large;color: white;">Leave your question!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                    </div>
+                    <div class="modal-body background">
+                        <div class="container">
+                            <form id="formsfaqs" action="http://192.168.160.36/FormEcho.aspx" name="faqs" autocomplete="off">
+                                <div class="row form-group">
+                                    <label for="Nome" class="col-md-2 col-form-label">Name</label>
+                                    <div class="col-md-10">
+                                        <input type="text" name="Nome" id="pessoa" class="form-control" />
+                                        <div class="d-none text-danger col-form-label" id="pessoaError"><i class="fa fa-exclamation-triangle"></i> (Min: 10 letters; Max: 100 letters).</div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row form-group">
+                                    <label for="email" class="col-md-2 col-form-label">Email</label>
+                                    <div class="col-md-10">
+                                        <input type="text" name="email" id="email" class="form-control" />
+                                        <div class="d-none text-danger col-form-label" id="emailError"><i class="fa fa-exclamation-triangle"></i> (Min: 10 letters; Max: 100 letters).</div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row form-group">
+                                    <label for="duvtipo" class="col-4 col-form-label">Type of question</label>
+                                    <div class="col-8 form-check">
+                                        <input type="radio" name="duvtipo" class="form-check-input " value="bugs"><label class="form-check-label">Report bugs</label><br>
+                                        <input type="radio" name="duvtipo" class="form-check-input" value="duvida"><label class="form-check-label">Help</label><br>
+                                        <input type="radio" name="duvtipo" class="form-check-input" value="outro"><label class="form-check-label">Other</label>
+                                    </div>
+                                    <div class="d-none text-danger col-form-label" id="duvtipoError" style="margin-left: 80px;"><i class="fa fa-exclamation-triangle"></i> (Choose a type of question).</div>
+                                </div>
+                                <br>
+                                <div class="row form-group" style="margin-left: 1px;">
+                                    <label for="duvida" class="col-md-2 col-form-label">Write</label>
+                                    <div class="col-md-10">
+                                        <textarea type="text" name="duvida" id="duvida" class="form-control" style="min-height:80px ;"> </textarea>
+                                        <div class="d-none text-danger col-form-label" id="duvidaError"><i class="fa fa-exclamation-triangle"></i> (Min: 20 letters; Max: 200 letters).</div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="text-center form-group">
+                                    <input type="Submit" name="submitBtn" value="Submit" class="btn btn-danger" />
+                                    <input type="reset" name="resetBtn" value="Clear" class="btn btn-secondary" id='clean' />
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar light-mode fixed-bottom" id="navbar-bottom">
+        <div class="container small">
+            <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2023/24</div>
+            <div class="navbar-text">Made with &hearts;<i class="fa fa-heart-o text-danger"></i> for U by <a href="mailto:jsp@ua.pt" class="text-decoration-none text-muted">jsp@ua.pt</a>.</div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
+            </div>
+        </div>
+    </nav>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="Faqs.js"></script>
+    <script src="JSIndex.js"></script>
+</body>
+</html>
