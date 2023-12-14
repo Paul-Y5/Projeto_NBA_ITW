@@ -46,9 +46,11 @@
             <h2 class="col-9" data-bind="text:displayName"></h2>
             <div class="col-3">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="input" placeholder="Search...">
-                    <button class="btn btn-primary" id="search" type="button"><i class="fa fa-search"></i></button>
-                    <button class="btn btn-primary" id="clear" type="button"><i class="fa fa-times"></i></button>                      
+                    <form id="forms">
+                        <input type="search" class="form-control" id="input" placeholder="Search..." aria-label="Search">
+                        <button class="btn btn-primary" id="search" type="submit"><i class="fa fa-search"></i></button>
+                        <button class="btn btn-primary" id="clear" type="reset"><i class="fa fa-times"></i></button>
+                    </form>                      
                 </div>
             </div>
         </div>
