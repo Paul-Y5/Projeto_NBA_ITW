@@ -42,42 +42,69 @@
     </nav>
     <!-- Work Area-->
     <div class="container">
-        <div class="py-2 border-bottom mb-3">
-            <h2 data-bind="text:Name() +' [' + Id() + ']'"></h2>
-        </div>
-        <!-- ko if:Name().length > 0 -->
-        <div class="row border-bottom g-2">
-            <div class="col-2">Arena Id</div><div class="col-10" data-bind="text: Id"></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">Name</div><div class="col-10" data-bind="text: Name"></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">State</div><div class="col-10"><a class="nav-link" data-bind="text:StateName, attr: { href:'./stateDetails.html?id=' + StateId }" title="Show State Details"></a></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">Team</div>
-            <div class="col-10"><a class="nav-link" data-bind="text:'[' + TeamAcronym() + '] ' + TeamName(), attr: { href:'./teamDetails.html?id=' + TeamId }" title="Show Team Details"></a></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">Location</div><div class="col-10" data-bind="text: Location"></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">Capacity</div><div class="col-10" data-bind="text: Capacity"></div>
-        </div>
-        <!-- ko if:Opened().length > 0 -->
-        <div class="row border-bottom g-2">
-            <div class="col-2">Opened</div><div class="col-10" data-bind="text: Opened"></div>
-        </div>
-        <!-- /ko -->
-        <div class="row border-bottom g-2" data-bind="visible: Photo() != '' && Photo() != null">
-            <div class="col-2">Photo</div><div class="small col-10">
-                <img class="img-thumbnail" data-bind="attr:{src: Photo}"><br />
-                <i class="fa fa-link"></i> [<a class="link-dark text-decoration-none" data-bind="attr: { href: Photo }, text: Photo" target="_blank"></a>]
+        <div><br/></div>
+        <div class="row">
+            <!-- ko -->
+            <div class="col-3" data-bind="visible: Photo() != '' && Photo() != null">
+                <img id="img1" data-bind="attr:{src: Photo}"/>
+            </div>
+            <!-- /ko -->
+            <!-- ko ifnot: Photo() != null && Photo() != '' -->
+            <div class="col-3">
+                <img id="img1" src="imagens/765-default-avatar.png" />
+            </div>
+            <!-- /ko -->
+            <div class="col-3" id="div1">
+                <table class="table" id="table1">
+                    <thead class="titulo1">
+                    <tr>
+                        <th scope="col" data-bind="text: Name"></th>
+                    </tr>
+                    </thead>
+                    <tbody class="body1">
+                    <tr>
+                        <td data-bind="text:StateName() + ' | ' + StateId()"></td>
+                    </tr>
+                    </tbody> 
+                </table>
+            </div>
+            <div class="col-6" id="div2">
+                <table class="table" id="table_lay" >
+                    <thead class="titulo2">
+                    <tr>
+                        <th scope="col">Location</th>
+                        <th scope="col">Team</th>
+                        <th scope="col">State</th>
+                    </tr>
+                    </thead>
+                    <tbody class="body2">
+                    <tr>
+                        <td data-bind="text: Location"></td>
+                        <td data-bind="text: TeamName"></td>
+                        <td data-bind="text: StateName"></td>
+                    </tr>
+                    </tbody>
+                    <thead class="titulo2">
+                        <tr>
+                        <th scope="col">Capacity</th>
+                        <th scope="col">Coordinates</th>
+                        <th scope="col">Opened</th>
+                        </tr>
+                    </thead>  
+                    <tbody class="body2">
+                        <tr>
+                        <td data-bind="text:Capacity"></td>
+                        <td data-bind="text: Lat() + ', ' + Lon() "></td>
+                        <td data-bind="text: Opened"></td>
+                        </tr>
+                    </tbody>
+                    
+                </table>
             </div>
         </div>
-        <!-- /ko -->
-        <a href="./arenas.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
+            <!-- /ko -->
+            <a href="./players.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
+        </div>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

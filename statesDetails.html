@@ -47,44 +47,48 @@
             <!-- ko -->
             <div class="col-3" data-bind="visible: Flag() != '' && Flag() != null">
                 <img id="img1" data-bind="attr:{src: Flag}"/>
-                <div class="border-bottom py-2 mb-2">
-                    <h1 data-bind="text:Id" style="color: black; font-weight: bold;"></h1>
-                    <h2 data-bind="text:Name" style="color: black; font-weight: bold;"></h2>
-                </div>
             </div>
             <!-- /ko -->
-        </div>
             <!-- ko ifnot: Flag() != null && Flag() != '' -->
             <div class="col-3">
-                <img id="img1" src="imagens/istockphoto-1394197218-612x612.jpg" />
+                <img id="img1" src="imagens/765-default-avatar.png" />
             </div>
             <!-- /ko -->
-            <div class="btn">
-                <a href="./states.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
+            <div class="col-9" id="div1">
+                <table class="table" id="table1">
+                    <thead class="titulo1">
+                    <tr>
+                        <th scope="col" data-bind="text: Name() + ', ' + Id()"></th>
+                    </tr>
+                    </thead>
+                </table>
             </div>
-            <div class="border-bottom container-fluid" style="background-color: aliceblue; opacity: 0.8;">
-                <h2 style="color: red; font-weight: bold;">Teams</h2>
-                <!-- ko ifnot: Teams() != null && Teams() != '' -->
-                <div class="col-3">
-                    No teams in this state!
-                </div>
-                <!-- /ko -->
-                <div class="row g-1" data-bind="foreach: Teams">
-                    <div class="align-middle col-3" data-bind="text:Name" style="font-weight: bold; font-size: medium;"></div>
-                </div>
-            </div>
-            <br/>
-            <div class="border-bottom container-fluid" style="background-color: aliceblue; opacity: 0.8;">
-                <h2 style="color: red; font-weight: bold;">Arenas</h2>
-                <!-- ko ifnot: Arenas() != null && Arenas() != '' -->
-                <div class="col-3">
-                    No Arenas in this state!
-                </div>
-                <!-- /ko -->
-                <div class="row g-1" data-bind="foreach: Arenas">
-                    <div class="align-middle col-3" data-bind="text:Name" style="font-weight: bold; font-size: medium;"></div>
-                </div>
-            </div>
+        </div>
+        <div><br/></div>
+
+        <div class="titulo2">Teams<span data-bind="text: ' [' + Teams().length +']'"></span></div>
+        
+        <div><br/></div>
+        
+        <div class="row justify-content-center" data-bind="foreach: Teams">
+            <div class="card light-mode col-2 mx-2 mb-1">
+                <a class="btn light-mode stretched-link" data-bind=" attr:{href: './teamsdetails.html?id=' + Id + '&amp;acronym=' + Acronym}" style="text-decoration: none; text-align: left;"><i class="fa-solid fa-flag" aria-hidden="true"></i><span data-bind="text:' | '+ Name"></span></a>
+            </div>        
+        </div>
+       
+        <div><br/></div>
+        
+        <div class="titulo2">List of arenas<span data-bind="text: ' [' + Arenas().length +']'"></span></div>
+        
+        <div><br/></div>
+        
+        <div class="row justify-content-center" data-bind="foreach: Arenas">
+            <div class="card col-2 mx-2 mb-1">
+                <a class="btn light-mode stretched-link" data-bind=" attr:{href: 'arenaDetails.html?id=' + Id}" style="text-decoration: none; text-align: left;"><i class="fa fa-user" aria-hidden="true"></i><span data-bind="text:' | ' + Name"></span></a>
+            </div>        
+        </div>
+            <!-- /ko -->
+            <a href="./states.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
         </div>
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -102,7 +106,6 @@
             </div>
         <!-- /Modal -->
     </div>
-    <!-- /End of Work Area -->
     <nav class="navbar light-mode fixed-bottom" id="navbar-bottom">
         <div class="container small">
             <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2023/24</div>

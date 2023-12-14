@@ -20,6 +20,8 @@ var vm = function () {
     self.Weight = ko.observable('');
     self.School = ko.observable('');
     self.Photo = ko.observable('');
+    self.Teams = ko.observableArray([]);
+    self.Seasons = ko.observableArray([]);
 
     //--- Page Events
     self.activate = function (id) {
@@ -40,6 +42,8 @@ var vm = function () {
             self.Weight(data.Weight);
             self.School(data.School);
             self.Photo(data.Photo);
+            self.Teams(data.Teams);
+            self.Seasons(data.Seasons);
         });
     };
 

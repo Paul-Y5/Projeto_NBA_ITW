@@ -31,7 +31,7 @@ body.light-mode {
 }
 a.light-mode{
     color: rgb(17, 16, 16);
-    background-color: pink;
+    background-color: rgb(255, 255, 255);
 }
 
 /* Estilos para o modo escuro */
@@ -322,7 +322,11 @@ a {
   }
 
   #table_lay>tbody>tr>td, #table_lay>tbody>tr>th, #table_lay>thead>tr>td, #table_lay>thead>tr>th {
-    border: 0;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  #table_1>tbody>tr>td, #table_1>tbody>tr>th, #table_1>thead>tr>td, #table_1>thead>tr>th {
+    border: none;
     background-color: rgba(0, 0, 0, 0);
   }
   

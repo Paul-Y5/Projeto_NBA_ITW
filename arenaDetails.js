@@ -19,6 +19,8 @@ var vm = function () {
     self.Capacity = ko.observable('');
     self.Opened = ko.observable('');
     self.Photo = ko.observable('');
+    self.Lat = ko.observable('');
+    self.Lon = ko.observable('');
 
     //--- Page Events
     self.activate = function (id) {
@@ -38,6 +40,8 @@ var vm = function () {
             self.Capacity(data.Capacity);
             self.Opened(data.Opened);
             self.Photo(data.Photo);
+            self.Lat(data.Lat);
+            self.Lon(data.Lon);
         });
     };
 
