@@ -43,9 +43,9 @@
     <!-- Work Area-->
     <div class="container">
         <div><br/></div>
-        <div class="row">
+        <div class="row justify-content-center">
             <!-- ko -->
-            <div class="col-3" data-bind="visible: Flag() != '' && Flag() != null">
+            <div class="col-4" data-bind="visible: Flag() != '' && Flag() != null">
                 <img id="img1" data-bind="attr:{src: Flag}"/>
             </div>
             <!-- /ko -->
@@ -54,15 +54,10 @@
                 <img id="img1" src="imagens/765-default-avatar.png" />
             </div>
             <!-- /ko -->
-            <div class="col-9" id="div1">
-                <table class="table" id="table1">
-                    <thead class="titulo1">
-                    <tr>
-                        <th scope="col" data-bind="text: Name() + ', ' + Id()"></th>
-                    </tr>
-                    </thead>
-                </table>
-            </div>
+            
+        </div>
+        <div class="row mt-4" id="div1">
+            <h2 scope="col" data-bind="text: Name() + ', ' + Id()"></h2>
         </div>
         <div><br/></div>
 
