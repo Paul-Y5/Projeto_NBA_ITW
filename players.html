@@ -47,7 +47,7 @@
             <h2 class="col-6" data-bind="text:displayName"></h2>
             <div class="col-6" id="cover">
                 <div class="row" style="justify-content:end">
-                    <input class="form-control" type="search" placeholder="Search..." aria-label="Search" style="width:35%" id="procura" name="procura" autocomplete="off">
+                    <input class="form-control" type="search" placeholder="Search..." aria-label="Search" id="search" name="search" autocomplete="off">
                 </div>
             </div>      
         </div> 
@@ -148,7 +148,7 @@
         $(document).ready(function () {
             const api_url = "http://192.168.160.58/NBA/API/Players/Search?q=";
             
-            $("#procura").autocomplete({
+            $("#search").autocomplete({
                 minLength: 2,
                 source: function (request, response) {
                     $.ajax({
@@ -178,11 +178,11 @@
                 },
                 select: function (event, ui) {
                     event.preventDefault();
-                    $("#procura").val(ui.item.label);
+                    $("#search").val(ui.item.label);
                     window.location.href = "./playersDetails.html?id=" + ui.item.value;
                 },
                 focus: function (event, ui) {
-                    $("#procura").val(ui.item.label);
+                    $("#search").val(ui.item.label);
                 },
                 
             
