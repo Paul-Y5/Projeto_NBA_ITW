@@ -21,28 +21,26 @@ function getToggleState() {
 // Atualiza o estado o estado do dark-mode
 function setDarkModeState(isDarkMode) {
   document.body.classList.toggle("dark-mode", isDarkMode);
-  const navbars = document.querySelectorAll(".navbar");
-  navbars.forEach((navbar) => {
-    navbar.classList.toggle("dark-mode", isDarkMode)});
-
-  const cards = document.querySelectorAll(".card");
-  cards.forEach((card) => {
-    card.classList.toggle("dark-mode", isDarkMode);
-  });
   
-  const btn = document.querySelectorAll(".btn");
-  cards.forEach((btn) => {
-    btn.classList.toggle("dark-mode", isDarkMode);
+  const elementsToToggleDarkMode = [
+    ".navbar",
+    ".card",
+    ".btn",
+    ".card-header",
+    ".card-body",
+    ".table", // Add the table class here
+  ];
+
+  elementsToToggleDarkMode.forEach((element) => {
+    const elements = document.querySelectorAll(element);
+    elements.forEach((el) => {
+      el.classList.toggle("dark-mode", isDarkMode);
+    });
   });
 
-  const cardh = document.querySelectorAll(".card-header");
-  cardh.forEach((card) => {
-    card.classList.toggle("dark-mode", isDarkMode);
-  });
-
-  const cardb = document.querySelectorAll(".card-body");
-  cardb.forEach((card) => {
-    card.classList.toggle("dark-mode", isDarkMode);
+  const tables = document.querySelectorAll(".table");
+  tables.forEach((table) => {
+    table.classList.toggle("table-dark", isDarkMode);
   });
 
   // Atualiza o estado do dark-mode na localStorage
@@ -68,6 +66,7 @@ document.getElementById("toggle-mode").addEventListener("change", function () {
   setToggleState(isToggleActive);
   setDarkModeState(isToggleActive);
 });
+
 
 
 /* Tempo nas cidades das Arenas */

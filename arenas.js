@@ -144,9 +144,27 @@ function getToggleState() {
 // Atualiza o estado o estado do dark-mode
 function setDarkModeState(isDarkMode) {
   document.body.classList.toggle("dark-mode", isDarkMode);
-  const navbars = document.querySelectorAll(".navbar");
-  navbars.forEach((navbar) => {
-    navbar.classList.toggle("dark-mode", isDarkMode)});
+  
+  const elementsToToggleDarkMode = [
+    ".navbar",
+    ".card",
+    ".btn",
+    ".card-header",
+    ".card-body",
+    ".table", // Add the table class here
+  ];
+
+  elementsToToggleDarkMode.forEach((element) => {
+    const elements = document.querySelectorAll(element);
+    elements.forEach((el) => {
+      el.classList.toggle("dark-mode", isDarkMode);
+    });
+  });
+
+  const tables = document.querySelectorAll(".table");
+  tables.forEach((table) => {
+    table.classList.toggle("table-dark", isDarkMode);
+  });
 
   // Atualiza o estado do dark-mode na localStorage
   localStorage.setItem("darkMode", isDarkMode);

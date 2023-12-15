@@ -34,6 +34,16 @@ a.light-mode{
     background-color: rgb(255, 255, 255);
 }
 
+button.light-mode {
+    color: rgb(150, 149, 149);
+    background-color: rgb(0, 0, 0);
+}
+
+.table.light-mode {
+    background-color: #8c8c8c;
+    color: #000000;
+}
+
 /* Estilos para o modo escuro */
 body.dark-mode {
     background-color: #302c2c;
@@ -60,7 +70,18 @@ body.dark-mode {
     color: #ffffff;
 }
 a.dark-mode{
-    color: white;
+    color: rgb(150, 149, 149);
+    background-color: rgb(0, 0, 0);
+}
+
+button.dark-mode {
+    color: rgb(150, 149, 149);
+    background-color: rgb(0, 0, 0);
+}
+
+.table.dark-mode {
+    background-color: #222121;
+    color: #ccc;
 }
 
 /* Label Button Toggle */
@@ -221,7 +242,7 @@ a {
     text-align: justify;
 }
 
- /* #Body-arenas {
+ #Body-arenas {
     background-image: url(https://i.redd.it/m6up7z4yphh31.jpg);
     background-position: top center;
 }
@@ -237,7 +258,7 @@ a {
     background-image: url(https://wallpapercave.com/wp/wp1827440.jpg);
     background-position: top center;
     background-repeat: no-repeat;
-} */
+}
 
 #Body-FAV {
     background-image: url(https://w0.peakpx.com/wallpaper/657/828/HD-wallpaper-nba-logo-blue-stone-background-nba-grunge-logo-national-basketball-association-nba-emblem-usa-basketball.jpg);
