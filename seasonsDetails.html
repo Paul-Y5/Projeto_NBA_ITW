@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ITW 2023/24 - NBA States Details</title>
+    <title>ITW 2023/24 - NBA Players Details</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
@@ -43,30 +43,37 @@
     <!-- Work Area-->
     <div class="container">
         <div><br/></div>
-        <div class="row justify-content-center">
-            <!-- ko -->
-            <h1 class="col-4" data-bind="text:Season"></h1>
-            <h2 data-bind="text:SeasonType"></h2>
-            <!-- /ko -->   
+        <div>
+            <h1 data-bind="text: displayName + ' [' + Season() + ']' "></h1>
         </div>
-
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" style="color: white; background-color: rgb(117, 117, 117);" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <strong><div class="titulo2">Players</strong></button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                         <div class="row justify-content-center" data-bind="foreach: Players">
-                            <div class="card col-2 mx-2 mb-1">
-                                <a class="btn light-mode stretched-link" data-bind=" attr:{href: 'playersDetails.html?id=' + Id}" style="text-decoration: none; text-align: left;"><i class="fa fa-user" aria-hidden="true"></i><span data-bind="text:' | ' + Name"></span></a>
-                            </div>        
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            
+        <div><br/></div>
+        
+        <div class="titulo2">Teams<span data-bind="text: ' [' + Teams().length +']'"></span></div>
+        
+        <div><br/></div>
+        
+        <div class="row justify-content-center" data-bind="foreach: Teams">
+            <div class="card light-mode col-2 mx-2 mb-1">
+                <a class="btn light-mode stretched-link" data-bind="attr: { href: './teamsdetails.html?id=' + Id + '&acronym=' + Acronym }" style="text-decoration: none; text-align: left;"><i class="fa fa-flag" aria-hidden="true"></i><span data-bind="text:' | '+ Name"></span></a>
+            </div>        
+        </div>
+       
+        <div><br/></div>
+        
+        <div class="titulo2">Players<span data-bind="text: ' [' + Players().length +']'"></span></div>
+        
+        <div><br/></div>
+        
+        <div class="row justify-content-center" data-bind="foreach: Players">
+            <div class="card col-2 mx-2 mb-1">
+                <a class="btn light-mode stretched-link" data-bind=" attr:{href: 'playersDetails.html?id=' + Id}" style="text-decoration: none; text-align: left;"><i class="fa fa-user" aria-hidden="true"></i><span data-bind="text:' | ' + Name"></span></a>
+            </div>        
+        </div>
+            <!-- /ko -->
+            <a href="./players.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
+            <a href="./PlayersStats?id=.html" class="btn btn-default btn-sm small"><i class="fa fa-line-chart"></i> Stats</a>
+        </div>
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -81,8 +88,9 @@
                     </div>
                 </div>
             </div>
-            <!-- /Modal -->
-        </div>
+        <!-- /Modal -->
+    </div>
+    <!-- /End of Work Area -->
     <nav class="navbar light-mode fixed-bottom" id="navbar-bottom">
         <div class="container small">
             <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2023/24</div>
