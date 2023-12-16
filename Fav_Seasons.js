@@ -59,7 +59,7 @@ function ajaxHelper(uri, method, data) {
 
 //--- Page Events
 self.activate = function (id) {
-  console.log("CALL: getPlayers...");
+  console.log("CALL: getSeasons...");
   var composedUri =
     self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
   ajaxHelper(composedUri, "GET").done(function (data) {
@@ -112,7 +112,7 @@ function removeFav(Id) {
 
 function openDetails(Id) {
   // Construct the URL for the details page using the provided Id
-  const detailsPageUrl = "./arenaDetails.html?id=" + Id;
+  const detailsPageUrl = "./seasonsDetails.html?id=" + Id;
 
   // Redirect to the details page
   window.location.href = detailsPageUrl;
@@ -138,10 +138,7 @@ $(document).ready(function () {
           $("#table-favourites").append(
             `<tr id="removefav${Id}">
                         <td class="align-middle">${data.Id}</td>
-                        <td class="align-middle">${data.Name}</td>
-                        <td class="align-middle">${data.StateName}</td>
-                        <td class="align-middle">${data.TeamName}</td>
-                        <td class="align-middle">${data.Location}</td>
+                        <td class="align-middle">${data.Season}</td>
                         <td class="text-end">
                             <a class="btn btn-default btn-light btn-xs" onclick="openDetails(${Id})"><i class="fa fa-eye" title="Show details"></i></a>
                             <a class="btn btn-default btn-light btn-xs" onclick="removeFav(${Id})"><i class="fa fa-star text-warning" title="Remover dos favoritos"></i></a>

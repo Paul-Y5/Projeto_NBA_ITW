@@ -121,42 +121,47 @@ function openDetails(Id) {
 
 
 $(document).ready(function () {
-    showLoading();
+  showLoading();
 
-    let fav = JSON.parse(localStorage.fav || '[]');
+  let fav = JSON.parse(localStorage.fav || "[]");
 
-    console.log(fav);
+  console.log(fav);
 
+  for (const Id of fav) {
+    console.log(Id); // Removido "Acronym" desta linha, pois ainda não está definido aqui
 
-    for (const Id of fav) {
-        console.log(Id, Acronym);
+    ajaxHelper("http://192.168.160.58/NBA/api/Teams/" + Id, "GET").done(
+      function (data) {
+        console.log(data);
 
-        ajaxHelper('http://192.168.160.58/NBA/api/Teams/' + Id + Acronym, 'GET').done(function (data) {
-            console.log(data)
-            if (localStorage.fav.length != 0) {
-                $("#table-favourites").show();
-                $('#noadd').hide();
-                $('#nofav').hide();
-                $("#table-favourites").append(
-                    `<tr id="removefav${Id}">
+        // Certifique-se de que Acronym está disponível nos dados retornados
+        const Acronym = data.Acronym;
+
+        if (localStorage.fav.length != 0) {
+          $("#table-favourites").show();
+          $("#noadd").hide();
+          $("#nofav").hide();
+          $("#table-favourites").append(
+            `<tr id="removefav${Id}">
                         <td class="align-middle"><img class="imgtable" src="${data.Logo}" /></td>                    
-                        <td class="align-middle">${data.Acronym}</td>
+                        <td class="align-middle">${Acronym}</td>
                         <td class="align-middle">${data.Name}</td>
                         <td class="align-middle">${data.ConferenceName}</td>
                         <td class="align-middle">${data.DivisionName}</td>
                         <td class="align-middle">${data.StateName}</td>
                         <td class="align-middle">${data.City}</td>
                         <td class="text-end">
-                            <a class="btn btn-default btn-light btn-xs" onclick="openDetails(${Id})"><i class="fa fa-eye" title="Show details"></i></a>
+                            <a class="btn btn-default btn-light btn-xs" onclick="openDetails(${Id}, '${Acronym}')"><i class="fa fa-eye" title="Show details"></i></a>
                             <a class="btn btn-default btn-light btn-xs" onclick="removeFav(${Id})"><i class="fa fa-star text-warning" title="Remover dos favoritos"></i></a>
                         </td>
                     </tr>`
-                )
+          );
+        }
+      }
+    );
 
-            }
-        });
-        sleep(50);
-    }
+    sleep(50);
+  }
 
-    hideLoading();
-})
+  hideLoading();
+});

@@ -58,7 +58,7 @@ function getUrlParameter(sParam) {
 
 //--- Page Events
 self.activate = function (id) {
-    console.log('CALL: getPlayers...');
+    console.log('CALL: getArenas...');
     var composedUri = self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
     ajaxHelper(composedUri, 'GET').done(function (data) {
         console.log(data);
