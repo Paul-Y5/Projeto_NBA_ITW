@@ -132,79 +132,48 @@ $(document).ajaxComplete(function (event, xhr, options) {
 
 
 /* Grafico */
-const composedUri = "http://192.168.160.58/NBA/api/Statistics/NumPlayersBySeason";
-$("document").ready(function () {
-  const ctx = document.getElementById("myChart");
+var Counter = [];
+var Season = [];
 
-  ajaxHelper(composedUri, "GET").done(function (stats) {
-    // Interact with the data returned
-    var myLabels = [];
-    var myData = [];
-    $.each(stats, function (index, item) {
-      myLabels.push(item.Players);
-      myData.push(item.Season);
-    });
+$.ajax({
+type: 'GET',
+url: 'http://192.168.160.58/NBA/API/statistics/NumPlayersBySeason',
+headers: {
+'Content-Type': 'application/json'
+},
+success: function (data, status, xhr) {
 
-    // Instantiate and draw our chart, passing in some options.
-    new Chart(ctx, {
-      type: "line",
-      title: "Players",
-      data: {
-        labels: myData,
-        datasets: [
-          {
-            label: "Number of Players",
-            data: myLabels,
-            borderWidth: 1,
-          },
-        ],
-      },
-      options: {
-        responsive: false,
-        plugins: {
-          legend: {
-            display: true,
-            labels: { align: "start", font: { family: "Open Sans" } },
-            title: {
-              display: true,
-              text: [
-                "Players by Seaosn",
-              ],
-              padding: { top: 10, bottom: 10 },
-              font: { size: 12, family: "Open Sans" },
-            },
-          },
-        },
-        indexAxis: "x",
-        scales: {
-          x: {
-            ticks: {
-              font: { family: "Open Sans", color: "#800" },
-            },
-          },
-          y: {
-            beginAtZero: true,
-            ticks: {
-              font: { family: "Open Sans", color: "#800", size: 8, width: 200 },
-            },
-          },
-        },
-      },
-    });
-  });
+var numPlayersData = data;
+numPlayersData.forEach(element => {
+  Counter.push(element.Players);
+  Season.push(element.Season);
+});
+  createBarGraph(Counter, Season);
+}
 });
 
-//--- Internal functions
-function ajaxHelper(uri, method, data) {
-  return $.ajax({
-    type: method,
-    url: uri,
-    dataType: "json",
-    contentType: "application/json",
-    data: data ? JSON.stringify(data) : null,
-    error: function (jqXHR, textStatus, errorThrown) {
-      console.log("AJAX Call[" + uri + "] Fail...");
+function createBarGraph(Counter, Season) {
+  let barChart = new Chart("myChart", {
+    type: "bar",
+    data: {
+    labels: Season,
+    datasets: [{
+      data: Counter,
+      label: 'Number of players by season type',
+      backgroundColor: ["#17408B","#C9082A"]
+}]
+},
+options:{
+    animations: {
+    tension: {
+        duration: 1000,
+        easing: 'linear',
+        from: 1,
+        to: 0,
+        loop: true
+    }
     },
-  });
 }
-
+});
+}
+        
