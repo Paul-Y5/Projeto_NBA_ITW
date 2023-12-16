@@ -46,7 +46,7 @@ button.light-mode {
 
 /* Estilos para o modo escuro */
 body.dark-mode {
-    background-color: #302c2c;
+    background-color: #28242c;
     color: #ffffff;
 }
 
@@ -80,7 +80,7 @@ button.dark-mode {
 }
 
 .table.dark-mode {
-    background-color: #222121;
+    background-color: rgba(0, 0, 0, 0);
     color: #ccc;
 }
 
