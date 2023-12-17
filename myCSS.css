@@ -7,7 +7,8 @@
 
 /* Dark-mode Custom */
 body.light-mode {
-    background-color: #ffffff;
+    background-image: linear-gradient(transparent, rgb(255, 254, 254) 80%), url(/imagens/NBAGrad.jpg);
+    background-position: bottom center;
     color: #000000;
 }
 
@@ -46,16 +47,18 @@ button.light-mode {
 
 /* Estilos para o modo escuro */
 body.dark-mode {
-    background-color: #242222;
-    color: #ffffff;
+    background-image: linear-gradient(transparent, rgb(10, 10, 10) 50%), url(/imagens/NBAGrad.jpg);
+    background-position: bottom center;
+    color: #f4f4f4;
 }
 
 .navbar.dark-mode {
-    background-color: #393838;
+    background-color: #555454;
     color: #ffffff;
 }
 
 .card.dark-mode {
+    border-radius: 5px;
     background-color: #1c1c1c;
     color: #ffffff;
 }
@@ -66,6 +69,9 @@ body.dark-mode {
 }
 
 .card-body.dark-mode {
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
     background-color: #424242;
     color: #ffffff;
 }
@@ -135,17 +141,31 @@ button.dark-mode {
 .carousel-inner { padding: 0 !important; }
 
 /* Titles-nav-bar */
-/* .navbar-nav > li > a {
-  color: blue;
-} */
+.navbar-nav > li > a {
+    font-weight: bold;
+    color: rgb(2, 2, 125);
+}
 
 #active {
-    color: rgb(255, 0, 0);
+    border-radius: 50%;
+    background-color: rgb(215, 209, 209);
+    outline: none;
+    box-shadow: none;
+    color: rgb(2, 2, 125)
+}
+
+.navbar-nav > li > a {
+    transition: none;
 }
 
 .navbar-nav > li:hover > a,
 .navbar-nav > li.active > a {
-  color: red;
+    border-radius: 50%;
+    background-color: rgb(205, 17, 17);
+    outline: none;
+    box-shadow: none;
+    transition: none;
+    color: rgb(2, 2, 125)
 }
 
 /* button default
