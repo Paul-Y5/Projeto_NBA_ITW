@@ -31,7 +31,7 @@ function setDarkModeState(isDarkMode) {
     ".table",
     ".modal-body",
     ".modal-header",
-    
+    ".dropdown-menu",
   ];
 
   elementsToToggleDarkMode.forEach((element) => {

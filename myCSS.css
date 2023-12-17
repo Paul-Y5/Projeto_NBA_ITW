@@ -21,7 +21,6 @@ body.light-mode {
 }
 .navbar.light-mode {
     background-color: #e8e8e8;
-    color: #ec0c0c;
 }
 
 .card-header.light-mode {
@@ -71,6 +70,11 @@ button.light-mode {
     color: #000000;
 }
 
+.dropdown-menu.dark-mode {
+    background-color: #e8e8e8;
+    color : rgb(2, 2, 164);
+}
+
 /* Dark-Theme */
 body.dark-mode {
     background-image: linear-gradient(transparent, rgb(10, 10, 10) 50%), url(/imagens/NBAGrad.jpg);
@@ -80,7 +84,6 @@ body.dark-mode {
 
 .navbar.dark-mode {
     background-color: #555454;
-    color: #ffffff;
 }
 
 .card.dark-mode {
@@ -129,6 +132,11 @@ button.dark-mode {
 .offcanvas-start.dark-mode {
     background-color: #252525;
     color: #f3f3f3;
+}
+
+.dropdown-menu.dark-mode {
+    background-color: #555454;
+    color : rgb(2, 2, 164);
 }
 
 /* Label Button Toggle */
