@@ -315,9 +315,8 @@ a {
 #img1 {
     background: transparent no-repeat center;
     background-size: cover;
-    max-width: 100%;
-    height: auto;
-    margin: auto
+    width: 1000px;
+    border-radius: 5px;
   }
 
 /* div{
