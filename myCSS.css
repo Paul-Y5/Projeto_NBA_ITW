@@ -229,22 +229,41 @@ button.dark-mode {
 
 /* button default
 ---------------------------- */
-.btn-default {
+.btn-default,light-mode {
     color: #333;
     background-color: #f8f9fa;
     border-color: #ccc;
 }
 
-    .btn-default:focus {
+    .btn-default.light-mode:focus {
         color: #333;
         background-color: #e6e6e6;
         border-color: #8c8c8c;
     }
 
-    .btn-default:active,
-    .btn-default:hover {
+    .btn-default.light-mode:active,
+    .btn-default.light-mode:hover {
         color: #333;
         background-color: #e6e6e6;
+        border-color: #adadad;
+    }
+
+.btn-default.dark-mode {
+    color: #333;
+    background-color: #000000;
+    border-color: #ccc;
+}
+
+    .btn-default.dark-mode:focus {
+        color: #333;
+        background-color: #1c1b1b;
+        border-color: #8c8c8c;
+    }
+
+    .btn-default.dark-mode:active,
+    .btn-default.dark-mode:hover {
+        color: #333;
+        background-color: #232222;
         border-color: #adadad;
     }
 
