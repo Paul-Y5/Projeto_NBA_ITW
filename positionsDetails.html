@@ -55,25 +55,40 @@
         <div>
             <h2 data-bind="text: displayName + ' [' + Name() + ']' "></h2>
         </div>
+
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" style="color: white; background-color: rgb(117, 117, 117);" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <strong><div class="titulo2">Players<span data-bind="text: ' [' + Players().length +']'"></span></div></strong></button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                         <div class="row justify-content-center" data-bind="foreach: Players">
+                            <div class="card col-2 mx-2 mb-1">
+                                <a class="btn light-mode stretched-link" data-bind=" attr:{href: 'playersDetails.html?id=' + Id}" style="text-decoration: none; text-align: left;"><i class="fa fa-user" aria-hidden="true"></i><span data-bind="text:' | ' + Name"></span></a>
+                            </div>        
+                        </div>
+                    </div>
+                </div>
+            </div>       
+
+            <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" style="color: white; background-color: rgb(117, 117, 117)" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        <strong><div class="titulo2">Description</div></strong></button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row justify-content-center">
+                                <h2 data-bind="text: Description "></h2>
+                            </div>
+                        </div>
+                    </div>
+            </div>
        
-        <div class="mt-4">
-            <h2 data-bind="text: Description "></h2>
-        </div>
-       
-        <div><br/></div>
-        
-        <div class="titulo2">Players<span data-bind="text: ' [' + Players().length +']'"></span></div>
-        
-        <div><br/></div>
-        
-        <div class="row justify-content-center" data-bind="foreach: Players">
-            <div class="card col-2 mx-2 mb-1">
-                <a class="btn light-mode stretched-link" data-bind=" attr:{href: 'playersDetails.html?id=' + Id}" style="text-decoration: none; text-align: left;"><i class="fa fa-user" aria-hidden="true"></i><span data-bind="text:' | ' + Name"></span></a>
-            </div>        
-        </div>
             <!-- /ko -->
-            <a href="./players.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
-            <a href="./PlayersStats?id=.html" class="btn btn-default btn-sm small"><i class="fa fa-line-chart"></i> Stats</a>
+            <a href="./positions.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
         </div>
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

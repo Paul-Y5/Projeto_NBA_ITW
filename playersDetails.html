@@ -112,31 +112,40 @@
             </div>
         </div>
         <div><br/></div>
-        
-        <div class="titulo2">Teams<span data-bind="text: ' [' + Teams().length +']'"></span></div>
-        
-        <div><br/></div>
-        
-        <div class="row justify-content-center" data-bind="foreach: Teams">
-            <div class="card light-mode col-2 mx-2 mb-1">
-                <a class="btn light-mode stretched-link" data-bind="attr: { href: './teamsdetails.html?id=' + Id + '&acronym=' + Acronym }" style="text-decoration: none; text-align: left;"><i class="fa fa-flag" aria-hidden="true"></i><span data-bind="text:' | '+ Name"></span></a>
-            </div>        
-        </div>
-       
-        <div><br/></div>
-        
-        <div class="titulo2">List of seasons<span data-bind="text: ' [' + Seasons().length +']'"></span></div>
-        
-        <div><br/></div>
-        
-        <div class="row justify-content-center" data-bind="foreach: Seasons">
-            <div class="card col-2 mx-2 mb-1">
-                <a class="btn light-mode stretched-link" data-bind=" attr:{href: 'playersDetails.html?id=' + Id}" style="text-decoration: none; text-align: left;"><i class="fa fa-user" aria-hidden="true"></i><span data-bind="text:' | ' + Season"></span></a>
-            </div>        
-        </div>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" style="color: white; background-color: rgb(117, 117, 117);" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <strong><div class="titulo2">Teams<span data-bind="text: ' [' + Teams().length +']'"></span></div></strong></button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                         <div class="row justify-content-center" data-bind="foreach: Teams">
+                            <div class="card col-2 mx-2 mb-1">
+                                <a class="btn light-mode stretched-link" data-bind=" attr:{href: 'teamsDetails.html?id=' + Id}" style="text-decoration: none; text-align: left;"><i class="fa fa-flag" aria-hidden="true"></i><span data-bind="text:' | ' + Name"></span></a>
+                            </div>        
+                        </div>
+                    </div>
+                </div>
+            </div>       
+
+            <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" style="color: white; background-color: rgb(117, 117, 117)" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            <strong><div class="titulo2">Seasons<span data-bind="text: ' [' + Seasons().length +']'"></span></div></strong></button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row justify-content-center" data-bind="foreach: Seasons">
+                                <div class="card light-mode col-2 mx-2 mb-1">
+                                    <a class="btn light-mode stretched-link" data-bind=" attr:{href: './seasonsDetails.html?id=' + Id}" style="text-decoration: none; text-align: left;"><i class="fa-solid fa-calendar" aria-hidden="true"></i><span data-bind="text:' | '+ Season"></span></a>
+                                </div>        
+                            </div>
+                        </div>
+                    </div>
+            </div>
             <!-- /ko -->
-            <a href="./players.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
-            <a href="./PlayersStats?id=.html" class="btn btn-default btn-sm small"><i class="fa fa-line-chart"></i> Stats</a>
+            <a href="./players.html" class="btn btn-default btn-sm small mt-2"><i class="fa fa-list"></i> Back to List</a>
         </div>
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
