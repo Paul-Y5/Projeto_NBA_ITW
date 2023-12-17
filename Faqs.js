@@ -3,8 +3,8 @@ $(document).ready(function () {
     var retval = true;
 
     if (
-      $("#pessoa").val().trim().length < 10 ||
-      $("#pessoa").val().trim().length > 100
+      $("#pessoa").val().trim().length < 4 ||
+      $("#pessoa").val().trim().length > 30
     ) {
       $("#pessoaError").removeClass("d-none");
       retval = false;
@@ -12,8 +12,8 @@ $(document).ready(function () {
       $("#pessoaError").addClass("d-none");
     }
     if (
-      $("#email").val().trim().length < 10 ||
-      $("#email").val().trim().length > 100
+      $("#email").val().trim().length < 8 ||
+      $("#email").val().trim().length > 50
     ) {
       $("#emailError").removeClass("d-none");
       retval = false;
@@ -27,7 +27,7 @@ $(document).ready(function () {
       $("#duvtipoError").addClass("d-none");
     }
     if (
-      $("#duvida").val().trim().length < 20 ||
+      $("#duvida").val().trim().length < 10 ||
       $("#duvida").val().trim().length > 200
     ) {
       $("#duvidaError").removeClass("d-none");
@@ -37,6 +37,7 @@ $(document).ready(function () {
     }
     return retval;
   });
+
   $("#clean").click(function () {
     $("#pessoaError").addClass("d-none");
     $("#emailError").addClass("d-none");
