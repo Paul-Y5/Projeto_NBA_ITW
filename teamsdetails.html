@@ -111,38 +111,52 @@
             </div>
         </div>
 
-        <div><br/></div>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" style="color: white; background-color: rgb(117, 117, 117);" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <div class="titulo2">Histoty</div>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="text1" data-bind="text:History"></div>
+                    </div>
+                </div>
+        </div>       
 
-        <div class="row">
-            <div class="text1" data-bind="text:History"></div>
-        </div>
-        
-        <div><br/></div>
-        
-        <div class="titulo2">Seasons<span data-bind="text: ' [' + Seasons().length +']'"></span></div>
-        
-        <div><br/></div>
-        
-        <div class="row justify-content-center" data-bind="foreach: Seasons">
-            <div class="card light-mode col-2 mx-2 mb-1">
-                <a class="btn light-mode stretched-link" data-bind=" attr:{href: 'SeasonsDetails.html?id=' + Id}" style="text-decoration: none; text-align: left;"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i><span data-bind="text:' | '+ Season"></span></a>
-            </div>        
-        </div>
-       
-        <div><br/></div>
-        
-        <div class="titulo2">List of players<span data-bind="text: ' [' + Players().length +']'"></span></div>
-        
-        <div><br/></div>
-        
-        <div class="row justify-content-center" data-bind="foreach: Players">
-            <div class="card col-2 mx-2 mb-1">
-                <a class="btn light-mode stretched-link" data-bind=" attr:{href: 'playersDetails.html?id=' + Id}" style="text-decoration: none; text-align: left;"><i class="fa fa-user" aria-hidden="true"></i><span data-bind="text:' | ' + Name"></span></a>
-            </div>        
-        </div>
-        
+            <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" style="color: white; background-color: rgb(117, 117, 117)" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            <strong><div class="titulo2">Seasons<span data-bind="text: ' [' + Seasons().length +']'"></span></div></strong></button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row justify-content-center" data-bind="foreach: Seasons">
+                                <div class="card light-mode col-2 mx-2 mb-1">
+                                    <a class="btn light-mode stretched-link" data-bind=" attr:{href: './seasonsDetails.html?id=' + Id}" style="text-decoration: none; text-align: left;"><i class="fa-solid fa-calendar" aria-hidden="true"></i><span data-bind="text:' | '+ Season"></span></a>
+                                </div>        
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" style="color: white; background-color: rgb(117, 117, 117)" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            <strong><div class="titulo2">Players<span data-bind="text: ' [' + Players().length +']'"></span></div></strong></button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row justify-content-center" data-bind="foreach: Players">
+                                <div class="card light-mode col-2 mx-2 mb-1">
+                                    <a class="btn light-mode stretched-link" data-bind=" attr:{href: './playersDetails.html?id=' + Id}" style="text-decoration: none; text-align: left;"><i class="fa-solid fa-user" aria-hidden="true"></i><span data-bind="text:' | '+ Name"></span></a>
+                                </div>        
+                            </div>
+                        </div>
+                    </div>
+            </div>      
     </div>        
-        <a href="./teams.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
+        <a href="./teams.html" class="btn btn-default btn-sm small mt-2"><i class="fa fa-list"></i> Back to List</a>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
