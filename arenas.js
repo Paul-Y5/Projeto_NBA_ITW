@@ -173,7 +173,10 @@ function setDarkModeState(isDarkMode) {
     ".btn",
     ".card-header",
     ".card-body",
-    ".table", // Add the table class here
+    ".table",
+    ".modal-body",
+    ".modal-header",
+    
   ];
 
   elementsToToggleDarkMode.forEach((element) => {
@@ -211,3 +214,4 @@ document.getElementById("toggle-mode").addEventListener("change", function () {
   setToggleState(isToggleActive);
   setDarkModeState(isToggleActive);
 });
+

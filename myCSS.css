@@ -51,8 +51,23 @@ button.light-mode {
     color: #000000;
 }
 
+.modal-header.light-mode {
+    background-color: #adadad;
+    color: #000000;
+}
+
+.modal-title.light-mode {
+    background-color: #adadad;
+    color: #000000;
+}
+
 .modal-body.light-mode {
     background-color: #adadad;
+    color: #000000;
+}
+
+.offcanvas-start.light-mode {
+    background-color: #828282;
     color: #000000;
 }
 
@@ -101,9 +116,19 @@ button.dark-mode {
     color: #ccc;
 }
 
+.modal-header.dark-mode {
+    background-color: #414141;
+    color:#131313
+}
+
 .modal-body.dark-mode {
     background-color: #171717;
-    color:#bfbfbf
+    color:#cecece
+}
+
+.offcanvas-start.dark-mode {
+    background-color: #252525;
+    color: #f3f3f3;
 }
 
 /* Label Button Toggle */
@@ -166,7 +191,7 @@ button.dark-mode {
 #active {
     border-radius: 20%;
     background-color: rgb(228, 6, 6);
-    outline: solid 2px black;
+    outline: solid 3px black;
     box-shadow: none;
     color: rgb(2, 2, 164);
 }
@@ -179,7 +204,7 @@ button.dark-mode {
 .navbar-nav > li.active > a {
     border-radius: 20%;
     background-color: rgb(228, 6, 6);
-    outline: solid 2px black;
+    outline: solid 3px black;
     box-shadow: none;
     transition: none;
     color: rgb(2, 2, 164);
