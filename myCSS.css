@@ -197,7 +197,7 @@ button.dark-mode {
 }
 
 #active {
-    border-radius: 20%;
+    border-radius: 5%;
     background-color: rgb(228, 6, 6);
     outline: solid 3px black;
     box-shadow: none;
@@ -209,7 +209,7 @@ button.dark-mode {
 }
 
 .dropdown-menu > a:hover {
-    border-radius: 20%;
+    border-radius: 5%;
     background-color: rgb(228, 6, 6);
     outline: solid 3px black;
     box-shadow: none;

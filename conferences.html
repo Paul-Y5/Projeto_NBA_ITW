@@ -58,16 +58,13 @@
     </div>
     <div class="container" style="display: flex; width: 1000px;">
     <div class="col-sm-4" style="margin: 10px; flex: 1;">
-        <div data-bind="foreach: records.slice(records.length / 2)">
+        <div>
             <!-- Container for West conference card -->
             <a title="West" href="Westconf.html" style="text-decoration: none; color: black">
                 <div class="card h-100" id="cardclick">
                     <img class="img-fluid" src="imagens/1westconferencelogo.png" class="card-img-top" alt="...">
                 </div>
             </a>
-            <button class="btn btn-default btn-xs" data-bind="click: function () { $parent.toggleFavourite(Id); }, attr: { 'id': 'favourite_' + Id }">
-                <i class="fa fa-star" data-bind="attr: {'class': $parent.favourites().includes(Id) ? 'fa fa-star text-warning' : 'fa fa-star'}" title="Add to favorites"></i>
-            </button>
         </div>
     </div>
 
@@ -78,16 +75,13 @@
     </div>
 
     <div class="col-sm-4" style="margin: 10px; flex: 1;">
-        <div data-bind="foreach: records.slice(records.length / 2)">
+        <div>
             <!-- Container for East conference card -->
             <a title="East" href="Eastconf.html" style="text-decoration: none; color: black" >
                 <div class="card h-100" id="cardclick">
                     <img class="img-fluid" src="imagens/eastconferencelogo.png" class="card-img-top" alt="...">
                 </div>
             </a>
-            <button class="btn btn-default btn-xs" data-bind="click: function () { $parent.toggleFavourite(Id); }, attr: { 'id': 'favourite_' + Id }">
-                <i class="fa fa-star" data-bind="attr: {'class': $parent.favourites().includes(Id) ? 'fa fa-star text-warning' : 'fa fa-star'}" title="Add to favorites"></i>
-            </button>
         </div>
     </div>
     <!-- End of Working Area -->

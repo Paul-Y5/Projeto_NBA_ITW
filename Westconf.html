@@ -60,30 +60,27 @@
             </div>
         </div> 
 
-        <div class="btn-outline-dark flex-row border-bottom" style="padding: 5px;">
-            <a href="./conferences.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
-        </div>
-
+        
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button collapsed" style="color: brown; background-color: rgb(117, 117, 117);" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <strong><div class="titulo2">Teams<span data-bind="text: ' [' + Teams().length +']'"></span></div></strong></button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                         <div class="row justify-content-center" data-bind="foreach: Teams">
-                            <div class="card col-2 mx-2 mb-1">
-                                <a class="btn light-mode stretched-link" data-bind=" attr:{href: 'teamsDetails.html?id=' + Id}" style="text-decoration: none; text-align: left;"><i class="fa fa-flag" aria-hidden="true"></i><span data-bind="text:' | ' + Name"></span></a>
+                        <strong><div class="titulo2">Teams<span data-bind="text: ' [' + Teams().length +']'"></span></div></strong></button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row justify-content-center" data-bind="foreach: Teams">
+                                <div class="card col-2 mx-2 mb-1">
+                                <a class="btn light-mode stretched-link" data-bind=" attr:{href: 'teamsDetails.html?id=' + Id + '&acronym=' + Acronym}" style="text-decoration: none; text-align: left;"><i class="fa fa-flag" aria-hidden="true"></i><span data-bind="text:' | ' + Name"></span></a>
                             </div>        
                         </div>
                     </div>
                 </div>
             </div>       
-
+            
             <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" style="color: brown; background-color: rgb(117, 117, 117)" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" style="color: brown; background-color: rgb(117, 117, 117)" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                         <strong><div class="titulo2">Divisions<span data-bind="text: ' [' + Divisions().length +']'"></span></div></strong></button>
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -95,11 +92,14 @@
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <!-- End of Working Area -->
+        <div class="btn-outline-dark flex-row border-bottom" style="padding: 5px;">
+            <a href="./conferences.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
+        </div>
+        
+        <!-- End of Working Area -->
     <nav class="navbar light-mode fixed-bottom" id="navbar-bottom">
         <div class="container small">
             <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2023/24</div>
