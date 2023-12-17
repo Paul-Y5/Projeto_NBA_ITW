@@ -151,3 +151,53 @@ var vm = function () {
     $("#myModal").modal("hide");
   });
   
+
+  // Your API endpoint for positions
+const positionsEndpoint = "http://192.168.160.58/NBA/API/Positions";
+
+// Function to fetch data from the API
+async function fetchData(url) {
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+}
+
+// Function to create the pie chart
+async function createPieChart() {
+  const positionsData = await fetchData(positionsEndpoint);
+
+  const positionLabels = positionsData.Records.map((position) => position.Name);
+  const playersData = [];
+
+  for (const position of positionsData.Records) {
+    const positionDetailEndpoint = `http://192.168.160.58/NBA/API/Positions/${position.Id}`;
+    const positionDetailData = await fetchData(positionDetailEndpoint);
+    playersData.push(positionDetailData.Players.length);
+  }
+
+  // Create the pie chart
+  const ctx = document.getElementById("positionChart").getContext("2d");
+  new Chart(ctx, {
+    type: "pie",
+    data: {
+      labels: positionLabels,
+      datasets: [
+        {
+          data: playersData,
+          backgroundColor: [
+            "#FF6384",
+            "#36A2EB",
+            "#FFCE56",
+            "#8B4513",
+            "#008080",
+            "#800080",
+            "#808000",
+          ],
+        },
+      ],
+    },
+  });
+}
+
+// Call the function to create the pie chart
+createPieChart();
