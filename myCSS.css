@@ -414,44 +414,51 @@ a {
     display: flex;
     text-align: center;
     align-items: center;
+    background-color: transparent !important;
   }
 #div2 {
     display: flex;
     text-align: center;
     align-items: center;
+    background-color: transparent !important;
   }
 
 #div3 {
     font: optional;
     text-align: center;
     align-items: center;
+    background-color: transparent !important;
   }
 
   #table_lay>tbody>tr>td, #table_lay>tbody>tr>th, #table_lay>thead>tr>td, #table_lay>thead>tr>th {
     border: none;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0) !important;
   }
   #table_1>tbody>tr>td, #table_1>tbody>tr>th, #table_1>thead>tr>td, #table_1>thead>tr>th {
     border: none;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0) !important;
   }
   
 .titulo1{
     font-size: 35px;
     font-weight: bold;
+    background-color: transparent !important;
 }
 .body1{
     font-size: 20px;
+    background-color: transparent !important;
 }
 
 .titulo2{
     font-size: 25px;
     font-weight: bold;
+    background-color: transparent !important;
     
 }
 
 .body2{
     font-size: 20px;
+    background-color: transparent !important;
 }
 .text1{
     font-size: 20px;
@@ -465,6 +472,7 @@ a {
         overflow-y: auto; /* Enable vertical scrolling */
         max-width: 200px;
         background-color: white;
+        color: #000000 !important;
         position: absolute;
         top: 100%;
         z-index: 9999 !important;        

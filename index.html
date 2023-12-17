@@ -55,7 +55,7 @@
     </nav>
     
     <!-- Working Area -->
-    <div class="container-xl">
+    
         <div id="myCarousel" class="carousel slide carousel-fade mb-5" data-bs-ride="carousel" data-bs-interval="5500">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
@@ -82,7 +82,9 @@
                 <span class="visually-hidden"></span>
             </button>
         </div>
-        <div class="text">
+        <div class="container-xl">
+        <div class="text" style="font-weight: bold;">
+            <h2 class="mb-3" style="font-weight: bolder; font-size: 40px; color:#C9082A;">NBA</h2>
             <p>The National Basketball Association (NBA), comprised of 30 teams (29 in the U.S. and 1 in Canada), stands as the foremost basketball league globally. Originating in 1946 as the Basketball Association of America (BAA), it underwent significant transformations, merging with the National Basketball League (NBL) in 1949 and later integrating with the American Basketball Association (ABA) in 1976, leading to the addition of four franchises.</p>
             
             <p>The league's annual calendar unfolds with a regular season spanning from October to April, featuring a rigorous schedule of 82 games per team. This intense competition sets the stage for a captivating playoff tournament that extends into June, capturing the attention of basketball enthusiasts worldwide.
@@ -100,11 +102,38 @@
             <div class="col-md-6 d-flex">
                 <div class="card light-mode mb-3 flex-grow-1">
                         <div class="card-header light-mode" >
-                            <div class="card-title">League Table</div>
+                            <div class="card-title"><h2 style="font-weight: bolder; font-size: 40px; color:#C9082A; text-align: center;"> League Standings</h2></div>
                         </div>
                     <div class="card-body light-mode">
-                        <div class="card-text"></div>
+                        <div class="mb-3">See how your favorite teams are doing! Check their standings here and stay updated on their performance.</div>
+                        <img src="https://pbs.twimg.com/media/FVbJ_p8X0AEtPXI.jpg" class="img-thumbnail">
+                        <button type="button" class="btn stretched-link" style="background-color: transparent;" data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
                     </div>
+                </div>
+            </div>
+
+            <!-- Modal1 -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-image: url(/imagens/nbalive_11828.png); background-position: center center;">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="background-color: white;">
+                        <!-- <div id="wg-api-basketball-standings"
+                            data-host="v1.basketball.api-sports.io"
+                            data-key="6c8dde745965f8a4182e7388c05818f1"
+                            data-league="12"
+                            data-season="2023-2024"
+                            data-theme="light"
+                            data-show-errors="false"
+                            data-show-logos="true"
+                            class="wg_loader">
+                        </div> -->
+                    </div>
+                    
+                </div>
                 </div>
             </div>
 
@@ -114,21 +143,53 @@
                         
                         <div class="card h-100">
                             <div class="card-header light-mode">
-                                <div class="card-title">Recent games</div>
+                                <div class="card-title"><h2 style="font-weight: bolder; font-size: 40px; color:#C9082A; text-align: center;">GAMES</h2></div>
                             </div>
                             <div class="card-body light-mode">
-                                <div class="card-text"><p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil ratione ipsum distinctio officia numquam iste, ex incidunt, animi reiciendis autem ipsam sint perspiciatis sequi praesentium excepturi enim, obcaecati saepe. Maiores?</p></div>
+                                <div class="mb-3">Find out the latest scores and game results for your favorite teams! Stay in the loop and catch up on all the action right here.</div>
+                                <img src="https://cdn.nba.com/manage/2023/08/nba-canada-1-1568x882.png" class="img-thumbnail" style="display: block; margin-left: auto; margin-right: auto;">
+                                <button type="button" class="btn stretched-link" style="background-color: transparent;" data-bs-toggle="modal" data-bs-target="#exampleModal2"></button>
                             </div>
                         </div>
 
                     </div>
 
+                    <!-- Modal2 -->
+                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-image: url(/imagens/nbalive_11828.png); background-position: center center;">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" style="background-color: white;">
+                            <!-- <div id="wg-api-basketball-games"
+                                    data-host="v1.basketball.api-sports.io"
+                                    data-key="6c8dde745965f8a4182e7388c05818f1"
+                                    data-date="2023-12-17"
+                                    data-league="12"
+                                    data-season="2023-2024"
+                                    data-theme="light"
+                                    data-refresh="150000000000"
+                                    data-show-toolbar="true"
+                                    data-show-errors="false"
+                                    data-show-logos="false"
+                                    data-modal-game="true"
+                                    data-modal-standings="true"
+                                    data-modal-show-logos="true">
+                                </div> -->
+                        </div>
+                        
+                    </div>
+                    </div>
+                </div>
+
                     <div class="col-md-12 mb-3">
                         <div class="card h-100"> 
                             <div class="card-header light-mode">
                                 <h4>
-                                    <img style="width:50px; " src="https://help.apple.com/assets/63FFF4F425D106794D09CC92/63FFF4F525D106794D09CC99/pt_PT/dc7f8cdb406dc7704cccb5188ddc28c1.png" />
-                                     Wheather
+<!--                                     <img style="width:50px; " src="https://help.apple.com/assets/63FFF4F425D106794D09CC92/63FFF4F525D106794D09CC99/pt_PT/dc7f8cdb406dc7704cccb5188ddc28c1.png" />
+ -->                                    <h2 style="font-weight: bolder; font-size: 40px; color:#C9082A; text-align: center;">Weather</h2>
                                 </h4>
                             </div>
                             <div class="card-body light-mode">
@@ -202,6 +263,10 @@
             </div>
         </div>
     </nav>
+    <script
+    type="module"
+    src="https://widgets.api-sports.io/2.0.3/widgets.js">
+</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
