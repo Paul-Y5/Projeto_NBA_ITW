@@ -28,7 +28,8 @@ function setDarkModeState(isDarkMode) {
     ".btn",
     ".card-header",
     ".card-body",
-    ".table", // Add the table class here
+    ".table",
+    ".modal-body"
   ];
 
   elementsToToggleDarkMode.forEach((element) => {

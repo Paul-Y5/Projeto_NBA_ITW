@@ -6,14 +6,17 @@
 
 
 /* Dark-mode Custom */
+
+/* Light-Theme */
 body.light-mode {
-    background-image: linear-gradient(transparent, rgb(255, 254, 254) 80%), url(/imagens/NBAGrad.jpg);
+    background-image: linear-gradient(transparent, rgb(255, 255, 255) 80%), url(/imagens/NBAGrad.jpg);
     background-position: bottom center;
     color: #000000;
 }
 
 .card.light-mode {
-    background-color: #ffffff;
+    border-radius: 5px;
+    background-color: #e4e4e4;
     color: #222121;
 }
 .navbar.light-mode {
@@ -22,12 +25,15 @@ body.light-mode {
 }
 
 .card-header.light-mode {
-    background-color: #e8e8e8;
+    background-color: #c6c5c5;
     color: #000000;
 }
 
 .card-body.light-mode {
-    background-color: #ececec;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    background-color: #e4e4e4;
     color: #000000;
 }
 a.light-mode{
@@ -45,7 +51,12 @@ button.light-mode {
     color: #000000;
 }
 
-/* Estilos para o modo escuro */
+.modal-body.light-mode {
+    background-color: #adadad;
+    color: #000000;
+}
+
+/* Dark-Theme */
 body.dark-mode {
     background-image: linear-gradient(transparent, rgb(10, 10, 10) 50%), url(/imagens/NBAGrad.jpg);
     background-position: bottom center;
@@ -88,6 +99,11 @@ button.dark-mode {
 .table.dark-mode {
     background-color: rgba(0, 0, 0, 0);
     color: #ccc;
+}
+
+.modal-body.dark-mode {
+    background-color: #171717;
+    color:#bfbfbf
 }
 
 /* Label Button Toggle */
@@ -142,16 +158,17 @@ button.dark-mode {
 
 /* Titles-nav-bar */
 .navbar-nav > li > a {
+    margin-right: 8px;
     font-weight: bold;
-    color: rgb(2, 2, 125);
+    color: rgb(2, 2, 164);
 }
 
 #active {
-    border-radius: 50%;
-    background-color: rgb(215, 209, 209);
-    outline: none;
+    border-radius: 20%;
+    background-color: rgb(228, 6, 6);
+    outline: solid 2px black;
     box-shadow: none;
-    color: rgb(2, 2, 125)
+    color: rgb(2, 2, 164);
 }
 
 .navbar-nav > li > a {
@@ -160,12 +177,12 @@ button.dark-mode {
 
 .navbar-nav > li:hover > a,
 .navbar-nav > li.active > a {
-    border-radius: 50%;
-    background-color: rgb(205, 17, 17);
-    outline: none;
+    border-radius: 20%;
+    background-color: rgb(228, 6, 6);
+    outline: solid 2px black;
     box-shadow: none;
     transition: none;
-    color: rgb(2, 2, 125)
+    color: rgb(2, 2, 164);
 }
 
 /* button default
