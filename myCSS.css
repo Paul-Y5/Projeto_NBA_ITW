@@ -196,7 +196,7 @@ button.dark-mode {
     color: rgb(2, 2, 164);
 }
 
-#active > {
+#active {
     border-radius: 20%;
     background-color: rgb(228, 6, 6);
     outline: solid 3px black;
