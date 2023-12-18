@@ -112,7 +112,7 @@ function removeFav(Id) {
 
 function openDetails(Id) {
   // Construct the URL for the details page using the provided Id
-  const detailsPageUrl = "./playersDetails.html?id=" + Id;
+  const detailsPageUrl = "./divisionsDetails.html?id=" + Id;
 
   // Redirect to the details page
   window.location.href = detailsPageUrl;
