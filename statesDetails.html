@@ -55,7 +55,7 @@
         <div class="row justify-content-center">
             <!-- ko -->
             <div class="col-4" data-bind="visible: Flag() != '' && Flag() != null">
-                <img id="img1" data-bind="attr:{src: Flag}"/>
+                <img id="img1" class="img-thumbnail img-fluid mx-auto d-block" data-bind="attr:{src: Flag}"/>
             </div>
             <!-- /ko -->
             <!-- ko ifnot: Flag() != null && Flag() != '' -->
@@ -78,11 +78,18 @@
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
+                        <!--ko if: Arenas().length > 0-->
                          <div class="row justify-content-center" data-bind="foreach: Arenas">
                             <div class="card col-2 mx-2 mb-1">
+                                <!--ko-->
                                 <a class="btn light-mode stretched-link" data-bind=" attr:{href: 'arenaDetails.html?id=' + Id}" style="text-decoration: none; text-align: left;"><i class="fa fa-user" aria-hidden="true"></i><span data-bind="text:' | ' + Name"></span></a>
-                            </div>        
+                                <!--/ko-->
+                            </div>      
                         </div>
+                        <!--/ko-->
+                        <!-- ko ifnot: Arenas.length > 0-->
+                        <h2 class="card-text">Arenas Not found!</h2>
+                        <!-- /ko -->
                     </div>
                 </div>
             </div>
@@ -94,11 +101,20 @@
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
+                        <!--ko if: Teams().length > 0-->
                         <div class="row justify-content-center" data-bind="foreach: Teams">
+                            <!-- ko -->
                             <div class="card light-mode col-2 mx-2 mb-1">
                                 <a class="btn light-mode stretched-link" data-bind=" attr:{href: './teamsdetails.html?id=' + Id + '&amp;acronym=' + Acronym}" style="text-decoration: none; text-align: left;"><i class="fa-solid fa-flag" aria-hidden="true"></i><span data-bind="text:' | '+ Name"></span></a>
                             </div>        
+                            <!-- /ko -->
                         </div>
+                        <!--/ko-->
+                        <!-- ko ifnot: Teams().length > 0 -->
+                        <div class="card light-mode col-2 mx-2 mb-1">
+                            <h2>Teams Not found!</h2>
+                        </div>        
+                        <!-- /ko -->
                     </div>
                 </div>
             </div>

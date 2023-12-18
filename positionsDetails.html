@@ -64,11 +64,20 @@
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                         <div class="row justify-content-center" data-bind="foreach: Players">
+                        <!--ko if: Players().length > 0-->
+                        <div class="row justify-content-center" data-bind="foreach: Players">
+                            <!--ko-->
                             <div class="card col-2 mx-2 mb-1">
                                 <a class="btn light-mode stretched-link" data-bind=" attr:{href: 'playersDetails.html?id=' + Id}" style="text-decoration: none; text-align: left;"><i class="fa fa-user" aria-hidden="true"></i><span data-bind="text:' | ' + Name"></span></a>
-                            </div>        
+                            </div>
+                            <!--/ko-->       
                         </div>
+                        <!--/ko-->
+                        <!--ko ifnot: Players().length > 0-->
+                        <div class="card light-mode col-2 mx-2 mb-1">
+                            <h2>Players Not found!</h2>
+                        </div>
+                        <!--/ko-->
                     </div>
                 </div>
             </div>       
@@ -79,16 +88,23 @@
                         <strong><div class="titulo2">Description</div></strong></button>
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <!--ko-->
                         <div class="accordion-body">
                             <div class="row justify-content-center">
                                 <h2 data-bind="text: Description "></h2>
                             </div>
                         </div>
+                        <!--/ko-->
+                        <!-- ko ifnot: Description() != null && Description() != '' -->
+                        <div class="row justify-content-center">
+                            <h2> Description Not Found!</h2>
+                        </div>
+                        <!--/ko-->
                     </div>
             </div>
        
             <!-- /ko -->
-            <a href="./positions.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
+            <a href="./positions.html" class="btn btn-default btn-sm small mt-2"><i class="fa fa-list"></i> Back to List</a>
         </div>
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
