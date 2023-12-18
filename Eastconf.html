@@ -80,13 +80,23 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingTwo">
                     <button class="accordion-button collapsed" style="color:  rgb(42, 134, 165); background-color: rgb(117, 117, 117)" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                        <strong><div class="titulo2">Divisions<span data-bind="text: ' [' + Divisions().length +']'"></span></div></strong></button>
+                        <strong><div class="titulo2">Divisions [3]</div></strong></button>
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <div class="row justify-content-center" data-bind="foreach: Divisions">
+                            <div class="row justify-content-center">
                                 <div class="card light-mode col-2 mx-2 mb-1">
-                                    <a class="btn light-mode stretched-link" data-bind=" attr:{href: './divisionsDetails.html?id=' + Id}" style="text-decoration: none; text-align: left;"><i class="fa-solid fa-user" aria-hidden="true"></i><span data-bind="text:' | '+ Name"></span></a>
+                                    <a class="btn light-mode stretched-link" href="./divisionsDetails.html?id=1" style="text-decoration: none; text-align: left;"><i class="fa-solid fa-landmark" aria-hidden="true"></i><span>Atlantic</span></a>
+                                </div>        
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="card light-mode col-2 mx-2 mb-1">
+                                    <a class="btn light-mode stretched-link" href="./divisionsDetails.html?id=2" style="text-decoration: none; text-align: left;"><i class="fa-solid fa-landmark" aria-hidden="true"></i><span>Central</span></a>
+                                </div>        
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="card light-mode col-2 mx-2 mb-1">
+                                    <a class="btn light-mode stretched-link" href="./divisionsDetails.html?id=5" style="text-decoration: none; text-align: left;"><i class="fa-solid fa-landmark" aria-hidden="true"></i><span>South East</span></a>
                                 </div>        
                             </div>
                         </div>
