@@ -71,7 +71,6 @@ self.activate = function (id) {
         self.totalPages(data.TotalPages);
         self.totalRecords(data.TotalRecords);
         self.SetFavourites();
-        self.SetFavourites();
     });
 };
 function showLoading() {
@@ -97,7 +96,7 @@ $(document).ajaxComplete(function (event, xhr, options) {
 
 
 function removeFav(Id) {
-    console.log("remove fav")
+    console.log("removeFav called with Id:", Id);
     $("#fav-" + Id).remove();
 
     let fav = JSON.parse(localStorage.fav || '[]');
@@ -143,8 +142,8 @@ $(document).ready(function () {
                         <td class="align-middle">${data.Name}</td>
                         <td class="align-middle">${data.Id}</td>
                         <td class="text-end">
-                            <a class="btn btn-default btn-light btn-xs" onclick="openDetails(${Id})"><i class="fa fa-eye" title="Show details"></i></a>
-                            <a class="btn btn-default btn-light btn-xs" onclick="removeFav(${Id})"><i class="fa fa-star text-warning" title="Remover dos favoritos"></i></a>
+                            <a class="btn btn-default btn-light btn-xs" onclick="openDetails('${Id}')"><i class="fa fa-eye" title="Show details"></i></a>
+                            <a class="btn btn-default btn-light btn-xs" onclick="removeFav('${Id}')"><i class="fa fa-star text-warning" title="Remover dos favoritos"></i></a>
                         </td>
                     </tr>`
                 )

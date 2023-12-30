@@ -143,8 +143,8 @@ $(document).ready(function () {
                         <td class="align-middle">${data.Name}</td>
                         <td class="align-middle">${data.Id}</td>
                         <td class="text-end">
-                            <a class="btn btn-default btn-light btn-xs" onclick="openDetails(${Id})"><i class="fa fa-eye" title="Show details"></i></a>
-                            <a class="btn btn-default btn-light btn-xs" onclick="removeFav(${Id})"><i class="fa fa-star text-warning" title="Remover dos favoritos"></i></a>
+                            <a class="btn btn-default btn-light btn-xs" onclick="openDetails('${Id}')"><i class="fa fa-eye" title="Show details"></i></a>
+                            <a class="btn btn-default btn-light btn-xs" onclick="removeFav('${Id}')"><i class="fa fa-star text-warning" title="Remover dos favoritos"></i></a>
                         </td>
                     </tr>`
                 )
