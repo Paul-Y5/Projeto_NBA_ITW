@@ -57,28 +57,38 @@ var vm = function () {
         self.SetFavourites();
       });
     };
-    self.toggleFavourite = function (id) {
-      if (self.favourites.indexOf(id) == -1) {
-          self.favourites.push(id);
+    self.toggleFavourite = function (Id, Acronym) {
+      // Convert fav to a Knockout observable array
+      const fav = ko.observableArray(JSON.parse(localStorage.fav || "[]"));
+  
+      const index = fav().findIndex(item => Array.isArray(item) && item[0] === Id && item[1] === Acronym);
+      if (index == -1) {
+          self.favourites.push([Id, Acronym]);
+      } else {
+          self.favourites.splice(index, 1);
       }
-      else {
-          self.favourites.remove(id);
-      }
+  
       localStorage.setItem("fav", JSON.stringify(self.favourites()));
   };
+  
+  
+  
   self.SetFavourites = function () {
       let storage;
       try {
           storage = JSON.parse(localStorage.getItem("fav"));
+      } catch (e) {
+          // Handle parsing error
+          console.error("Error parsing favorites from localStorage:", e);
       }
-      catch (e) {
-          ;
-      }
+  
       if (Array.isArray(storage)) {
           self.favourites(storage);
       }
-  }
-  self.favourites = ko.observableArray([])
+  };
+  
+  self.favourites = ko.observableArray([]);
+  
   
     //--- Internal functions
     function ajaxHelper(uri, method, data) {

@@ -71,24 +71,26 @@ $(document).ajaxComplete(function (event, xhr, options) {
   $("#myModal").modal("hide");
 });
 
-function removeFav(Id) {
+function removeFav(Id, Acronym) {
   console.log("remove fav");
-  $("#fav-" + Id).remove();
 
   let fav = JSON.parse(localStorage.fav || "[]");
 
-  const index = fav.indexOf(Id);
+  // Find the index of the item with the specified Id and Acronym
+  const index = fav.findIndex(item => Array.isArray(item) && item[0] === Id && item[1] === Acronym);
 
-  if (index != -1) fav.splice(index, 1);
-
-  localStorage.setItem("fav", JSON.stringify(fav));
-
-  location.reload();
+  // If the item is found, remove it
+  if (index !== -1) {
+      fav.splice(index, 1);
+      localStorage.setItem("fav", JSON.stringify(fav));
+      location.reload();
+  }
 }
+
 
 function openDetails(Id, Acronym) {
   // Construct the URL for the details page using the provided Id
-  const detailsPageUrl = `./teamsdetails.html?id=${Id}&acronym="${Acronym}"`;
+  const detailsPageUrl = "./teamsdetails.html?id=" + Id + '&acronym=' + Acronym 
 
   // Redirect to the details page
   window.location.href = detailsPageUrl;
@@ -101,18 +103,17 @@ $(document).ready(function () {
 
   console.log(fav);
 
-  for (const Id of fav) {
-    console.log(Id);
+  for (const item of fav) {
+    if (Array.isArray(item)) {
+        var Id = item[0];
+        var Acronym = item[1];
+        console.log(Id);
+        console.log(Acronym);
+    
 
-    ajaxHelper("http://192.168.160.58/NBA/api/Teams/" + Id, "GET").done(
+
+    ajaxHelper("http://192.168.160.58/NBA/api/Teams/" + Id + "?acronym=" + Acronym, "GET").done(
       function (data) {
-        console.log(data);
-
-        // Ensure Acronym is available in the returned data
-        const Acronym = data.Acronym;
-
-        const apiUrl ="http://192.168.160.58/NBA/api/Teams/" + Id + "?acronym=" + Acronym;
-
         if (localStorage.fav.length != 0) {
           $("#table-favourites").show();
           $("#noadd").hide();
@@ -128,7 +129,7 @@ $(document).ready(function () {
                         <td class="align-middle">${data.City}</td>
                         <td class="text-end">
                             <a class="btn btn-default btn-light btn-xs" onclick="openDetails(${Id}, '${Acronym}')"><i class="fa fa-eye" title="Show details"></i></a>
-                            <a class="btn btn-default btn-light btn-xs" onclick="removeFav(${Id})"><i class="fa fa-star text-warning" title="Remover dos favoritos"></i></a>
+                            <a class="btn btn-default btn-light btn-xs" onclick="removeFav(${Id}, '${Acronym}')"><i class="fa fa-star text-warning" title="Remover dos favoritos"></i></a>
                         </td>
                     </tr>`
           );
@@ -138,6 +139,6 @@ $(document).ready(function () {
 
     sleep(50);
   }
-
+}
   hideLoading();
 });
