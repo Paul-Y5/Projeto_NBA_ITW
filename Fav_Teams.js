@@ -121,15 +121,15 @@ $(document).ready(function () {
           $("#table-favourites").append(
             `<tr id="removefav${Id}">
                         <td class="align-middle"><img class="imgtable" src="${data.Logo}" /></td>                    
-                        <td class="align-middle">${Acronym}</td>
+                        <td class="align-middle">${data.Acronym}</td>
                         <td class="align-middle">${data.Name}</td>
                         <td class="align-middle">${data.ConferenceName}</td>
                         <td class="align-middle">${data.DivisionName}</td>
                         <td class="align-middle">${data.StateName}</td>
                         <td class="align-middle">${data.City}</td>
                         <td class="text-end">
-                            <a class="btn btn-default btn-light btn-xs" onclick="openDetails(${Id}, '${Acronym}')"><i class="fa fa-eye" title="Show details"></i></a>
-                            <a class="btn btn-default btn-light btn-xs" onclick="removeFav(${Id}, '${Acronym}')"><i class="fa fa-star text-warning" title="Remover dos favoritos"></i></a>
+                            <a class="btn btn-default btn-light btn-xs" onclick="openDetails(${data.Id}, '${data.Acronym}')"><i class="fa fa-eye" title="Show details"></i></a>
+                            <a class="btn btn-default btn-light btn-xs" onclick="removeFav(${data.Id}, '${data.Acronym}')"><i class="fa fa-star text-warning" title="Remover dos favoritos"></i></a>
                         </td>
                     </tr>`
           );
