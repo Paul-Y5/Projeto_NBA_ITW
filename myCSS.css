@@ -378,15 +378,16 @@ a {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    object-fit: cover; 
+    object-fit: cover;
 }
 
 .imgtable {
     vertical-align: middle;
     width: 40px;
     height: 40px;
-    
+    object-fit: cover;
 }
+
 .flags {
     vertical-align: middle;
     width: 70px;
