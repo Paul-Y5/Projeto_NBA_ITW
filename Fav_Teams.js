@@ -1,124 +1,98 @@
 //--- Internal functions
 function ajaxHelper(uri, method, data) {
-    return $.ajax({
-        type: method,
-        url: uri,
-        dataType: 'json',
-        contentType: 'application/json',
-        data: data ? JSON.stringify(data) : null,
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log("AJAX Call[" + uri + "] Fail...");
-            hideLoading();
-        }
-    });
+  return $.ajax({
+    type: method,
+    url: uri,
+    dataType: "json",
+    contentType: "application/json",
+    data: data ? JSON.stringify(data) : null,
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.log("AJAX Call[" + uri + "] Fail...");
+      hideLoading();
+    },
+  });
+}
 
 function sleep(milliseconds) {
-    const start = Date.now();
-    while (Date.now() - start < milliseconds);
+  const start = Date.now();
+  while (Date.now() - start < milliseconds);
 }
 
 function showLoading() {
-    $("#myModal").modal('show', {
-        backdrop: 'static',
-        keyboard: false
-    });
+  $("#myModal").modal("show", {
+    backdrop: "static",
+    keyboard: false,
+  });
 }
+
 function hideLoading() {
-    $('#myModal').on('shown.bs.modal', function (e) {
-        $("#myModal").modal('hide');
-    })
+  $("#myModal").on("shown.bs.modal", function (e) {
+    $("#myModal").modal("hide");
+  });
 }
 
 function getUrlParameter(sParam) {
-    var sPageURL = window.location.search.substring(1),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
-    console.log("sPageURL=", sPageURL);
-    for (i = 0; i < sURLVariables.length; i++) {
-        sParameterName = sURLVariables[i].split('=');
+  var sPageURL = window.location.search.substring(1),
+    sURLVariables = sPageURL.split("&"),
+    sParameterName,
+    i;
+  console.log("sPageURL=", sPageURL);
+  for (i = 0; i < sURLVariables.length; i++) {
+    sParameterName = sURLVariables[i].split("=");
 
-        if (sParameterName[0] === sParam) {
-            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-        }
+    if (sParameterName[0] === sParam) {
+      return sParameterName[1] === undefined
+        ? true
+        : decodeURIComponent(sParameterName[1]);
     }
-};
-
-    //--- start ....
-    showLoading();
-    var pg = getUrlParameter('page');
-    console.log(pg);
-    if (pg == undefined)
-        self.activate(1);
-    else {
-        self.activate(pg);
-    }
-    console.log("VM initialized!")
-};
+  }
+}
 
 //--- Page Events
 self.activate = function (id) {
-    console.log('CALL: getTeams...');
-    var composedUri = self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
-    ajaxHelper(composedUri, 'GET').done(function (data) {
-        console.log(data);
-        hideLoading();
-        self.records(data.Records);
-        self.currentPage(data.CurrentPage);
-        self.hasNext(data.HasNext);
-        self.hasPrevious(data.HasPrevious);
-        self.pagesize(data.PageSize)
-        self.totalPages(data.TotalPages);
-        self.totalRecords(data.TotalRecords);
-        self.SetFavourites();
-    });
+  console.log("CALL: getTeams...");
+  var composedUri =
+    self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
+  ajaxHelper(composedUri, "GET").done(function (data) {
+    console.log(data);
+    hideLoading();
+    self.records(data.Records);
+    self.currentPage(data.CurrentPage);
+    self.hasNext(data.HasNext);
+    self.hasPrevious(data.HasPrevious);
+    self.pagesize(data.PageSize);
+    self.totalPages(data.TotalPages);
+    self.totalRecords(data.TotalRecords);
+    self.SetFavourites();
+  });
 };
-function showLoading() {
-    $("#myModal").modal('show', {
-        keyboard: false
-    });
-}
-function hideLoading() {
-    $('#myModal').on('shown.bs.modal', function (e) {
-        $("#myModal").modal('hide');
-    });
-}
-
-function sleep(milliseconds) {
-    const start = Date.now();
-    while (Date.now() - start < milliseconds);
-}
-
 
 $(document).ajaxComplete(function (event, xhr, options) {
-    $("#myModal").modal('hide');
-})
-
+  $("#myModal").modal("hide");
+});
 
 function removeFav(Id) {
-    console.log("remove fav")
-    $("#fav-" + Id).remove();
+  console.log("remove fav");
+  $("#fav-" + Id).remove();
 
-    let fav = JSON.parse(localStorage.fav || '[]');
+  let fav = JSON.parse(localStorage.fav || "[]");
 
-    const index = fav.indexOf(Id);
+  const index = fav.indexOf(Id);
 
-    if (index != -1)
-        fav.splice(index, 1);
+  if (index != -1) fav.splice(index, 1);
 
-    localStorage.setItem("fav", JSON.stringify(fav));
-    
-    location.reload();
+  localStorage.setItem("fav", JSON.stringify(fav));
+
+  location.reload();
 }
 
-function openDetails(Id) {
-    // Construct the URL for the details page using the provided Id
-    const detailsPageUrl = './teamsdetails.html?id=' + Id;
+function openDetails(Id, Acronym) {
+  // Construct the URL for the details page using the provided Id
+  const detailsPageUrl = `./teamsdetails.html?id=${Id}&acronym="${Acronym}"`;
 
-    // Redirect to the details page
-    window.location.href = detailsPageUrl;
+  // Redirect to the details page
+  window.location.href = detailsPageUrl;
 }
-
 
 $(document).ready(function () {
   showLoading();
@@ -128,14 +102,16 @@ $(document).ready(function () {
   console.log(fav);
 
   for (const Id of fav) {
-    console.log(Id); // Removido "Acronym" desta linha, pois ainda não está definido aqui
+    console.log(Id);
 
     ajaxHelper("http://192.168.160.58/NBA/api/Teams/" + Id, "GET").done(
       function (data) {
         console.log(data);
 
-        // Certifique-se de que Acronym está disponível nos dados retornados
+        // Ensure Acronym is available in the returned data
         const Acronym = data.Acronym;
+
+        const apiUrl ="http://192.168.160.58/NBA/api/Teams/" + Id + "?acronym=" + Acronym;
 
         if (localStorage.fav.length != 0) {
           $("#table-favourites").show();
