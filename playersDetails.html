@@ -54,12 +54,12 @@
         <div><br/></div>
         <div class="row">
             <!-- ko -->
-            <div class="col-3" data-bind="visible: Photo() != '' && Photo() != null">
+            <div class="col-md-3 d-none d-md-block" data-bind="visible: Photo() != '' && Photo() != null">
                 <img id="img1" data-bind="attr:{src: Photo}"/>
             </div>
             <!-- /ko -->
             <!-- ko ifnot: Photo() != null && Photo() != '' -->
-            <div class="col-3">
+            <div class="col-md-3 d-none d-md-block">
                 <img id="img1" src="imagens/765-default-avatar.png" />
             </div>
             <!-- /ko -->
